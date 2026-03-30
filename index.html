@@ -2,72 +2,110 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BD Media Blueprint — AI-First Bite-Size Media Conglomerate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>BD Media Blueprint v5.1 — Stress-Tested AI Media Conglomerate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg-base:#06060b;--bg-elevated:#0d0d15;--bg-surface:#13131f;--bg-surface-2:#1a1a2a;--bg-surface-3:#222236;--bg-hover:#1e1e32;--text-primary:#f0f0f5;--text-secondary:#a0a0b8;--text-tertiary:#6b6b82;--text-heading:#fff;--accent:#7c3aed;--accent-light:#a78bfa;--accent-dim:rgba(124,58,237,.10);--accent-dim-2:rgba(124,58,237,.06);--accent-glow:rgba(124,58,237,.25);--border:rgba(255,255,255,.06);--border-subtle:rgba(255,255,255,.04);--border-strong:rgba(255,255,255,.10);--red:#f43f5e;--red-dim:rgba(244,63,94,.08);--green:#10b981;--green-dim:rgba(16,185,129,.08);--yellow:#f59e0b;--yellow-dim:rgba(245,158,11,.08);--blue:#3b82f6;--blue-dim:rgba(59,130,246,.08);--orange:#f97316;--orange-dim:rgba(249,115,22,.08);--cyan:#06b6d4;--cyan-dim:rgba(6,182,212,.08);--pink:#ec4899;--pink-dim:rgba(236,72,153,.08);--prohor:#3b82f6;--dhaka:#06b6d4;--rong:#ec4899;--shoili:#10b981;--dheu:#f97316;--sidebar-w:270px;--topbar-h:56px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--shadow-sm:0 1px 2px rgba(0,0,0,.3);--shadow-md:0 4px 12px rgba(0,0,0,.3);--shadow-lg:0 8px 32px rgba(0,0,0,.4);--shadow-glow:0 0 40px rgba(124,58,237,.15);--transition:.2s cubic-bezier(.4,0,.2,1)}
-[data-theme="light"]{--bg-base:#f8f8fc;--bg-elevated:#fff;--bg-surface:#fff;--bg-surface-2:#f3f3f8;--bg-surface-3:#ebebf2;--bg-hover:#f0f0f8;--text-primary:#1a1a2e;--text-secondary:#555570;--text-tertiary:#8888a0;--text-heading:#0a0a14;--accent:#6d28d9;--accent-light:#7c3aed;--accent-dim:rgba(109,40,217,.06);--accent-dim-2:rgba(109,40,217,.03);--accent-glow:rgba(109,40,217,.08);--border:rgba(0,0,0,.06);--border-subtle:rgba(0,0,0,.03);--border-strong:rgba(0,0,0,.10);--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);--shadow-glow:0 0 40px rgba(109,40,217,.06);--red-dim:rgba(244,63,94,.06);--green-dim:rgba(16,185,129,.06);--yellow-dim:rgba(245,158,11,.06);--blue-dim:rgba(59,130,246,.06);--orange-dim:rgba(249,115,22,.06);--cyan-dim:rgba(6,182,212,.06);--pink-dim:rgba(236,72,153,.06)}
+:root{
+--bg-base:#06060b;--bg-elevated:#0d0d15;--bg-surface:#13131f;--bg-surface-2:#1a1a2a;--bg-surface-3:#222236;--bg-hover:#1e1e32;
+--text-primary:#f0f0f5;--text-secondary:#a0a0b8;--text-tertiary:#6b6b82;--text-heading:#fff;
+--accent:#7c3aed;--accent-light:#a78bfa;--accent-dim:rgba(124,58,237,.10);--accent-dim-2:rgba(124,58,237,.06);--accent-glow:rgba(124,58,237,.25);
+--border:rgba(255,255,255,.06);--border-subtle:rgba(255,255,255,.04);--border-strong:rgba(255,255,255,.10);
+--red:#f43f5e;--red-dim:rgba(244,63,94,.08);--green:#10b981;--green-dim:rgba(16,185,129,.08);--yellow:#f59e0b;--yellow-dim:rgba(245,158,11,.08);
+--blue:#3b82f6;--blue-dim:rgba(59,130,246,.08);--orange:#f97316;--orange-dim:rgba(249,115,22,.08);--cyan:#06b6d4;--cyan-dim:rgba(6,182,212,.08);
+--pink:#ec4899;--pink-dim:rgba(236,72,153,.08);
+--prohor:#3b82f6;--dhaka:#06b6d4;--rong:#ec4899;--shoili:#10b981;--dheu:#f97316;
+--sidebar-w:260px;--topbar-h:52px;
+--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;
+--shadow-sm:0 1px 2px rgba(0,0,0,.3);--shadow-md:0 4px 12px rgba(0,0,0,.3);--shadow-lg:0 8px 32px rgba(0,0,0,.4);--shadow-glow:0 0 40px rgba(124,58,237,.15);
+--transition:.2s cubic-bezier(.4,0,.2,1)
+}
+[data-theme="light"]{
+--bg-base:#f8f8fc;--bg-elevated:#fff;--bg-surface:#fff;--bg-surface-2:#f3f3f8;--bg-surface-3:#ebebf2;--bg-hover:#f0f0f8;
+--text-primary:#1a1a2e;--text-secondary:#555570;--text-tertiary:#8888a0;--text-heading:#0a0a14;
+--accent:#6d28d9;--accent-light:#7c3aed;--accent-dim:rgba(109,40,217,.06);--accent-dim-2:rgba(109,40,217,.03);--accent-glow:rgba(109,40,217,.08);
+--border:rgba(0,0,0,.06);--border-subtle:rgba(0,0,0,.03);--border-strong:rgba(0,0,0,.10);
+--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);--shadow-glow:0 0 40px rgba(109,40,217,.06);
+--red-dim:rgba(244,63,94,.06);--green-dim:rgba(16,185,129,.06);--yellow-dim:rgba(245,158,11,.06);--blue-dim:rgba(59,130,246,.06);--orange-dim:rgba(249,115,22,.06);--cyan-dim:rgba(6,182,212,.06);--pink-dim:rgba(236,72,153,.06)
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar-h) + 20px)}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;transition:background var(--transition),color var(--transition)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar-h) + 16px)}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.65;font-size:14px;-webkit-font-smoothing:antialiased;transition:background var(--transition),color var(--transition);overflow-x:hidden}
 ::selection{background:var(--accent);color:#fff}
-.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(6,6,11,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:1000}
-[data-theme="light"] .topbar{background:rgba(255,255,255,.88)}
-.topbar-left{display:flex;align-items:center;gap:10px}
-.topbar-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.topbar-logo svg{width:26px;height:26px;flex-shrink:0}
-.topbar-logo-text{font-weight:800;font-size:14px;color:var(--text-heading);letter-spacing:-.3px;white-space:nowrap}
-.topbar-logo-text span{color:var(--accent-light);font-weight:600;font-size:11px;margin-left:4px;opacity:.7}
-.topbar-right{display:flex;align-items:center;gap:8px}
-.topbar-btn{background:var(--bg-surface-2);border:1px solid var(--border);color:var(--text-secondary);cursor:pointer;padding:6px 12px;border-radius:var(--radius-sm);font-size:11px;font-weight:600;transition:all var(--transition);display:flex;align-items:center;gap:5px;font-family:inherit}
+
+/* TOPBAR */
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(6,6,11,.88);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:1000}
+[data-theme="light"] .topbar{background:rgba(255,255,255,.9)}
+.topbar-left{display:flex;align-items:center;gap:8px;min-width:0}
+.topbar-logo{display:flex;align-items:center;gap:7px;text-decoration:none;min-width:0}
+.topbar-logo svg{width:24px;height:24px;flex-shrink:0}
+.topbar-logo-text{font-weight:800;font-size:13px;color:var(--text-heading);letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-logo-text span{color:var(--accent-light);font-weight:600;font-size:10px;margin-left:4px;opacity:.7}
+.topbar-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.topbar-btn{background:var(--bg-surface-2);border:1px solid var(--border);color:var(--text-secondary);cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);font-size:10px;font-weight:600;transition:all var(--transition);display:flex;align-items:center;gap:4px;font-family:inherit;white-space:nowrap}
 .topbar-btn:hover{border-color:var(--accent);color:var(--accent)}
-.topbar-btn svg{width:13px;height:13px}
-.hamburger{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;padding:6px;border-radius:var(--radius-sm);transition:background var(--transition)}
+.topbar-btn svg{width:12px;height:12px}
+.hamburger{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;padding:4px;border-radius:var(--radius-sm);transition:background var(--transition);flex-shrink:0}
 .hamburger:hover{background:var(--bg-surface-2)}
-.hamburger svg{width:22px;height:22px}
-.sidebar{position:fixed;top:var(--topbar-h);left:0;bottom:0;width:var(--sidebar-w);background:var(--bg-elevated);border-right:1px solid var(--border);overflow-y:auto;padding:16px 0;z-index:900;transition:transform .3s cubic-bezier(.4,0,.2,1)}
-.sidebar::-webkit-scrollbar{width:3px}
+.hamburger svg{width:20px;height:20px}
+
+/* SIDEBAR */
+.sidebar{position:fixed;top:var(--topbar-h);left:0;bottom:0;width:var(--sidebar-w);background:var(--bg-elevated);border-right:1px solid var(--border);overflow-y:auto;overflow-x:hidden;padding:12px 0 60px;z-index:900;transition:transform .3s cubic-bezier(.4,0,.2,1),width .3s ease}
+.sidebar::-webkit-scrollbar{width:2px}
 .sidebar::-webkit-scrollbar-track{background:transparent}
 .sidebar::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:10px}
-.sidebar-section{padding:16px 16px 4px;font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-tertiary)}
-.sidebar a{display:flex;align-items:center;gap:8px;padding:7px 16px;color:var(--text-tertiary);text-decoration:none;font-size:12px;font-weight:500;border-left:2px solid transparent;transition:all .15s}
-.sidebar a svg{width:14px;height:14px;flex-shrink:0;opacity:.5}
+.sidebar-section{padding:14px 14px 3px;font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-tertiary)}
+.sidebar a{display:flex;align-items:center;gap:7px;padding:6px 14px;color:var(--text-tertiary);text-decoration:none;font-size:11px;font-weight:500;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sidebar a svg{width:13px;height:13px;flex-shrink:0;opacity:.5}
 .sidebar a:hover,.sidebar a.active{color:var(--accent-light);background:var(--accent-dim);border-left-color:var(--accent)}
 .sidebar a:hover svg,.sidebar a.active svg{opacity:1}
-.sidebar a.vol-link{font-weight:700;font-size:12px;color:var(--text-heading);padding:10px 16px;margin-top:6px;border-left:2px solid var(--accent);background:var(--accent-dim)}
+.sidebar a.vol-link{font-weight:700;font-size:11px;color:var(--text-heading);padding:9px 14px;margin-top:4px;border-left:2px solid var(--accent);background:var(--accent-dim)}
 .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:899;backdrop-filter:blur(4px)}
-.main{margin-left:var(--sidebar-w);margin-top:var(--topbar-h);padding:32px 40px 80px;max-width:1000px}
-h1{font-size:32px;font-weight:900;color:var(--text-heading);margin-bottom:8px;line-height:1.15;letter-spacing:-.5px}
-h2{font-size:22px;font-weight:800;color:var(--text-heading);margin-top:56px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-h2 svg{width:22px;height:22px;color:var(--accent)}
-h3{font-size:17px;font-weight:700;color:var(--text-heading);margin-top:36px;margin-bottom:12px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
-h3 svg{width:17px;height:17px;color:var(--accent-light)}
-h4{font-size:14px;font-weight:700;color:var(--text-heading);margin-top:24px;margin-bottom:8px}
-p{margin-bottom:14px;color:var(--text-secondary)}
-.subtitle{color:var(--text-tertiary);font-size:15px;margin-bottom:32px;line-height:1.6}
-.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+.sidebar-collapse-btn{display:none}
+
+/* MAIN */
+.main{margin-left:var(--sidebar-w);margin-top:var(--topbar-h);padding:28px clamp(16px,4vw,48px) 80px;max-width:960px;width:100%}
+
+/* TYPOGRAPHY */
+h1{font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--text-heading);margin-bottom:6px;line-height:1.15;letter-spacing:-.5px}
+h2{font-size:clamp(18px,3vw,22px);font-weight:800;color:var(--text-heading);margin-top:48px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);letter-spacing:-.3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+h2 svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
+h3{font-size:clamp(15px,2.5vw,17px);font-weight:700;color:var(--text-heading);margin-top:32px;margin-bottom:10px;display:flex;align-items:center;gap:7px;letter-spacing:-.2px}
+h3 svg{width:16px;height:16px;color:var(--accent-light);flex-shrink:0}
+h4{font-size:13px;font-weight:700;color:var(--text-heading);margin-top:22px;margin-bottom:6px}
+p{margin-bottom:12px;color:var(--text-secondary);font-size:13px}
+.subtitle{color:var(--text-tertiary);font-size:14px;margin-bottom:28px;line-height:1.6}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
 .badge-green{background:var(--green-dim);color:var(--green)}
 .badge-red{background:var(--red-dim);color:var(--red)}
 .badge-yellow{background:var(--yellow-dim);color:var(--yellow)}
 .badge-blue{background:var(--blue-dim);color:var(--blue)}
 .badge-accent{background:var(--accent-dim);color:var(--accent-light)}
-.hero{position:relative;padding:36px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(124,58,237,.12) 0%,rgba(59,130,246,.08) 50%,rgba(16,185,129,.06) 100%);border:1px solid var(--border);overflow:hidden;margin-bottom:32px}
-.hero::before{content:'';position:absolute;top:-50%;right:-30%;width:500px;height:500px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:12px}
-.hero-eyebrow svg{width:13px;height:13px}
-.hero h1{font-size:36px;max-width:680px;position:relative}
-.hero .subtitle{font-size:16px;max-width:600px;position:relative}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:20px 0}
-.kpi{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 12px;text-align:center;transition:all var(--transition)}
+
+/* HERO */
+.hero{position:relative;padding:clamp(20px,4vw,36px);border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(59,130,246,.08) 50%,rgba(16,185,129,.06));border:1px solid var(--border);overflow:hidden;margin-bottom:28px}
+.hero::before{content:'';position:absolute;top:-50%;right:-30%;width:400px;height:400px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent-light);margin-bottom:10px}
+.hero-eyebrow svg{width:12px;height:12px}
+.hero h1{position:relative}
+.hero .subtitle{position:relative}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:16px 0}
+.kpi{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 10px;text-align:center;transition:all var(--transition)}
 .kpi:hover{border-color:var(--accent);box-shadow:var(--shadow-glow)}
-.kpi-icon{width:32px;height:32px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
-.kpi-icon svg{width:16px;height:16px}
-.kpi-number{font-size:24px;font-weight:900;color:var(--text-heading);letter-spacing:-1px;line-height:1.1}
-.kpi-label{font-size:10px;color:var(--text-tertiary);margin-top:4px;font-weight:500;letter-spacing:.3px}
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0}
-.brand-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;transition:all var(--transition);position:relative;overflow:hidden}
+.kpi-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px}
+.kpi-icon svg{width:14px;height:14px}
+.kpi-number{font-size:22px;font-weight:900;color:var(--text-heading);letter-spacing:-.8px;line-height:1.1}
+.kpi-label{font-size:9px;color:var(--text-tertiary);margin-top:3px;font-weight:500;letter-spacing:.2px}
+
+/* BRAND CARDS */
+.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:16px 0}
+.brand-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;transition:all var(--transition);position:relative;overflow:hidden}
 .brand-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-md)}
 .brand-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .brand-card[data-brand="prohor"]::before{background:var(--prohor)}
@@ -75,18 +113,20 @@ p{margin-bottom:14px;color:var(--text-secondary)}
 .brand-card[data-brand="rong"]::before{background:var(--rong)}
 .brand-card[data-brand="shoili"]::before{background:var(--shoili)}
 .brand-card[data-brand="dheu"]::before{background:var(--dheu)}
-.brand-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.brand-icon{width:40px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
-.brand-name{font-size:15px;font-weight:800;color:var(--text-heading)}
-.brand-sub{font-size:11px;color:var(--text-tertiary);font-weight:500}
-.brand-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-.brand-tag{font-size:9px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--bg-surface-2);color:var(--text-tertiary);border:1px solid var(--border)}
-.brand-card p{font-size:12px;margin-bottom:0;color:var(--text-secondary)}
-.callout{padding:16px 20px;border-radius:var(--radius-md);margin:20px 0;font-size:13px;border:1px solid var(--border);display:flex;gap:14px;align-items:flex-start}
-.callout-icon{width:32px;height:32px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.callout-icon svg{width:16px;height:16px}
+.brand-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.brand-icon{width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-name{font-size:14px;font-weight:800;color:var(--text-heading)}
+.brand-sub{font-size:10px;color:var(--text-tertiary);font-weight:500}
+.brand-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.brand-tag{font-size:9px;font-weight:600;padding:2px 6px;border-radius:20px;background:var(--bg-surface-2);color:var(--text-tertiary);border:1px solid var(--border)}
+.brand-card p{font-size:11px;margin-bottom:0;color:var(--text-secondary);line-height:1.5}
+
+/* CALLOUTS */
+.callout{padding:14px 16px;border-radius:var(--radius-md);margin:16px 0;font-size:12px;border:1px solid var(--border);display:flex;gap:12px;align-items:flex-start}
+.callout-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.callout-icon svg{width:14px;height:14px}
 .callout-content{flex:1;min-width:0}
-.callout-content strong{display:block;margin-bottom:4px;color:var(--text-heading);font-size:13px}
+.callout-content strong{display:block;margin-bottom:3px;color:var(--text-heading);font-size:12px}
 .callout-danger{background:var(--red-dim);border-color:rgba(244,63,94,.15)}
 .callout-danger .callout-icon{background:rgba(244,63,94,.15);color:var(--red)}
 .callout-warning{background:var(--yellow-dim);border-color:rgba(245,158,11,.15)}
@@ -95,128 +135,163 @@ p{margin-bottom:14px;color:var(--text-secondary)}
 .callout-success .callout-icon{background:rgba(16,185,129,.15);color:var(--green)}
 .callout-info{background:var(--accent-dim);border-color:rgba(124,58,237,.15)}
 .callout-info .callout-icon{background:rgba(124,58,237,.15);color:var(--accent-light)}
-.table-wrap{overflow-x:auto;margin:16px 0 24px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--bg-surface)}
-table{width:100%;border-collapse:collapse;font-size:12px}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:14px 0 20px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--bg-surface);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:480px}
 thead{background:var(--bg-surface-2)}
-th{text-align:left;padding:10px 14px;font-weight:700;color:var(--text-heading);white-space:nowrap;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.3px;text-transform:uppercase}
-td{padding:9px 14px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
+th{text-align:left;padding:8px 12px;font-weight:700;color:var(--text-heading);white-space:nowrap;border-bottom:1px solid var(--border);font-size:10px;letter-spacing:.3px;text-transform:uppercase}
+td{padding:7px 12px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:var(--accent-dim-2)}
 td strong{color:var(--text-heading)}
-.pipeline{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:20px 0;padding:20px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow-x:auto}
-.pipeline-step{background:var(--accent-dim);border:1px solid rgba(124,58,237,.2);color:var(--accent-light);padding:6px 12px;border-radius:var(--radius-sm);font-size:10px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:5px}
-.pipeline-arrow{color:var(--text-tertiary);font-size:12px;flex-shrink:0}
-.pipeline-arrow svg{width:14px;height:14px}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:20px 0}
-.card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;transition:all var(--transition)}
+
+/* PIPELINE */
+.pipeline{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:16px 0;padding:16px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.pipeline-step{background:var(--accent-dim);border:1px solid rgba(124,58,237,.2);color:var(--accent-light);padding:5px 10px;border-radius:var(--radius-sm);font-size:9px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.pipeline-arrow{color:var(--text-tertiary);font-size:10px;flex-shrink:0}
+.pipeline-arrow svg{width:12px;height:12px}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:16px 0}
+.card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;transition:all var(--transition)}
 .card:hover{border-color:var(--border-strong);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.card-icon{width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.card-icon svg{width:18px;height:18px}
-.card-title{font-weight:700;font-size:13px;color:var(--text-heading);margin-bottom:4px}
-.card p{font-size:12px;margin-bottom:0;color:var(--text-secondary)}
-.chart-container{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin:20px 0}
-.chart-title{font-size:13px;font-weight:700;color:var(--text-heading);margin-bottom:3px}
-.chart-subtitle{font-size:11px;color:var(--text-tertiary);margin-bottom:20px}
-.bar-chart{display:flex;flex-direction:column;gap:10px}
-.bar-row{display:flex;align-items:center;gap:10px}
-.bar-label{width:90px;font-size:11px;font-weight:600;color:var(--text-secondary);text-align:right;flex-shrink:0}
-.bar-track{flex:1;height:26px;background:var(--bg-surface-2);border-radius:6px;overflow:hidden;position:relative}
-.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;font-weight:700;color:#fff;transition:width 1s ease;min-width:fit-content}
-.bar-value{font-size:11px;font-weight:700;color:var(--text-heading);width:55px;text-align:right;flex-shrink:0}
-.donut-row{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
-.donut-chart{position:relative;width:140px;height:140px;flex-shrink:0}
-.donut-chart svg{width:140px;height:140px;transform:rotate(-90deg)}
-.donut-chart circle{fill:none;stroke-width:18;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.card-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.card-icon svg{width:16px;height:16px}
+.card-title{font-weight:700;font-size:12px;color:var(--text-heading);margin-bottom:3px}
+.card p{font-size:11px;margin-bottom:0;color:var(--text-secondary)}
+
+/* CHARTS */
+.chart-container{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin:16px 0}
+.chart-title{font-size:12px;font-weight:700;color:var(--text-heading);margin-bottom:2px}
+.chart-subtitle{font-size:10px;color:var(--text-tertiary);margin-bottom:16px}
+.bar-chart{display:flex;flex-direction:column;gap:8px}
+.bar-row{display:flex;align-items:center;gap:8px}
+.bar-label{width:80px;font-size:10px;font-weight:600;color:var(--text-secondary);text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:24px;background:var(--bg-surface-2);border-radius:5px;overflow:hidden;position:relative;min-width:60px}
+.bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:7px;font-size:9px;font-weight:700;color:#fff;transition:width 1s ease;min-width:fit-content;white-space:nowrap}
+.bar-value{font-size:10px;font-weight:700;color:var(--text-heading);width:50px;text-align:right;flex-shrink:0}
+
+/* DONUT */
+.donut-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.donut-chart{position:relative;width:120px;height:120px;flex-shrink:0}
+.donut-chart svg{width:120px;height:120px;transform:rotate(-90deg)}
+.donut-chart circle{fill:none;stroke-width:16;stroke-linecap:round}
 .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.donut-center .number{font-size:24px;font-weight:900;color:var(--text-heading)}
-.donut-center .label{font-size:9px;color:var(--text-tertiary);font-weight:600}
-.donut-legend{display:flex;flex-direction:column;gap:8px;flex:1}
-.legend-item{display:flex;align-items:center;gap:8px}
-.legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.legend-text{font-size:12px;color:var(--text-secondary)}
-.legend-value{font-size:12px;font-weight:700;color:var(--text-heading);margin-left:auto}
-.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:20px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
-.versus-side{padding:24px}
-.versus-side:first-child{background:var(--bg-surface)}
-.versus-side:last-child{background:var(--bg-surface)}
-.versus-side h4{font-size:13px;margin-bottom:14px;margin-top:0;display:flex;align-items:center;gap:6px}
-.versus-divider{width:44px;display:flex;align-items:center;justify-content:center;background:var(--bg-surface-2);font-weight:900;color:var(--text-tertiary);font-size:13px}
-.versus-stat{margin-bottom:12px}
-.versus-stat .num{font-size:20px;font-weight:900;color:var(--text-heading)}
-.versus-stat .lbl{font-size:10px;color:var(--text-tertiary);font-weight:500}
-.phase-timeline{display:flex;gap:3px;margin:20px 0;border-radius:var(--radius-md);overflow:hidden}
-.phase-seg{flex:1;padding:12px 8px;text-align:center;font-size:10px;font-weight:700;color:#fff;display:flex;flex-direction:column;gap:2px}
-.phase-seg .ph-num{font-size:16px;font-weight:900}
-.phase-seg .ph-name{font-size:9px;opacity:.85;font-weight:600}
-.checklist{list-style:none;margin:16px 0}
-.checklist li{padding:8px 0 8px 32px;position:relative;font-size:13px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
+.donut-center .number{font-size:20px;font-weight:900;color:var(--text-heading)}
+.donut-center .label{font-size:8px;color:var(--text-tertiary);font-weight:600}
+.donut-legend{display:flex;flex-direction:column;gap:6px;flex:1;min-width:140px}
+.legend-item{display:flex;align-items:center;gap:6px}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.legend-text{font-size:11px;color:var(--text-secondary);flex:1;min-width:0}
+.legend-value{font-size:11px;font-weight:700;color:var(--text-heading);flex-shrink:0}
+
+/* VERSUS */
+.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:16px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
+.versus-side{padding:20px;background:var(--bg-surface)}
+.versus-side h4{font-size:12px;margin-bottom:12px;margin-top:0;display:flex;align-items:center;gap:5px}
+.versus-divider{width:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-surface-2);font-weight:900;color:var(--text-tertiary);font-size:12px}
+.versus-stat{margin-bottom:10px}
+.versus-stat .num{font-size:18px;font-weight:900;color:var(--text-heading);line-height:1.2}
+.versus-stat .lbl{font-size:9px;color:var(--text-tertiary);font-weight:500}
+
+/* PHASE */
+.phase-timeline{display:flex;gap:2px;margin:16px 0;border-radius:var(--radius-md);overflow:hidden}
+.phase-seg{flex:1;padding:10px 6px;text-align:center;font-size:9px;font-weight:700;color:#fff;display:flex;flex-direction:column;gap:1px;min-width:0}
+.phase-seg .ph-num{font-size:14px;font-weight:900}
+.phase-seg .ph-name{font-size:8px;opacity:.85;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* CHECKLIST */
+.checklist{list-style:none;margin:14px 0}
+.checklist li{padding:7px 0 7px 28px;position:relative;font-size:12px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
 .checklist li:last-child{border-bottom:none}
-.checklist li::before{content:'';position:absolute;left:4px;top:10px;width:16px;height:16px;border:2px solid var(--border-strong);border-radius:4px}
-.code-block{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;font-family:'JetBrains Mono',monospace;font-size:11px;overflow-x:auto;margin:16px 0;line-height:1.8;white-space:pre-wrap;color:var(--text-secondary);position:relative}
-.code-block::before{content:attr(data-label);position:absolute;top:0;right:0;background:var(--accent-dim);color:var(--accent-light);font-size:8px;font-weight:700;padding:3px 10px;border-radius:0 var(--radius-md) 0 var(--radius-sm);letter-spacing:1px;text-transform:uppercase;font-family:'Inter',sans-serif}
-.tab-container{margin:20px 0;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.tab-buttons{display:flex;gap:0;background:var(--bg-surface-2);overflow-x:auto;border-bottom:1px solid var(--border)}
-.tab-btn{background:none;border:none;padding:10px 16px;font-size:11px;font-weight:700;color:var(--text-tertiary);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--transition);font-family:inherit;display:flex;align-items:center;gap:5px}
+.checklist li::before{content:'';position:absolute;left:2px;top:9px;width:14px;height:14px;border:2px solid var(--border-strong);border-radius:3px}
+
+/* CODE */
+.code-block{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;font-family:'JetBrains Mono',monospace;font-size:10px;overflow-x:auto;margin:14px 0;line-height:1.7;white-space:pre-wrap;color:var(--text-secondary);position:relative;-webkit-overflow-scrolling:touch}
+.code-block::before{content:attr(data-label);position:absolute;top:0;right:0;background:var(--accent-dim);color:var(--accent-light);font-size:8px;font-weight:700;padding:2px 8px;border-radius:0 var(--radius-md) 0 var(--radius-sm);letter-spacing:.8px;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+/* TABS */
+.tab-container{margin:16px 0;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.tab-buttons{display:flex;gap:0;background:var(--bg-surface-2);overflow-x:auto;border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch}
+.tab-btn{background:none;border:none;padding:8px 14px;font-size:10px;font-weight:700;color:var(--text-tertiary);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--transition);font-family:inherit}
 .tab-btn:hover{color:var(--text-primary);background:var(--bg-hover)}
 .tab-btn.active{color:var(--accent-light);border-bottom-color:var(--accent);background:var(--bg-surface)}
-.tab-panel{display:none;padding:20px}
+.tab-panel{display:none;padding:16px}
 .tab-panel.active{display:block}
-ul.bullet{list-style:none;margin:14px 0}
-ul.bullet li{padding:5px 0 5px 24px;position:relative;font-size:13px;color:var(--text-secondary)}
-ul.bullet li::before{content:'';position:absolute;left:6px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--accent);opacity:.4}
-.scroll-top{position:fixed;bottom:20px;right:20px;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1001;box-shadow:0 4px 20px rgba(124,58,237,.4);transition:transform var(--transition)}
+.tab-panel p{font-size:12px}
+
+/* BULLETS */
+ul.bullet{list-style:none;margin:12px 0}
+ul.bullet li{padding:4px 0 4px 22px;position:relative;font-size:12px;color:var(--text-secondary)}
+ul.bullet li::before{content:'';position:absolute;left:5px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.4}
+
+/* PLATFORM LOGOS */
+.platform-logos{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.platform-logo{display:flex;align-items:center;gap:5px;padding:5px 10px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:10px;font-weight:600;color:var(--text-secondary);white-space:nowrap}
+.platform-logo svg{width:16px;height:16px;flex-shrink:0}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1001;box-shadow:0 4px 20px rgba(124,58,237,.4);transition:transform var(--transition)}
 .scroll-top:hover{transform:scale(1.1)}
 .scroll-top.show{display:flex}
-.scroll-top svg{width:18px;height:18px}
-.vol-header{margin-top:64px;padding:32px 0 16px;position:relative}
+.scroll-top svg{width:16px;height:16px}
+
+/* VOL HEADER */
+.vol-header{margin-top:56px;padding:28px 0 14px;position:relative}
 .vol-header::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent)}
-.vol-num{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);margin-bottom:10px}
-.platform-logos{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}
-.platform-logo{display:flex;align-items:center;gap:6px;padding:6px 12px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:11px;font-weight:600;color:var(--text-secondary)}
-.platform-logo svg{width:18px;height:18px;flex-shrink:0}
-.stress-fix{position:relative;padding-left:16px;margin:12px 0}
-.stress-fix::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:var(--green)}
-.stress-fix-bad{color:var(--red);text-decoration:line-through;font-size:12px}
-.stress-fix-good{color:var(--green);font-weight:700;font-size:12px}
-@media(max-width:1100px){.main{padding:28px 28px 70px}}
+.vol-num{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent-light);margin-bottom:8px}
+
+/* RESPONSIVE */
+@media(min-width:1400px){
+.main{max-width:1060px}
+}
+@media(max-width:1100px){
+.main{padding:24px clamp(12px,3vw,32px) 70px}
+}
 @media(max-width:900px){
 .sidebar{transform:translateX(-100%)}
 .sidebar.open{transform:translateX(0)}
 .sidebar-overlay.open{display:block}
-.main{margin-left:0;padding:20px 16px 60px}
+.main{margin-left:0}
 .hamburger{display:block}
-h1,.hero h1{font-size:26px}
-h2{font-size:19px;margin-top:40px}
-.kpi-grid{grid-template-columns:repeat(3,1fr)}
-.hero{padding:24px}
 .versus{grid-template-columns:1fr}
-.versus-divider{width:100%;height:36px}
-.bar-label{width:70px;font-size:10px}
+.versus-divider{width:100%;height:32px}
 }
 @media(max-width:600px){
 .kpi-grid{grid-template-columns:repeat(2,1fr)}
 .card-grid,.brand-grid{grid-template-columns:1fr}
 .phase-timeline{flex-direction:column}
 .donut-row{flex-direction:column;align-items:center}
-.hero h1{font-size:22px}
-.hero{padding:20px}
-.main{padding:16px 12px 50px}
+.bar-label{width:60px;font-size:9px}
+.bar-value{width:40px;font-size:9px}
+.callout{flex-direction:column;gap:8px}
+.callout-icon{width:24px;height:24px}
+table{font-size:10px;min-width:400px}
+th,td{padding:6px 8px}
 }
 @media(max-width:380px){
-.kpi-grid{grid-template-columns:1fr}
+.kpi-grid{grid-template-columns:repeat(2,1fr)}
 .topbar-logo-text span{display:none}
+.kpi-number{font-size:18px}
+.hero{padding:16px}
 }
-@media print{.sidebar,.topbar,.scroll-top,.hamburger{display:none!important}.main{margin-left:0;padding:20px;max-width:100%}}
+@media print{
+.sidebar,.topbar,.scroll-top,.hamburger,.sidebar-overlay{display:none!important}
+.main{margin-left:0;padding:16px;max-width:100%}
+.hero,.callout,.chart-container,.tab-container,.code-block{break-inside:avoid}
+}
 </style>
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
 <div class="topbar-left">
-<button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 <a href="#" class="topbar-logo">
-<svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#logoG)"/><path d="M8 10h16M8 16h12M8 22h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="22" r="3" fill="#fff" opacity=".6"/><defs><linearGradient id="logoG" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs></svg>
-<div class="topbar-logo-text">BD Media Blueprint <span>v5.0 Stress-Tested</span></div>
+<svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M8 10h16M8 16h12M8 22h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="22" r="3" fill="#fff" opacity=".6"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs></svg>
+<div class="topbar-logo-text">BD Media Blueprint <span>v5.1 Verified</span></div>
 </a>
 </div>
 <div class="topbar-right">
@@ -224,360 +299,231 @@ h2{font-size:19px;margin-top:40px}
 </div>
 </div>
 
+<!-- OVERLAY -->
 <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
 <div class="sidebar-section">Start Here</div>
-<a href="#overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Overview</a>
-<a href="#stress-test-results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Stress Test Results</a>
-<a href="#exec-summary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Executive Summary</a>
+<a href="#overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Overview & KPIs</a>
+<a href="#stress-fixes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>8 Critical Fixes</a>
+<a href="#exec-summary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Executive Summary</a>
 
-<a href="#vol1" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Vol 1: Architecture</a>
-<a href="#honest-assessment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Honest Assessment</a>
-<a href="#market-landscape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market Landscape</a>
-<a href="#channel-architecture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>Channel Architecture</a>
-<a href="#tool-stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Tool Stack (Verified)</a>
-<a href="#revenue-model"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Revenue Model</a>
-<a href="#launch-sequence"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Launch Sequence</a>
+<a href="#vol1" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Vol 1 — Architecture</a>
+<a href="#honest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Honest Assessment</a>
+<a href="#market"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market (73.4M FB)</a>
+<a href="#brands"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>5 Brands</a>
+<a href="#tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Tool Stack ($618)</a>
+<a href="#revenue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Revenue Model</a>
 
-<a href="#vol2" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg>Vol 2: Operations</a>
-<a href="#scoring-engine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>AI Scoring Engine</a>
-<a href="#hook-framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Hook Framework</a>
-<a href="#platform-algorithms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>Platform Algorithms</a>
+<a href="#vol2" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06"/></svg>Vol 2 — Operations</a>
+<a href="#scoring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>AI Scoring Engine</a>
+<a href="#hooks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Hook Framework</a>
+<a href="#algos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>Platform Algorithms</a>
+<a href="#selflearn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>Self-Improving Model</a>
 
-<a href="#vol3" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Vol 3: Stress Test</a>
-<a href="#pricing-corrections"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing Corrections</a>
-<a href="#kill-risks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>7 Kill Risks</a>
-<a href="#first-30-days"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days</a>
+<a href="#vol3" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Vol 3 — Stress Test</a>
+<a href="#pricing-fixes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing Corrections</a>
+<a href="#kill-risks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>8 Kill Risks</a>
+
+<a href="#vol4" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Vol 4 — Execution</a>
+<a href="#handles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>Handle Strategy</a>
+<a href="#day30"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days</a>
+<a href="#tone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Content Tone</a>
+<a href="#architecture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>System Architecture</a>
 </nav>
 
+<!-- MAIN -->
 <div class="main">
 
 <!-- HERO -->
 <section id="overview">
 <div class="hero">
-<div class="hero-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Stress-Tested Execution Blueprint — v5.0</div>
+<div class="hero-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Stress-Tested Execution Blueprint — All 4 Volumes</div>
 <h1>AI-First Bite-Size Media Conglomerate</h1>
-<p class="subtitle">Five media brands. 20 social accounts. 100+ posts/day. Every tool verified against real March 2026 pricing. Every gap found and fixed. Built for Bangladesh.</p>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
-<span class="badge badge-red">7 Critical Fixes</span>
+<p class="subtitle">Five media brands · 20 social accounts · 100+ posts/day · ~$618/month verified · Every tool, workflow, and strategy stress-tested against live March 2026 data. Built for Bangladesh.</p>
+<div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:4px">
+<span class="badge badge-red">8 Critical Fixes</span>
 <span class="badge badge-green">All Prices Verified 30 Mar 2026</span>
 <span class="badge badge-accent">Production-Ready</span>
 </div>
 </div>
 
+<!-- KPIs -->
 <div class="kpi-grid">
 <div class="kpi"><div class="kpi-icon" style="background:var(--accent-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><div class="kpi-number">5</div><div class="kpi-label">Media Brands</div></div>
 <div class="kpi"><div class="kpi-icon" style="background:var(--blue-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="kpi-number">20</div><div class="kpi-label">Social Accounts</div></div>
 <div class="kpi"><div class="kpi-icon" style="background:var(--green-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="kpi-number">100+</div><div class="kpi-label">Posts / Day</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--yellow-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="kpi-number">~$640</div><div class="kpi-label">Monthly Cost</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--cyan-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div><div class="kpi-number">64M</div><div class="kpi-label">BD Social Users</div></div>
+<div class="kpi"><div class="kpi-icon" style="background:var(--yellow-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="kpi-number">$618</div><div class="kpi-label">Monthly (Verified)</div></div>
+<div class="kpi"><div class="kpi-icon" style="background:var(--cyan-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div><div class="kpi-number">73.4M</div><div class="kpi-label">BD Facebook Users</div></div>
 <div class="kpi"><div class="kpi-icon" style="background:var(--pink-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div><div class="kpi-number">0</div><div class="kpi-label">Staff Required</div></div>
 </div>
 
-<!-- PLATFORMS VISUAL -->
-<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Target Platforms</h3>
+<!-- PLATFORMS -->
+<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Target Platforms (Verified User Counts)</h3>
 <div class="platform-logos">
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>Facebook · 72.6M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153A4.904 4.904 0 012.525 18.55c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" fill="url(#ig)"/><circle cx="12" cy="12" r="3.5" stroke="#fff" stroke-width="1.5" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/><defs><linearGradient id="ig" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs></svg>Instagram · 9.9M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.88 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.99a8.21 8.21 0 004.77 1.51v-3.4a4.85 4.85 0 01-1.01-.41z"/></svg>TikTok · 46.5M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#f00"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube · 44.6M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X · Influential</div>
+<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>Facebook 73.4M</div>
+<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.88 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.99a8.21 8.21 0 004.77 1.51v-3.4a4.85 4.85 0 01-1.01-.41z"/></svg>TikTok 46.5M</div>
+<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#f00"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><polygon points="9.545 15.568 15.818 12 9.545 8.432" fill="#fff"/></svg>YouTube 44.6M</div>
+<div class="platform-logo"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#igr)"/><circle cx="12" cy="12" r="3.5" stroke="#fff" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/><defs><linearGradient id="igr" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs></svg>Instagram 9.9M</div>
+<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Elite)</div>
 </div>
 </section>
 
-<!-- STRESS TEST RESULTS -->
-<section id="stress-test-results">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Stress Test Results — 7 Critical Fixes <span class="badge badge-red">Read First</span></h2>
+<!-- STRESS FIXES -->
+<section id="stress-fixes">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>8 Critical Fixes <span class="badge badge-red">Read First</span></h2>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
-<div class="callout-content">
-<strong>Fix #1: WhatsApp is BLOCKED in Bangladesh</strong>
-The original blueprint recommended WhatsApp Channels. As of March 2026, WhatsApp remains blocked in Bangladesh. Multiple sources confirm BD is among 12 countries blocking WhatsApp access. <strong>Replaced with:</strong> Telegram channels (available in BD, growing rapidly) + Facebook Messenger broadcast via ManyChat.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>#1: WhatsApp is BLOCKED in Bangladesh</strong> Confirmed blocked as of March 2026 (12 countries blocking WhatsApp including BD). <strong>Replace with:</strong> Telegram channels + Facebook Messenger broadcast via ManyChat.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-<div class="callout-content">
-<strong>Fix #2: NapoleonCat is $79/mo, NOT $32/mo</strong>
-The original blueprint quoted $32/mo. Verified pricing: Standard plan starts at $79/mo for 5 profiles. For 20 accounts: significantly more expensive. <strong>Replaced with:</strong> Publer's built-in comment management (included in Business plan) + Meta Graph API direct comment monitoring via n8n (free). Saves ~$79/mo.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="callout-content"><strong>#2: NapoleonCat is $79/mo, NOT $32/mo</strong> Standard plan verified at $79/mo for 5 profiles. <strong>Dropped entirely.</strong> Replaced with Meta Graph API comment monitoring via n8n (free) + Publer's built-in inbox.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-<div class="callout-content">
-<strong>Fix #3: Publer Has DAILY POST LIMITS</strong>
-Professional plan caps at 12 FB posts/day and 15 IG posts/day per profile. At your volume targets, you WILL hit these. <strong>Solution:</strong> Publer Business plan ($21/mo base + per-profile) removes some limits. For Facebook/Instagram, supplement with direct Meta Business Suite API posting via n8n (free, no limits on Pages you own). For media companies, Publer can waive limits — contact them.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#3: Publer Has DAILY POST LIMITS</strong> Professional: 12 FB / 15 IG posts per day per profile. At 100+ posts/day you WILL hit this. <strong>Solution:</strong> Publer for TikTok/YouTube/X + direct Meta Business Suite API via n8n for FB/IG (free, no limits). Publer also waives limits for established news media companies.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-<div class="callout-content">
-<strong>Fix #4: Hetzner Price Increase April 1, 2026</strong>
-Hetzner announced 20-30% price increases effective April 1, 2026. CX32 (4 vCPU, 8GB RAM) goes from €6.30 to approximately €8.19/mo (~$9). Updated all infrastructure costs accordingly.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>#4: Hetzner CX32 DOESN'T EXIST</strong> The product line uses CX23/CX33/CX43. CX33 (4 vCPU, 8GB RAM) goes from €4.99→€6.49/mo ($5.99→$7.99) effective April 1, 2026. All costs updated.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-<div class="callout-content">
-<strong>Fix #5: Bannerbear 1,000 Credits/mo Won't Cover Volume</strong>
-At 100+ images/day, you'll exhaust the $49/mo Automate plan (1,000 credits) in 10 days. <strong>Options:</strong> Scale plan at $149/mo (10,000 credits) or switch to Orshot at $30/mo for 3,000 renders. Recommended: Start with Orshot, upgrade to Bannerbear Scale when revenue covers it.
-</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#5: Bannerbear 1,000 Credits Burns in 10 Days</strong> At 100+ images/day, the $49/mo plan is insufficient. <strong>Fixed:</strong> Orshot SaaS at $30/mo for 3,000 renders (verified). Overage at $0.018/render if needed. Bannerbear Scale ($149/mo) only when revenue justifies it.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div>
-<div class="callout-content">
-<strong>Fix #6: Apify Starter Plan is $29/mo, NOT $49/mo</strong>
-The original quoted $49/mo. Current verified price: $29/mo Starter with pay-as-you-go compute. Updated cost calculations. However, the $29 includes only $29 of platform credits — high-volume scraping may exceed this. Budget $40-60/mo for Apify realistically.
-</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#6: Facebook BD Users = 73.4M, NOT 72.6M</strong> NapoleonCat Feb 2026 data: 73,426,800 users (62.9% male). DataReportal says 64M via Meta ad tools. Using NapoleonCat figure as more current.</div></div>
 
-<div class="callout callout-success">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-<div class="callout-content">
-<strong>Fix #7: Claude Sonnet 4.6 Pricing Confirmed</strong>
-Claude Sonnet 4.6: $3/MTok input, $15/MTok output. For scoring + writing ~3,000 items/day with average 500 input + 300 output tokens per call: estimated $65-100/mo. This is accurate and cost-effective. DeepSeek V3 overflow at $0.14/MTok for bulk volume remains viable.
-</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div><div class="callout-content"><strong>#7: Metricool Starter = $22/mo (Annual) or $25/mo (Monthly)</strong> For 5 brands. Confirmed via metricool.com pricing page. Updated from previous $22 claim — both figures are correct depending on billing cycle.</div></div>
+
+<div class="callout callout-success"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="callout-content"><strong>#8: ElevenLabs Bengali = CONFIRMED SUPPORTED</strong> Bengali listed as supported language. Voice cloning available in Bengali. Creator plan $22/mo with 100K characters. Verified via elevenlabs.io.</div></div>
 </section>
 
 <!-- EXEC SUMMARY -->
 <section id="exec-summary">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Executive Summary <span class="badge badge-accent">60-Second Version</span></h2>
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Executive Summary</h2>
 
-<div class="callout callout-info">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
-<div class="callout-content">
-<strong>The Pitch in 60 Seconds</strong>
-Five distinct media brands distributed across 20 accounts on Facebook (72.6M BD users), Instagram (9.9M), TikTok (46.5M), YouTube (44.6M), and X. AI pipeline scrapes 30+ sources every 5–60 minutes, scores each item 0–100, auto-generates content in Bangla and English, and publishes across all platforms. 100+ posts/day at ~$640/month — verified pricing. First fully AI-automated media operation in Bangladesh. Conservative break-even: Month 8–10.
-</div>
-</div>
+<div class="callout callout-info"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div class="callout-content"><strong>60-Second Pitch</strong> Five distinct media brands across 20 accounts on Facebook (73.4M BD users), Instagram (9.9M), TikTok (46.5M), YouTube (44.6M), and X. AI pipeline scrapes 30+ sources every 5–60 min, scores 0–100 via Claude Sonnet 4.6, auto-generates Bangla + English content, and publishes 100+ posts/day. Cost: ~$618/month verified. First fully AI-automated media operation in Bangladesh. Break-even: Month 8–10.</div></div>
 </section>
 
-<!-- VOLUME 1 -->
-<section id="vol1">
-<div class="vol-header">
-<div class="vol-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Volume 1</div>
-<h1>Architecture</h1>
-<p class="subtitle">Market, channels, pipeline, tools, revenue, and launch sequence — all stress-tested.</p>
-</div>
-</section>
+<!-- VOL 1 -->
+<section id="vol1"><div class="vol-header"><div class="vol-num">Volume 1</div><h1>Architecture</h1><p class="subtitle">Market, channels, pipeline, tools, revenue — all stress-tested against live data.</p></div></section>
 
-<!-- HONEST ASSESSMENT -->
-<section id="honest-assessment">
+<!-- HONEST -->
+<section id="honest">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Honest Assessment</h2>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
-<div class="callout-content">
-<strong>Kill Risk #1: Coordinated Inauthentic Behavior (CIB)</strong>
-Running channels secretly under one entity will get you permanently banned. Meta's Q4 2025 report removed 2,000+ CIB networks. <strong>Instead:</strong> Different verticals, same transparent parent brand. Like Tyger Media runs Nutshell Today + Cablgram openly.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>CIB = Instant Death</strong> Running secret "pro/anti/neutral" channels under one entity = Coordinated Inauthentic Behavior. Meta removed 2,000+ CIB networks. <strong>Instead:</strong> Different verticals, same transparent parent. Like Tyger Media runs Nutshell + Cablgram openly.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-<div class="callout-content">
-<strong>Kill Risk #2: "Nobody will know it's AI"</strong>
-They will. When they find out, credibility = destroyed. <strong>Instead:</strong> Don't market it as AI, don't hide it. If asked: "We use AI tools in our workflow like every modern newsroom." BBC, Reuters, AP all use AI now.
-</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg></div><div class="callout-content"><strong>"Nobody Will Know It's AI"</strong> They will. When discovered, credibility = zero. <strong>Instead:</strong> "We use AI tools in our workflow like every modern newsroom." BBC, Reuters, AP all use AI.</div></div>
 
-<div class="callout callout-success">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-<div class="callout-content">
-<strong>What IS Genuinely Strong</strong>
-AI-first in a 20–25 person team market. No one in BD does full-pipeline automation. Bangla bite-size is wide open. 64M+ social users, median age 26. Neutrality as positioning in a hyper-polarized landscape. Self-improving system at zero additional cost.
-</div>
-</div>
+<div class="callout callout-success"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="callout-content"><strong>What IS Genuinely Strong</strong> AI-first in a 20–25 person team market. No one in BD does full-pipeline automation. Bangla bite-size is wide open. 73.4M+ social users, median age 26. Neutrality positioning in a hyper-polarized landscape. Self-improving system.</div></div>
 </section>
 
 <!-- MARKET -->
-<section id="market-landscape">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market Landscape <span class="badge badge-green">Verified March 2026</span></h2>
+<section id="market">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market Landscape <span class="badge badge-green">Verified 30 Mar 2026</span></h2>
 
 <div class="chart-container">
 <div class="chart-title">Bangladesh Platform Users (millions)</div>
-<div class="chart-subtitle">Sources: DataReportal, NapoleonCat, DemandSage — all verified March 2026</div>
+<div class="chart-subtitle">Sources: NapoleonCat Feb 2026, DataReportal, DemandSage — all verified today</div>
 <div class="bar-chart">
-<div class="bar-row"><div class="bar-label">Facebook</div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#1877f2">72.6M</div></div><div class="bar-value">72.6M</div></div>
+<div class="bar-row"><div class="bar-label">Facebook</div><div class="bar-track"><div class="bar-fill" style="width:93%;background:#1877f2">73.4M</div></div><div class="bar-value">73.4M</div></div>
 <div class="bar-row"><div class="bar-label">TikTok</div><div class="bar-track"><div class="bar-fill" style="width:59%;background:linear-gradient(90deg,#25f4ee,#fe2c55)">46.5M</div></div><div class="bar-value">46.5M</div></div>
 <div class="bar-row"><div class="bar-label">YouTube</div><div class="bar-track"><div class="bar-fill" style="width:56%;background:#f00">44.6M</div></div><div class="bar-value">44.6M</div></div>
-<div class="bar-row"><div class="bar-label">Instagram</div><div class="bar-track"><div class="bar-fill" style="width:13%;background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045)">9.9M</div></div><div class="bar-value" style="color:var(--green)">+46% YoY</div></div>
+<div class="bar-row"><div class="bar-label">Instagram</div><div class="bar-track"><div class="bar-fill" style="width:13%;background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045)">9.9M</div></div><div class="bar-value" style="color:var(--green)">+20% YoY</div></div>
 </div>
 </div>
 
-<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Key Competitors</h3>
+<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>Key Competitors (Verified Today)</h3>
 <div class="table-wrap"><table>
-<thead><tr><th>Competitor</th><th>Followers</th><th>Output</th><th>Strengths</th><th>Weaknesses</th></tr></thead>
+<thead><tr><th>Competitor</th><th>Followers</th><th>Posts</th><th>Output</th><th>Gap to Exploit</th></tr></thead>
 <tbody>
-<tr><td><strong>Nutshell Today</strong></td><td>322K IG (verified)</td><td>6–7/day</td><td>Clean design, English pioneer</td><td>20–25 staff, English-only, no TikTok</td></tr>
-<tr><td><strong>Cablgram</strong></td><td>~75K IG</td><td>6–7/day</td><td>Entertainment focus</td><td>Same team limitations</td></tr>
-<tr><td><strong>Prothom Alo Digital</strong></td><td>Massive FB</td><td>High</td><td>Largest Bangla newspaper</td><td>Not bite-size native</td></tr>
+<tr><td><strong>Nutshell Today</strong></td><td>322K IG (live)</td><td>14,429</td><td>6–7/day</td><td>English-only, no TikTok, no video</td></tr>
+<tr><td><strong>Cablgram</strong></td><td>~75K IG</td><td>11K+</td><td>6–7/day</td><td>Same team limits, no Bangla</td></tr>
+<tr><td><strong>Prothom Alo</strong></td><td>Massive FB</td><td>High</td><td>Many</td><td>Not bite-size native</td></tr>
 </tbody></table></div>
 </section>
 
-<!-- CHANNELS -->
-<section id="channel-architecture">
+<!-- BRANDS -->
+<section id="brands">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>The Five Brands</h2>
-
 <div class="brand-grid">
-<div class="brand-card" data-brand="prohor">
-<div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="brand-name">প্রহর (Prohor)</div><div class="brand-sub">The Steadfast Observer</div></div></div>
-<p>Calm, precise, never flinches. Bangla politics + national news for the mass market. Speaks like a senior Reuters correspondent who is Bangladeshi.</p>
-<div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook Primary</span><span class="brand-tag">Age 25–55</span></div>
-</div>
-<div class="brand-card" data-brand="dhaka">
-<div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:20px;height:20px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><div><div class="brand-name">The Dhaka Brief</div><div class="brand-sub">The Informed Insider</div></div></div>
-<p>Speaks to boardrooms and embassies. English business + world + policy. Like an FT columnist who grew up in Gulshan.</p>
-<div class="brand-tags"><span class="brand-tag">English</span><span class="brand-tag">Instagram Primary</span><span class="brand-tag">Age 18–35</span></div>
-</div>
-<div class="brand-card" data-brand="rong">
-<div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#db2777,#be185d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:20px;height:20px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="brand-name">রঙ (Rong)</div><div class="brand-sub">The Culture Pulse</div></div></div>
-<p>Energetic but never cheap. Entertainment + celebrity + pop culture. BD's most well-connected entertainment journalist.</p>
-<div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">TikTok Primary</span><span class="brand-tag">Age 16–30</span></div>
-</div>
-<div class="brand-card" data-brand="shoili">
-<div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#059669,#047857)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:20px;height:20px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="brand-name">শৈলী (Shoili)</div><div class="brand-sub">The Taste-Maker</div></div></div>
-<p>Elegant, aspirational, never try-hard. Lifestyle + culture. Editor of a Bangladeshi Monocle.</p>
-<div class="brand-tags"><span class="brand-tag">Bangla/English</span><span class="brand-tag">Instagram Primary</span><span class="brand-tag">Age 20–40</span></div>
-</div>
-<div class="brand-card" data-brand="dheu">
-<div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#ea580c,#c2410c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:20px;height:20px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="brand-name">ঢেউ (Dheu)</div><div class="brand-sub">The Wave</div></div></div>
-<p>Fast, bold, unapologetic. Pure virality — trending + shareable. Your sharpest friend who finds things first.</p>
-<div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook Primary</span><span class="brand-tag">All Ages</span></div>
-</div>
+<div class="brand-card" data-brand="prohor"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="brand-name">প্রহর (Prohor)</div><div class="brand-sub">The Steadfast Observer</div></div></div><p>Calm, precise. Bangla politics + national news. Like a senior Reuters correspondent who is Bangladeshi.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook</span><span class="brand-tag">25–55</span></div></div>
+
+<div class="brand-card" data-brand="dhaka"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><div><div class="brand-name">The Dhaka Brief</div><div class="brand-sub">The Informed Insider</div></div></div><p>Boardrooms and embassies. English business + world + policy. FT columnist energy.</p><div class="brand-tags"><span class="brand-tag">English</span><span class="brand-tag">Instagram</span><span class="brand-tag">18–35</span></div></div>
+
+<div class="brand-card" data-brand="rong"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#db2777,#be185d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="brand-name">রঙ (Rong)</div><div class="brand-sub">The Culture Pulse</div></div></div><p>Energetic but never cheap. Entertainment + celebrity + pop culture for BD youth.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">TikTok</span><span class="brand-tag">16–30</span></div></div>
+
+<div class="brand-card" data-brand="shoili"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#059669,#047857)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="brand-name">শৈলী (Shoili)</div><div class="brand-sub">The Taste-Maker</div></div></div><p>Elegant, aspirational. Lifestyle + culture. Bangladeshi Monocle energy.</p><div class="brand-tags"><span class="brand-tag">Bangla/English</span><span class="brand-tag">Instagram</span><span class="brand-tag">20–40</span></div></div>
+
+<div class="brand-card" data-brand="dheu"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#ea580c,#c2410c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="brand-name">ঢেউ (Dheu)</div><div class="brand-sub">The Wave</div></div></div><p>Fast, bold, unapologetic. Pure virality. Your sharpest friend who finds things first.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook</span><span class="brand-tag">All Ages</span></div></div>
 </div>
 </section>
 
-<!-- TOOL STACK -->
-<section id="tool-stack">
+<!-- TOOLS -->
+<section id="tools">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Complete Tool Stack <span class="badge badge-green">Verified 30 Mar 2026</span></h2>
 
 <div class="chart-container">
-<div class="chart-title">Monthly Cost Breakdown — ~$640/month (Corrected)</div>
-<div class="chart-subtitle">Every price verified against current listings. Equivalent to ~1.5 junior employees in Dhaka.</div>
+<div class="chart-title">Monthly Cost Breakdown — $618/month (Corrected & Verified)</div>
+<div class="chart-subtitle">Equivalent to ~1.5 junior employees in Dhaka. Every price checked against live listings today.</div>
 <div class="donut-row">
-<div class="donut-chart">
-<svg viewBox="0 0 140 140"><circle cx="70" cy="70" r="52" stroke="var(--bg-surface-3)" stroke-dasharray="327" stroke-dashoffset="0"/><circle cx="70" cy="70" r="52" stroke="var(--accent-light)" stroke-dasharray="327" stroke-dashoffset="232"/><circle cx="70" cy="70" r="52" stroke="var(--blue)" stroke-dasharray="327" stroke-dashoffset="262"/><circle cx="70" cy="70" r="52" stroke="var(--green)" stroke-dasharray="327" stroke-dashoffset="293"/><circle cx="70" cy="70" r="52" stroke="var(--yellow)" stroke-dasharray="327" stroke-dashoffset="310"/><circle cx="70" cy="70" r="52" stroke="var(--cyan)" stroke-dasharray="327" stroke-dashoffset="321"/></svg>
-<div class="donut-center"><div class="number">$640</div><div class="label">/month</div></div>
-</div>
+<div class="donut-chart"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" stroke="var(--bg-surface-3)" stroke-dasharray="276" stroke-dashoffset="0"/><circle cx="60" cy="60" r="44" stroke="var(--accent-light)" stroke-dasharray="276" stroke-dashoffset="190"/><circle cx="60" cy="60" r="44" stroke="var(--blue)" stroke-dasharray="276" stroke-dashoffset="222"/><circle cx="60" cy="60" r="44" stroke="var(--green)" stroke-dasharray="276" stroke-dashoffset="242"/><circle cx="60" cy="60" r="44" stroke="var(--yellow)" stroke-dasharray="276" stroke-dashoffset="256"/><circle cx="60" cy="60" r="44" stroke="var(--cyan)" stroke-dasharray="276" stroke-dashoffset="268"/></svg><div class="donut-center"><div class="number">$618</div><div class="label">/month</div></div></div>
 <div class="donut-legend">
-<div class="legend-item"><div class="legend-dot" style="background:var(--accent-light)"></div><div class="legend-text">AI Models (Claude, DeepSeek, ElevenLabs, FLUX)</div><div class="legend-value">$192</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div><div class="legend-text">Scraping + Listening (Apify, Feedly, Brand24)</div><div class="legend-value">$126</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div><div class="legend-text">Distribution (Publer, ManyChat, Meta API)</div><div class="legend-value">$113</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div><div class="legend-text">Content Tools (Orshot, Canva, OpusClip)</div><div class="legend-value">$60</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div><div class="legend-text">Infrastructure (Hetzner, Supabase, R2)</div><div class="legend-value">$44</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div><div class="legend-text">Analytics (Metricool, Looker Studio)</div><div class="legend-value">$25</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--accent-light)"></div><div class="legend-text">AI Models</div><div class="legend-value">$157</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div><div class="legend-text">Scraping + Listening</div><div class="legend-value">$107</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div><div class="legend-text">Distribution</div><div class="legend-value">$151</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div><div class="legend-text">Content Tools</div><div class="legend-value">$60</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div><div class="legend-text">Infrastructure</div><div class="legend-value">$43</div></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div><div class="legend-text">Analytics</div><div class="legend-value">$22</div></div>
 </div>
 </div>
 </div>
 
 <div class="table-wrap"><table>
-<thead><tr><th>Category</th><th>Tool</th><th>Cost/mo</th><th>Purpose</th><th>Verified</th></tr></thead>
+<thead><tr><th>Tool</th><th>Cost/mo</th><th>Purpose</th><th>✓</th></tr></thead>
 <tbody>
-<tr style="background:var(--accent-dim-2)"><td colspan="5"><strong style="color:var(--accent-light)">INFRASTRUCTURE</strong></td></tr>
-<tr><td>Orchestration</td><td><strong>n8n (self-hosted)</strong></td><td>$0</td><td>The brain — connects everything</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Hosting</td><td><strong>Hetzner CX32</strong></td><td>~$9</td><td>4 vCPU, 8GB RAM (post April 1 pricing)</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Database</td><td><strong>Supabase Pro</strong></td><td>$25</td><td>Content queue, analytics, scoring</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Storage</td><td><strong>Cloudflare R2</strong></td><td>~$10</td><td>Images, videos, assets</td><td style="color:var(--green)">✓</td></tr>
-<tr style="background:var(--blue-dim)"><td colspan="5"><strong style="color:var(--blue)">AI MODELS</strong></td></tr>
-<tr><td>Primary AI</td><td><strong>Claude Sonnet 4.6</strong></td><td>~$80</td><td>$3/$15 per MTok — scoring + writing</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Overflow</td><td><strong>DeepSeek V3</strong></td><td>~$25</td><td>$0.14/MTok — bulk volume overflow</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Voice</td><td><strong>ElevenLabs Creator</strong></td><td>$22</td><td>Bengali + English voiceover, 100K chars</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Images</td><td><strong>FLUX 1.1 Pro</strong></td><td>~$25</td><td>$0.04/image via Replicate</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Budget Images</td><td><strong>FLUX Kontext Dev</strong></td><td>—</td><td>$0.015/image — for lower-priority visuals</td><td style="color:var(--green)">✓</td></tr>
-<tr style="background:var(--green-dim)"><td colspan="5"><strong style="color:var(--green)">CONTENT + DISTRIBUTION</strong></td></tr>
-<tr><td>Templates</td><td><strong>Canva Pro</strong></td><td>$15</td><td>Design source files</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Auto Images</td><td><strong>Orshot</strong></td><td>$30</td><td>3,000 renders/mo (cheaper than Bannerbear)</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Video</td><td><strong>CapCut</strong></td><td>Free</td><td>Captions, transitions</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Clips</td><td><strong>OpusClip</strong></td><td>$15</td><td>Long → short video clipping</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Scheduling</td><td><strong>Publer Business</strong></td><td>~$84</td><td>20 accounts, higher daily limits</td><td style="color:var(--yellow)">⚠ Limits apply</td></tr>
-<tr><td>FB/IG Direct</td><td><strong>Meta Business API</strong></td><td>Free</td><td>Direct posting via n8n — no limits</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>DM Automation</td><td><strong>ManyChat</strong></td><td>$15</td><td>Messenger + IG DM automation</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Comments</td><td><strong>Meta Graph API + n8n</strong></td><td>Free</td><td>Comment monitoring, auto-like via API</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Analytics</td><td><strong>Metricool Starter</strong></td><td>$25</td><td>5 brands, cross-platform reporting</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Scraping</td><td><strong>Apify Starter</strong></td><td>$40</td><td>$29 base + ~$11 overage for volume</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>RSS</td><td><strong>Feedly Pro+</strong></td><td>$18</td><td>AI-prioritized RSS aggregation</td><td style="color:var(--green)">✓</td></tr>
-<tr><td>Social Listening</td><td><strong>Brand24</strong></td><td>$79</td><td>Cross-platform sentiment tracking</td><td style="color:var(--yellow)">⚠ Consider Phase 2</td></tr>
+<tr style="background:var(--accent-dim-2)"><td colspan="4"><strong style="color:var(--accent-light)">INFRASTRUCTURE — $43/mo</strong></td></tr>
+<tr><td><strong>n8n (self-hosted)</strong></td><td>$0</td><td>Orchestration brain — connects everything</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Hetzner CX33</strong></td><td>$8</td><td>4 vCPU, 8GB RAM (post Apr 1 price: €6.49)</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Supabase Pro</strong></td><td>$25</td><td>Database: content queue, analytics, scoring</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Cloudflare R2</strong></td><td>~$10</td><td>Image/video/asset storage</td><td style="color:var(--green)">✓</td></tr>
+<tr style="background:var(--blue-dim)"><td colspan="4"><strong style="color:var(--blue)">AI MODELS — $157/mo</strong></td></tr>
+<tr><td><strong>Claude Sonnet 4.6 API</strong></td><td>~$80</td><td>$3/$15 per MTok — scoring + writing + Bangla</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>DeepSeek V3 API</strong></td><td>~$25</td><td>$0.14/MTok — bulk volume overflow</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>ElevenLabs Creator</strong></td><td>$22</td><td>Bengali + English voiceover (100K chars)</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>FLUX 1.1 Pro</strong></td><td>~$30</td><td>$0.04/image via Replicate — photorealism</td><td style="color:var(--green)">✓</td></tr>
+<tr style="background:var(--green-dim)"><td colspan="4"><strong style="color:var(--green)">CONTENT + DISTRIBUTION — $211/mo</strong></td></tr>
+<tr><td><strong>Canva Pro</strong></td><td>$15</td><td>Design source templates</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Orshot SaaS</strong></td><td>$30</td><td>3,000 renders/mo — API image generation</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>OpusClip</strong></td><td>$15</td><td>Long → short video clipping</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Publer Business</strong></td><td>~$116</td><td>20 accounts ($21 base + per-account fees)</td><td style="color:var(--yellow)">⚠ Limits</td></tr>
+<tr><td><strong>Meta Business API</strong></td><td>Free</td><td>Direct FB/IG posting via n8n — no limits</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>ManyChat</strong></td><td>$15</td><td>Messenger + IG DM automation</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>CapCut</strong></td><td>Free</td><td>Video captions + transitions</td><td style="color:var(--green)">✓</td></tr>
+<tr style="background:var(--cyan-dim)"><td colspan="4"><strong style="color:var(--cyan)">SCRAPING + ANALYTICS — $129/mo</strong></td></tr>
+<tr><td><strong>Apify Starter</strong></td><td>~$40</td><td>$29 base + compute overage</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Feedly Pro+</strong></td><td>$18</td><td>AI-prioritized RSS aggregation</td><td style="color:var(--green)">✓</td></tr>
+<tr><td><strong>Brand24</strong></td><td>$49</td><td>Social listening (Phase 2 — skip Month 1)</td><td style="color:var(--yellow)">Phase 2</td></tr>
+<tr><td><strong>Metricool Starter</strong></td><td>$22</td><td>5 brands, cross-platform analytics (annual)</td><td style="color:var(--green)">✓</td></tr>
 </tbody></table></div>
 
-<div class="callout callout-info">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/></svg></div>
-<div class="callout-content">
-<strong>Phase 1 Budget (Launch): ~$480/mo</strong> — Drop Brand24 ($79) until Month 3. Use free Google Alerts + manual competitor monitoring instead. Upgrade when revenue justifies it. This cuts launch cost to under 60,000 BDT/month.
-</div>
-</div>
+<div class="callout callout-info"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/></svg></div><div class="callout-content"><strong>Phase 1 Launch Budget: ~$569/mo</strong> — Skip Brand24 ($49) until Month 3. Use free Google Alerts + manual competitor checks. That's ~68,000 BDT/month.</div></div>
 </section>
 
 <!-- REVENUE -->
-<section id="revenue-model">
+<section id="revenue">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Revenue Model</h2>
 
-<div class="chart-container">
-<div class="chart-title">Projected Monthly Revenue vs Cost</div>
-<div class="chart-subtitle">Conservative estimates based on BD market rates</div>
-<div class="bar-chart">
-<div class="bar-row"><div class="bar-label">Mo 1–3</div><div class="bar-track"><div class="bar-fill" style="width:7%;background:var(--red)">$0</div></div><div class="bar-value" style="color:var(--red)">−$480</div></div>
-<div class="bar-row"><div class="bar-label">Mo 4–6</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:linear-gradient(90deg,var(--red),var(--yellow))">$200–500</div></div><div class="bar-value" style="color:var(--yellow)">~−$150</div></div>
-<div class="bar-row"><div class="bar-label">Mo 7–12</div><div class="bar-track"><div class="bar-fill" style="width:48%;background:linear-gradient(90deg,var(--yellow),var(--green))">$1,000–3,000</div></div><div class="bar-value" style="color:var(--green)">+$1,400</div></div>
-<div class="bar-row"><div class="bar-label">Year 2</div><div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--green)">$3,000–10,000</div></div><div class="bar-value" style="color:var(--green)">+$6,000</div></div>
-<div class="bar-row"><div class="bar-label">Year 3+</div><div class="bar-track"><div class="bar-fill" style="width:95%;background:linear-gradient(90deg,var(--green),var(--cyan))">$10K–30K+</div></div><div class="bar-value" style="color:var(--cyan)">+$20K+</div></div>
-</div>
-</div>
-
 <div class="versus">
-<div class="versus-side">
-<h4 style="color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="width:16px;height:16px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Your AI Operation</h4>
-<div class="versus-stat"><div class="num" style="color:var(--green)">~$640</div><div class="lbl">Monthly Cost (verified)</div></div>
-<div class="versus-stat"><div class="num">100–150</div><div class="lbl">Posts Per Day</div></div>
-<div class="versus-stat"><div class="num">5</div><div class="lbl">Platforms</div></div>
-<div class="versus-stat"><div class="num">Auto</div><div class="lbl">Self-Improving Weekly</div></div>
-</div>
+<div class="versus-side"><h4 style="color:var(--green)">Your AI Operation</h4><div class="versus-stat"><div class="num" style="color:var(--green)">~$618</div><div class="lbl">Monthly Cost (verified)</div></div><div class="versus-stat"><div class="num">100–150</div><div class="lbl">Posts Per Day</div></div><div class="versus-stat"><div class="num">5+</div><div class="lbl">Platforms</div></div></div>
 <div class="versus-divider">VS</div>
-<div class="versus-side">
-<h4 style="color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" style="width:16px;height:16px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Tyger Media (Competitor)</h4>
-<div class="versus-stat"><div class="num" style="color:var(--red)">$5,200–$10,400</div><div class="lbl">Monthly Cost (20–25 staff)</div></div>
-<div class="versus-stat"><div class="num">12–14</div><div class="lbl">Posts Per Day (combined)</div></div>
-<div class="versus-stat"><div class="num">2–3</div><div class="lbl">Platforms (mainly)</div></div>
-<div class="versus-stat"><div class="num">Manual</div><div class="lbl">Editorial Decisions</div></div>
-</div>
-</div>
-</section>
-
-<!-- LAUNCH -->
-<section id="launch-sequence">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Launch Sequence</h2>
-<div class="phase-timeline">
-<div class="phase-seg" style="background:linear-gradient(135deg,#6366f1,#7c3aed)"><div class="ph-num">0</div><div class="ph-name">Setup · Wk 1–2</div></div>
-<div class="phase-seg" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)"><div class="ph-num">1</div><div class="ph-name">Soft · Wk 3–4</div></div>
-<div class="phase-seg" style="background:linear-gradient(135deg,#8b5cf6,#a855f7)"><div class="ph-num">2</div><div class="ph-name">Scale · Mo 2–3</div></div>
-<div class="phase-seg" style="background:linear-gradient(135deg,#a855f7,#d946ef)"><div class="ph-num">3</div><div class="ph-name">Monetize · Mo 4–6</div></div>
-<div class="phase-seg" style="background:linear-gradient(135deg,#d946ef,#ec4899)"><div class="ph-num">4</div><div class="ph-name">Dominate · Mo 7–12</div></div>
-<div class="phase-seg" style="background:linear-gradient(135deg,#ec4899,#f43f5e)"><div class="ph-num">5</div><div class="ph-name">Long Game · Yr 2+</div></div>
+<div class="versus-side"><h4 style="color:var(--red)">Tyger Media</h4><div class="versus-stat"><div class="num" style="color:var(--red)">$5,200–$10,400</div><div class="lbl">Monthly (20–25 staff)</div></div><div class="versus-stat"><div class="num">12–14</div><div class="lbl">Posts Per Day</div></div><div class="versus-stat"><div class="num">2–3</div><div class="lbl">Platforms</div></div></div>
 </div>
 </section>
 
 <!-- VOL 2 -->
-<section id="vol2">
-<div class="vol-header">
-<div class="vol-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><circle cx="12" cy="12" r="3"/></svg>Volume 2</div>
-<h1>Deep Operations</h1>
-<p class="subtitle">Scoring engine, hook framework, platform algorithms, self-improving model.</p>
-</div>
-</section>
+<section id="vol2"><div class="vol-header"><div class="vol-num">Volume 2</div><h1>Deep Operations</h1><p class="subtitle">Scoring engine, hook framework, platform algorithms, self-improving model.</p></div></section>
 
 <!-- SCORING -->
-<section id="scoring-engine">
+<section id="scoring">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>AI Scoring Engine</h2>
 
 <div class="chart-container">
-<div class="chart-title">Scoring Weights (0–100 composite score)</div>
+<div class="chart-title">Scoring Weights (0–100 composite)</div>
 <div class="chart-subtitle">Every scraped item scored by Claude Sonnet 4.6 across 7 dimensions</div>
 <div class="bar-chart">
 <div class="bar-row"><div class="bar-label">Emotion</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--red)">25%</div></div><div class="bar-value">25%</div></div>
@@ -589,182 +535,102 @@ AI-first in a 20–25 person team market. No one in BD does full-pipeline automa
 <div class="bar-row"><div class="bar-label">Brand Safety</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:var(--pink)">5%</div></div><div class="bar-value">5%</div></div>
 </div>
 </div>
-
-<p><strong>Thresholds:</strong> 80+ = auto-post immediately. 60–79 = auto-generate, queue. 40–59 = draft for review. Below 40 = discard. Legal risk = AUTO-REJECT regardless of score.</p>
+<p><strong>Thresholds:</strong> 80+ = auto-post. 60–79 = generate + queue. 40–59 = draft for review. Below 40 = discard. Legal risk = AUTO-REJECT.</p>
 </section>
 
 <!-- HOOKS -->
-<section id="hook-framework">
+<section id="hooks">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Hook → Subversion → Payoff</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Topic</th><th>Hook (0–2s)</th><th>Subversion (2–5s)</th><th>Payoff</th></tr></thead>
+<thead><tr><th>Topic</th><th>Hook (0–2s)</th><th>Subversion</th><th>Payoff</th></tr></thead>
 <tbody>
-<tr><td><strong>Political</strong></td><td>"He arrived in a 3 crore taka car"</td><td>"To visit a school without electricity for 6 months"</td><td>Let the image speak. Facts only.</td></tr>
-<tr><td><strong>Entertainment</strong></td><td>"Rejected from 47 auditions"</td><td>"Before becoming 2025's highest-grossing star"</td><td>Her quote about persistence.</td></tr>
-<tr><td><strong>Lifestyle</strong></td><td>"This meal costs 15,000 taka at Gulshan"</td><td>"A street vendor makes the same dish"</td><td>"For 60 taka. Which one?"</td></tr>
-<tr><td><strong>Business</strong></td><td>"This company fired 500 workers"</td><td>"CEO's salary increased 40% same month"</td><td>Both numbers side by side. No commentary.</td></tr>
+<tr><td><strong>Political</strong></td><td>"He arrived in a 3 crore taka car"</td><td>"To a school without electricity for 6 months"</td><td>Facts only. Let image speak.</td></tr>
+<tr><td><strong>Entertainment</strong></td><td>"Rejected from 47 auditions"</td><td>"Before becoming 2025's top star"</td><td>Her quote about persistence.</td></tr>
+<tr><td><strong>Lifestyle</strong></td><td>"This meal costs 15,000 taka"</td><td>"A street vendor makes the same dish"</td><td>"For 60 taka. Which one?"</td></tr>
+<tr><td><strong>Business</strong></td><td>"Company fired 500 workers"</td><td>"CEO's salary up 40% same month"</td><td>Both numbers. No commentary.</td></tr>
 </tbody></table></div>
 </section>
 
 <!-- ALGOS -->
-<section id="platform-algorithms">
+<section id="algos">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>Platform Algorithms (2026)</h2>
 <div class="tab-container">
 <div class="tab-buttons">
-<button class="tab-btn active" onclick="switchTab(event,'af')">Facebook</button>
-<button class="tab-btn" onclick="switchTab(event,'ai')">Instagram</button>
-<button class="tab-btn" onclick="switchTab(event,'at')">TikTok</button>
-<button class="tab-btn" onclick="switchTab(event,'ay')">YouTube</button>
-<button class="tab-btn" onclick="switchTab(event,'ax')">X / Twitter</button>
+<button class="tab-btn active" onclick="switchTab(event,'pf')">Facebook 73.4M</button>
+<button class="tab-btn" onclick="switchTab(event,'pi')">Instagram 9.9M</button>
+<button class="tab-btn" onclick="switchTab(event,'pt')">TikTok 46.5M</button>
+<button class="tab-btn" onclick="switchTab(event,'py')">YouTube 44.6M</button>
+<button class="tab-btn" onclick="switchTab(event,'px')">X / Twitter</button>
 </div>
-<div id="af" class="tab-panel active">
-<p><strong>72.6M BD users — LARGEST AUDIENCE.</strong> 2026 priority: Meaningful interactions > comments > shares > reactions. NEVER use link posts — post image, link in comments. Respond to EVERY comment in first hour. Go Live during breaking news for massive priority boost. Optimal caption: 100–250 words.</p>
+<div id="pf" class="tab-panel active"><p><strong>LARGEST BD AUDIENCE.</strong> Priority: Meaningful interactions > comments > shares. NEVER use link posts — image + link in comments. Go Live for breaking news (massive boost). Respond to EVERY comment in first hour. Optimal caption: 100–250 words. Post images with long captions, not links.</p></div>
+<div id="pi" class="tab-panel"><p><strong>GROWTH PLATFORM (+20% YoY).</strong> Reels > Carousels > Single images. Carousels: 1.4× more reach. Max 3–5 hashtags (keyword weight increased). Stories 8–10× per day with polls. Caption keywords are searchable (Instagram SEO). Post 3–5 feed posts per day.</p></div>
+<div id="pt" class="tab-panel"><p><strong>VIRAL ENGINE.</strong> Completion rate > shares > comments > likes. Sweet spot: 15–45 sec news, 30–90 entertainment. First 1 second MUST have movement. Text-on-screen critical — most BD users watch muted. Never identical content to IG. Post 3–8 times/day.</p></div>
+<div id="py" class="tab-panel"><p><strong>MONETIZATION PLATFORM.</strong> Shorts: 1K subs + 10M views in 90 days. Remove ALL watermarks. Shorts algo favors new channels. Cross-post TikTok content (clean, no watermark). End screen: "Subscribe for daily BD news in 30 seconds."</p></div>
+<div id="px" class="tab-panel"><p><strong>ELITE INFLUENCE.</strong> Journalists, politicians, diplomats. Thread format for explainers. 10–15 tweets/day. Quote-tweet viral BD tweets with analysis. "Pressure group" influence among policy circles.</p></div>
 </div>
-<div id="ai" class="tab-panel">
-<p><strong>9.9M BD users — GROWTH PLATFORM (+46% YoY).</strong> 2026: Reels > Carousels > Single images. Carousels: 1.4× more reach than single images. Max 3–5 hashtags (reduced hashtag weight, increased keyword weight). Stories 8–10× per day with polls. Caption keywords are now searchable (Instagram SEO).</p>
-</div>
-<div id="at" class="tab-panel">
-<p><strong>46.5M BD users — VIRAL ENGINE.</strong> 2026: Completion rate > shares > comments > likes. Sweet spot: 15–45 sec news, 30–90 entertainment. First 1 second MUST have visual movement. Text-on-screen critical — most BD users watch without sound. Never post identical content to TikTok and Instagram.</p>
-</div>
-<div id="ay" class="tab-panel">
-<p><strong>44.6M BD users — MONETIZATION PLATFORM.</strong> Shorts threshold: 1K subs + 10M Shorts views in 90 days. Remove ALL watermarks from cross-posted content. Shorts algorithm favors new channels. Add end screen: "Subscribe for daily Bangladesh news in 30 seconds."</p>
-</div>
-<div id="ax" class="tab-panel">
-<p><strong>Small but influential — journalists, politicians, diplomats.</strong> Thread format for explainers. Post 10–15 times/day (X rewards high frequency). Where "pressure group" influence is felt among elite circles. Quote-tweet viral tweets with your analysis.</p>
-</div>
-</div>
+</section>
+
+<!-- SELF LEARN -->
+<section id="selflearn">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>Self-Improving Model</h2>
+<p>Every Monday 6 AM BST: n8n + Claude API analyzes top/bottom 10 posts, finds patterns, outputs adjustment JSON applied to Supabase scoring weights automatically.</p>
+<div class="code-block" data-label="Weekly Output JSON">{
+  "scoring_weight_adjustments": {"emotion": +0.02, "timeliness": -0.01},
+  "topic_boosts": {"cricket": +10, "celebrity_gossip": -5},
+  "format_recommendations": {"carousel": "increase_to_40%"},
+  "posting_time_adjustments": {"instagram_evening": "20:45"},
+  "competitor_gaps": ["Topic X trending, no competitor covered"]
+}</div>
 </section>
 
 <!-- VOL 3 -->
-<section id="vol3">
-<div class="vol-header">
-<div class="vol-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M9 11l3 3L22 4"/></svg>Volume 3</div>
-<h1>Stress Test & Execution</h1>
-<p class="subtitle">Every pricing correction, every kill risk, the exact 30-day launch sequence.</p>
-</div>
-</section>
+<section id="vol3"><div class="vol-header"><div class="vol-num">Volume 3</div><h1>Stress Test</h1><p class="subtitle">Every pricing correction, every tool swap, verified against live data.</p></div></section>
 
-<!-- PRICING CORRECTIONS -->
-<section id="pricing-corrections">
+<!-- PRICING FIXES -->
+<section id="pricing-fixes">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing Corrections Table</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Tool</th><th style="color:var(--red)">Original Claim</th><th style="color:var(--green)">Verified Price</th><th>Action</th></tr></thead>
+<thead><tr><th>Tool</th><th style="color:var(--red)">Original</th><th style="color:var(--green)">Verified</th><th>Action</th></tr></thead>
 <tbody>
-<tr><td><strong>NapoleonCat</strong></td><td style="color:var(--red);text-decoration:line-through">$32/mo</td><td><strong>$79/mo</strong> (Standard, 5 profiles)</td><td style="color:var(--green)">Dropped — use Meta API + n8n</td></tr>
-<tr><td><strong>Publer</strong></td><td style="color:var(--red);text-decoration:line-through">$12/mo Professional</td><td><strong>$12/mo</strong> base, but daily limits hit</td><td style="color:var(--green)">Upgraded to Business + Meta API direct</td></tr>
-<tr><td><strong>Bannerbear</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo (1K credits)</td><td><strong>$49/mo</strong> — burns in 10 days</td><td style="color:var(--green)">Replaced with Orshot ($30/mo, 3K renders)</td></tr>
-<tr><td><strong>Apify</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo</td><td><strong>$29/mo</strong> Starter + overage</td><td style="color:var(--green)">Budget $40-60/mo with usage</td></tr>
-<tr><td><strong>Hetzner CX32</strong></td><td style="color:var(--red);text-decoration:line-through">$17/mo</td><td><strong>~$9/mo</strong> (4vCPU/8GB post April hike)</td><td style="color:var(--green)">Updated — cheaper than claimed</td></tr>
-<tr><td><strong>Metricool</strong></td><td style="color:var(--red);text-decoration:line-through">$22/mo</td><td><strong>$25/mo</strong> Starter (5 brands)</td><td style="color:var(--green)">Updated price</td></tr>
-<tr><td><strong>Supabase Pro</strong></td><td>$25/mo</td><td><strong>$25/mo</strong> base (correct)</td><td style="color:var(--green)">Confirmed ✓</td></tr>
-<tr><td><strong>ElevenLabs Creator</strong></td><td>$22/mo</td><td><strong>$22/mo</strong> (100K chars)</td><td style="color:var(--green)">Confirmed ✓ Bengali supported</td></tr>
-<tr><td><strong>FLUX 1.1 Pro</strong></td><td>~$0.04/image</td><td><strong>$0.04/image</strong> on Replicate</td><td style="color:var(--green)">Confirmed ✓</td></tr>
-<tr><td><strong>Claude Sonnet 4.6</strong></td><td>~$100/mo</td><td><strong>$3/$15 per MTok</strong></td><td style="color:var(--green)">Confirmed ✓ — $65-100/mo at volume</td></tr>
+<tr><td><strong>NapoleonCat</strong></td><td style="color:var(--red);text-decoration:line-through">$32/mo</td><td><strong>$79/mo</strong></td><td style="color:var(--green)">DROPPED — Meta API + n8n</td></tr>
+<tr><td><strong>Hetzner "CX32"</strong></td><td style="color:var(--red);text-decoration:line-through">$17/mo</td><td><strong>CX33 $7.99/mo</strong></td><td style="color:var(--green)">Correct model, cheaper</td></tr>
+<tr><td><strong>Bannerbear</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo</td><td><strong>Burns in 10 days</strong></td><td style="color:var(--green)">Orshot $30/mo (3K renders)</td></tr>
+<tr><td><strong>Publer</strong></td><td style="color:var(--red);text-decoration:line-through">$12/mo</td><td><strong>~$116 for 20 accts</strong></td><td style="color:var(--green)">Business plan + Meta API</td></tr>
+<tr><td><strong>Apify</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo</td><td><strong>$29 base + overage</strong></td><td style="color:var(--green)">Budget $40/mo realistic</td></tr>
+<tr><td><strong>Metricool</strong></td><td>$22/mo</td><td><strong>$22 annual / $25 monthly</strong></td><td style="color:var(--green)">Confirmed ✓</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>$22/mo</td><td><strong>$22/mo Creator</strong></td><td style="color:var(--green)">Bengali confirmed ✓</td></tr>
+<tr><td><strong>Claude Sonnet 4.6</strong></td><td>~$100/mo</td><td><strong>$3/$15 MTok</strong></td><td style="color:var(--green)">~$80/mo at volume ✓</td></tr>
 </tbody></table></div>
 </section>
 
 <!-- KILL RISKS -->
 <section id="kill-risks">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>The 7 Kill Risks</h2>
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>8 Kill Risks</h2>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-<div class="callout-content"><strong>#1: Bad AI Comment Goes Viral</strong> — One tone-deaf reply screenshotted 50K times = brand finished. <strong>Phase 1:</strong> NO auto-replies. AI drafts, you review top 20 daily. Never auto-reply to political/religious topics. Ever.</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="callout-content"><strong>#1: Bad AI Comment Goes Viral</strong> One tone-deaf reply screenshotted 50K times = finished. Phase 1: NO auto-replies. AI drafts, you review top 20/day. NEVER auto-reply political/religious.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-<div class="callout-content"><strong>#2: Publishing False Information</strong> — One wrong fact on Day 5 = nobody trusts you on Day 50. Tier 1 sources (Reuters, AP, Prothom Alo): 5 min. Social media claims: NEVER publish as fact. Reverse image search EVERY news image.</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#2: Publishing False Information</strong> One wrong fact Day 5 = nobody trusts Day 50. Tier 1 sources: 5 min. Social claims: NEVER as fact. Reverse image search EVERY news image.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-<div class="callout-content"><strong>#3: Platform Account Suspension</strong> — Use only official APIs. Never use unofficial automation (Jarvee etc). Remove ALL watermarks from cross-posted YouTube content. Stagger posting times across channels.</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="callout-content"><strong>#3: Platform Suspension</strong> Official APIs only. Never Jarvee or unofficial tools. Remove ALL watermarks from cross-posted YT content. Stagger posting times across channels.</div></div>
 
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
-<div class="callout-content"><strong>#4: CIB Detection — All Channels Banned Together</strong> — Stagger posting times (Prohor at :00/:30, Dhaka Brief at :10/:40, etc). Different ad accounts per brand. Different visual templates. Never share payment methods across Meta Business accounts.</div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/></svg></div><div class="callout-content"><strong>#4: CIB Detection — All Banned Together</strong> Different posting times per brand. Different ad accounts. Different visual templates. Never share payment methods across Meta accounts.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div>
-<div class="callout-content"><strong>#5: Bangla Writing Sounds Like AI</strong> — Generate 50 samples. Show to 5 BD friends WITHOUT telling them it's AI. If more than 1 in 5 spots it, rewrite prompts. $0 test prevents $50K mistake.</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div><div class="callout-content"><strong>#5: Bangla Sounds Like AI</strong> Generate 50 samples, show 5 BD friends WITHOUT saying it's AI. If 1+ spots it, rewrite prompts. $0 test prevents $50K mistake.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg></div>
-<div class="callout-content"><strong>#6: You Burn Out in Month 2</strong> — Minimum: ~45 min/day Months 1–3, dropping to ~20 min/day by Month 6. Spot-check posts, review flagged comments, check alerts. Not optional.</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg></div><div class="callout-content"><strong>#6: Burnout Month 2</strong> Minimum: ~45 min/day Months 1–3, dropping to ~20 min/day Month 6+. Not optional.</div></div>
 
-<div class="callout callout-warning">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-<div class="callout-content"><strong>#7: Publer Daily Limits Silently Cap Your Output</strong> — Professional plan: 12 FB/15 IG posts per day per profile. At 20 accounts × 5-10 posts each = you'll hit limits fast. Use Publer for TikTok/YouTube/X scheduling, and Meta Business Suite API (free, no limits) for Facebook/Instagram via n8n.</div>
-</div>
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/></svg></div><div class="callout-content"><strong>#7: Publer Daily Limits Silently Cap Output</strong> Pro: 12 FB/15 IG per day per profile. Use Meta Business Suite API (free, no limits) for FB/IG. Publer for TikTok/YT/X only.</div></div>
+
+<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12.01" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg></div><div class="callout-content"><strong>#8: Orshot 3,000 Renders Exhausted Mid-Month</strong> At 100+ images/day × 30 days = 3,000+. Enable pay-as-you-go overage at $0.018/render. Budget extra ~$18/mo. Or use FLUX Kontext Dev at $0.015/image for lower-priority visuals.</div></div>
 </section>
 
-<!-- FIRST 30 DAYS -->
-<section id="first-30-days">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days — Exact Sequence</h2>
+<!-- VOL 4 -->
+<section id="vol4"><div class="vol-header"><div class="vol-num">Volume 4</div><h1>Execution Audit</h1><p class="subtitle">Handle strategy, first 30 days, content tone, system architecture.</p></div></section>
 
-<h4>Day 1–2: Foundation</h4>
-<ul class="checklist">
-<li>Register ALL 20 handles across ALL platforms — same format everywhere</li>
-<li>Set up Hetzner server + install n8n via Docker Compose</li>
-<li>Create Supabase project with tables: sources, content_queue, published, analytics</li>
-<li>Sign up for all tool accounts (Apify, Canva, Orshot, Publer, ElevenLabs, Claude API, Metricool)</li>
-</ul>
-
-<h4>Day 3–5: Brand Identity</h4>
-<ul class="checklist">
-<li>Design logo per channel ($50 total Fiverr — NOT where you save money)</li>
-<li>Create color palette + typography per channel</li>
-<li>Design 25 core templates (5 per channel) in Canva → export to Orshot</li>
-<li>Create profile pics, covers, bios for all 20 accounts</li>
-</ul>
-
-<h4>Day 6–8: Pipeline Build</h4>
-<ul class="checklist">
-<li>Configure Apify scrapers for top 10 BD news sources</li>
-<li>Build n8n Workflow 1: Scrape → Deduplicate → Score → Queue</li>
-<li>Build n8n Workflow 2: Queue → Generate → Design → Schedule</li>
-<li>Build n8n Workflow 3: Meta API direct posting for FB/IG (bypasses Publer limits)</li>
-<li>End-to-end test: article → published post automatically</li>
-</ul>
-
-<h4>Day 9–12: Test + Launch</h4>
-<ul class="checklist">
-<li>Test 50 sample Bangla captions with 5 BD friends (AI detection test)</li>
-<li>Run pipeline 48h privately — target 80%+ publishable rate</li>
-<li>Soft launch: 3–5 posts per channel per day</li>
-</ul>
-
-<h4>Day 13–30: Ramp</h4>
-<ul class="checklist">
-<li>Week 3: increase to 5–8 posts/channel/day</li>
-<li>Week 4: increase to 8–12 posts/channel/day</li>
-<li>Enable auto-comment-liking via Meta Graph API</li>
-<li>First analytics review + scoring weight adjustments</li>
-</ul>
-
-<h3>Day 30 Checkpoint</h3>
-<div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr))">
-<div class="kpi"><div class="kpi-number">500+</div><div class="kpi-label">Followers / Channel</div></div>
-<div class="kpi"><div class="kpi-number">3%+</div><div class="kpi-label">Engagement Rate</div></div>
-<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Factual Errors</div></div>
-<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Platform Warnings</div></div>
-<div class="kpi"><div class="kpi-number">20+</div><div class="kpi-label">Hrs/Day Running</div></div>
-<div class="kpi"><div class="kpi-number">&lt;1hr</div><div class="kpi-label">Daily Oversight</div></div>
-</div>
-</section>
-
-<!-- HANDLE STRATEGY -->
-<section>
+<!-- HANDLES -->
+<section id="handles">
 <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>Handle Strategy — DO THIS TODAY</h2>
-<div class="callout callout-danger">
-<div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-<div class="callout-content"><strong>Register ALL handles in one session. Every day you wait, a handle gets taken.</strong></div>
-</div>
+<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>Register ALL handles in one session. Every day you wait, a handle gets taken.</strong> Same format across ALL platforms. If Priority 1 taken anywhere, use Priority 2 everywhere.</div></div>
 <div class="table-wrap"><table>
 <thead><tr><th>Channel</th><th>Priority 1</th><th>Priority 2</th><th>Priority 3</th></tr></thead>
 <tbody>
@@ -774,67 +640,194 @@ AI-first in a 20–25 person team market. No one in BD does full-pipeline automa
 <tr><td style="color:var(--shoili)"><strong>Shoili</strong></td><td>@shoili.bd</td><td>@shoilibd</td><td>@shoili_bd</td></tr>
 <tr><td style="color:var(--dheu)"><strong>Dheu</strong></td><td>@dheu.bd</td><td>@dheubd</td><td>@dheu_bd</td></tr>
 </tbody></table></div>
-<p>If Priority 1 is taken on ANY platform, move to Priority 2 for ALL platforms. Consistency is non-negotiable.</p>
 </section>
 
-<!-- ARCHITECTURE DIAGRAM -->
-<section>
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>System Architecture</h2>
-<div class="code-block" data-label="Full Pipeline">[30+ NEWS SOURCES] → [APIFY SCRAPERS] → [SUPABASE DATABASE]
-                                                 ↓
-                                         [CLAUDE SONNET 4.6 SCORING]
-                                                 ↓
-                                         [CONTENT QUEUE (scored 0-100)]
-                                                 ↓
-                              ┌──────────────────┼──────────────────┐
-                              ↓                  ↓                  ↓
-                      [WRITE (Claude)]   [DESIGN (Orshot)]  [VIDEO (ElevenLabs+CapCut)]
-                              ↓                  ↓                  ↓
-                              └──────────────────┼──────────────────┘
-                                                 ↓
-                                         [CHANNEL ROUTER]
-                              ┌──────────────────┼──────────────────┐
-                              ↓                                     ↓
-                  [META API DIRECT]                     [PUBLER SCHEDULER]
-                  (FB + IG — no limits)                 (TikTok + YT + X)
-                              ↓                                     ↓
-                              └──────────────────┼──────────────────┘
-                                                 ↓
-                                         [20 ACCOUNTS PUBLISHED]
-                                                 ↓
-                                         [ENGAGEMENT ENGINE]
-                                                 ↓
-                                         [ANALYTICS → WEEKLY AI REVIEW ↺]</div>
+<!-- FIRST 30 DAYS -->
+<section id="day30">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days — Exact Sequence</h2>
+
+<h4>Day 1–2: Foundation</h4>
+<ul class="checklist">
+<li>Register ALL 20 handles across ALL platforms in one session</li>
+<li>Set up Hetzner CX33 server + install n8n via Docker Compose</li>
+<li>Create Supabase project with all tables</li>
+<li>Sign up for all tool accounts</li>
+</ul>
+
+<h4>Day 3–5: Brand Identity</h4>
+<ul class="checklist">
+<li>Design 5 logos ($50 total on Fiverr — NOT where you save money)</li>
+<li>Create color palette + typography per channel</li>
+<li>Design 25 templates (5 per channel) in Canva → export to Orshot</li>
+<li>Profile pics, covers, bios for all 20 accounts</li>
+</ul>
+
+<h4>Day 6–8: Pipeline Build</h4>
+<ul class="checklist">
+<li>Configure Apify scrapers for top 10 BD news sources</li>
+<li>Build n8n Workflow 1: Scrape → Deduplicate → Score → Queue</li>
+<li>Build n8n Workflow 2: Queue → Generate → Design → Schedule</li>
+<li>Build n8n Workflow 3: Meta API direct posting (bypasses Publer limits)</li>
+<li>End-to-end test: article → published post automatically</li>
+</ul>
+
+<h4>Day 9–12: Test + Soft Launch</h4>
+<ul class="checklist">
+<li>Test 50 Bangla captions with 5 BD friends (AI detection test)</li>
+<li>Run pipeline 48h privately — target 80%+ publishable</li>
+<li>Soft launch: 3–5 posts per channel per day</li>
+</ul>
+
+<h4>Day 13–30: Ramp</h4>
+<ul class="checklist">
+<li>Week 3: 5–8 posts/channel/day</li>
+<li>Week 4: 8–12 posts/channel/day</li>
+<li>Enable auto-comment-liking via Meta Graph API</li>
+<li>First analytics review + scoring adjustments</li>
+</ul>
+
+<h3>Day 30 Checkpoint</h3>
+<div class="kpi-grid">
+<div class="kpi"><div class="kpi-number">500+</div><div class="kpi-label">Followers / Channel</div></div>
+<div class="kpi"><div class="kpi-number">3%+</div><div class="kpi-label">Engagement Rate</div></div>
+<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Factual Errors</div></div>
+<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Platform Warnings</div></div>
+<div class="kpi"><div class="kpi-number">20+</div><div class="kpi-label">Hrs/Day Running</div></div>
+<div class="kpi"><div class="kpi-number">&lt;1hr</div><div class="kpi-label">Daily Oversight</div></div>
+</div>
+</section>
+
+<!-- TONE -->
+<section id="tone">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Content Tone — Final Calibration</h2>
+<div class="brand-grid">
+<div class="brand-card" data-brand="prohor"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="brand-name">প্রহর</div><div class="brand-sub">Senior Reuters correspondent</div></div></div><p><strong>Never:</strong> Emotional, opinionated. <strong>Always:</strong> Precise, sourced, calm.</p></div>
+<div class="brand-card" data-brand="dhaka"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><div><div class="brand-name">The Dhaka Brief</div><div class="brand-sub">FT columnist from Gulshan</div></div></div><p><strong>Never:</strong> Casual, emoji. <strong>Always:</strong> Sharp, analytical, data-literate.</p></div>
+<div class="brand-card" data-brand="rong"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#db2777,#be185d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="brand-name">রঙ</div><div class="brand-sub">Well-connected entertainment journalist</div></div></div><p><strong>Never:</strong> Cheap gossip. <strong>Always:</strong> Inside knowledge, cultural context.</p></div>
+<div class="brand-card" data-brand="shoili"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#059669,#047857)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="brand-name">শৈলী</div><div class="brand-sub">Bangladeshi Monocle editor</div></div></div><p><strong>Never:</strong> "Goals!" clichés. <strong>Always:</strong> Specific, curated, quietly impressive.</p></div>
+<div class="brand-card" data-brand="dheu"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#ea580c,#c2410c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="brand-name">ঢেউ</div><div class="brand-sub">Sharpest friend on the internet</div></div></div><p><strong>Never:</strong> Try-hard, begging. <strong>Always:</strong> Fast, bold, slightly amused.</p></div>
+</div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>System Architecture</h2>
+<div class="code-block" data-label="Full Pipeline (Corrected)">[30+ NEWS SOURCES] → [APIFY SCRAPERS] → [SUPABASE]
+                                              ↓
+                                      [CLAUDE SONNET 4.6 SCORING 0-100]
+                                              ↓
+                                      [CONTENT QUEUE]
+                                              ↓
+                           ┌─────────────────┼─────────────────┐
+                           ↓                 ↓                 ↓
+                   [WRITE (Claude)]  [DESIGN (Orshot)]  [VIDEO (ElevenLabs)]
+                           ↓                 ↓                 ↓
+                           └─────────────────┼─────────────────┘
+                                              ↓
+                                      [CHANNEL ROUTER]
+                           ┌─────────────────┼─────────────────┐
+                           ↓                                   ↓
+               [META API DIRECT]                   [PUBLER SCHEDULER]
+               (FB + IG — NO LIMITS)               (TikTok + YT + X)
+                           ↓                                   ↓
+                           └─────────────────┼─────────────────┘
+                                              ↓
+                                      [20 ACCOUNTS PUBLISHED]
+                                              ↓
+                                      [ENGAGEMENT ENGINE]
+                                              ↓
+                                      [ANALYTICS → WEEKLY AI REVIEW ↺]</div>
 </section>
 
 <!-- FINAL -->
-<section style="margin-top:64px;padding:36px;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(59,130,246,.06));border-radius:var(--radius-xl);border:1px solid var(--border);">
-<h2 style="margin-top:0;border-bottom:none;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Stress-Tested. Verified. Now Execute.</h2>
+<section style="margin-top:48px;padding:28px;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(59,130,246,.06));border-radius:var(--radius-xl);border:1px solid var(--border);">
+<h2 style="margin-top:0;border-bottom:none;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Stress-Tested. Every Price Verified. Execute.</h2>
 
-<div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr));margin:20px 0">
-<div class="kpi" style="background:var(--red-dim)"><div class="kpi-number" style="font-size:20px;color:var(--red)">7</div><div class="kpi-label">Critical Fixes Made</div></div>
-<div class="kpi" style="background:var(--green-dim)"><div class="kpi-number" style="font-size:20px;color:var(--green)">$640</div><div class="kpi-label">Verified Monthly Cost</div></div>
-<div class="kpi" style="background:var(--blue-dim)"><div class="kpi-number" style="font-size:20px;color:var(--blue)">20</div><div class="kpi-label">Accounts Ready</div></div>
-<div class="kpi" style="background:var(--accent-dim)"><div class="kpi-number" style="font-size:20px;color:var(--accent-light)">100+</div><div class="kpi-label">Posts/Day Capacity</div></div>
+<div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">
+<div class="kpi" style="background:var(--red-dim)"><div class="kpi-number" style="font-size:18px;color:var(--red)">8</div><div class="kpi-label">Fixes Made</div></div>
+<div class="kpi" style="background:var(--green-dim)"><div class="kpi-number" style="font-size:18px;color:var(--green)">$618</div><div class="kpi-label">Verified Cost</div></div>
+<div class="kpi" style="background:var(--blue-dim)"><div class="kpi-number" style="font-size:18px;color:var(--blue)">73.4M</div><div class="kpi-label">FB Users (Feb 2026)</div></div>
+<div class="kpi" style="background:var(--accent-dim)"><div class="kpi-number" style="font-size:18px;color:var(--accent-light)">100+</div><div class="kpi-label">Posts/Day</div></div>
 </div>
 
-<p style="text-align:center;font-size:18px;font-weight:800;color:var(--text-heading);margin:20px 0 6px;letter-spacing:-.3px">Register handles first. Build pipeline second. Post 10 things third. Then scale.</p>
-<p style="text-align:center;color:var(--text-tertiary);font-size:11px;margin:0">Last stress-tested: March 30, 2026 — All tool pricing verified against live listings. WhatsApp block confirmed. Hetzner price increase confirmed. Publer daily limits confirmed.</p>
+<p style="text-align:center;font-size:16px;font-weight:800;color:var(--text-heading);margin:16px 0 4px;letter-spacing:-.3px">Register handles today. Build pipeline. Post 10 things. Then scale.</p>
+<p style="text-align:center;color:var(--text-tertiary);font-size:10px;margin:0">Stress-tested March 30, 2026 — All tool pricing verified against live listings · WhatsApp BD block confirmed · Hetzner Apr 1 pricing applied · Publer limits documented · Facebook 73.4M (NapoleonCat Feb 2026) · Nutshell Today 322K IG (live today)</p>
 </section>
 
 </div>
 
+<!-- SCROLL TOP -->
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <script>
 function toggleTheme(){const h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');localStorage.setItem('theme',h.getAttribute('data-theme'))}
 const st=localStorage.getItem('theme');if(st)document.documentElement.setAttribute('data-theme',st);
-function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.querySelector('.sidebar-overlay').classList.toggle('open')}
-document.querySelectorAll('.sidebar a').forEach(l=>{l.addEventListener('click',()=>{if(window.innerWidth<=900){document.getElementById('sidebar').classList.remove('open');document.querySelector('.sidebar-overlay').classList.remove('open')}})});
-window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>400)});
-const secs=document.querySelectorAll('section[id]');const navs=document.querySelectorAll('.sidebar a[href^="#"]');
-window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});navs.forEach(n=>{n.classList.remove('active');if(n.getAttribute('href')==='#'+cur)n.classList.add('active')})});
-function switchTab(e,id){const c=e.target.closest('.tab-container');c.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));c.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.closest('.tab-btn').classList.add('active');c.querySelector('#'+id).classList.add('active')}
+
+function toggleSidebar(){
+  const s=document.getElementById('sidebar');
+  const o=document.querySelector('.sidebar-overlay');
+  s.classList.toggle('open');
+  o.classList.toggle('open');
+  document.body.style.overflow=s.classList.contains('open')?'hidden':'';
+}
+
+document.querySelectorAll('.sidebar a').forEach(l=>{
+  l.addEventListener('click',()=>{
+    if(window.innerWidth<=900){
+      document.getElementById('sidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay').classList.remove('open');
+      document.body.style.overflow='';
+    }
+  });
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>400);
+});
+
+const secs=document.querySelectorAll('section[id]');
+const navs=document.querySelectorAll('.sidebar a[href^="#"]');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){
+    window.requestAnimationFrame(()=>{
+      let cur='';
+      secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+      navs.forEach(n=>{
+        n.classList.remove('active');
+        if(n.getAttribute('href')==='#'+cur)n.classList.add('active');
+      });
+      ticking=false;
+    });
+    ticking=true;
+  }
+});
+
+function switchTab(e,id){
+  const c=e.target.closest('.tab-container');
+  c.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  c.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  e.target.closest('.tab-btn').classList.add('active');
+  c.querySelector('#'+id).classList.add('active');
+}
+
+// Close sidebar on escape
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.getElementById('sidebar').classList.remove('open');
+    document.querySelector('.sidebar-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
+
+// Handle resize — if desktop, ensure sidebar visible
+window.addEventListener('resize',()=>{
+  if(window.innerWidth>900){
+    document.getElementById('sidebar').classList.remove('open');
+    document.querySelector('.sidebar-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
 </script>
 </body>
 </html>
