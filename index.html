@@ -1,832 +1,1458 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>BD Media Blueprint v5.1 — Stress-Tested AI Media Conglomerate</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BD Media HQ — Final Execution Playbook</title>
 <style>
-:root{
---bg-base:#06060b;--bg-elevated:#0d0d15;--bg-surface:#13131f;--bg-surface-2:#1a1a2a;--bg-surface-3:#222236;--bg-hover:#1e1e32;
---text-primary:#f0f0f5;--text-secondary:#a0a0b8;--text-tertiary:#6b6b82;--text-heading:#fff;
---accent:#7c3aed;--accent-light:#a78bfa;--accent-dim:rgba(124,58,237,.10);--accent-dim-2:rgba(124,58,237,.06);--accent-glow:rgba(124,58,237,.25);
---border:rgba(255,255,255,.06);--border-subtle:rgba(255,255,255,.04);--border-strong:rgba(255,255,255,.10);
---red:#f43f5e;--red-dim:rgba(244,63,94,.08);--green:#10b981;--green-dim:rgba(16,185,129,.08);--yellow:#f59e0b;--yellow-dim:rgba(245,158,11,.08);
---blue:#3b82f6;--blue-dim:rgba(59,130,246,.08);--orange:#f97316;--orange-dim:rgba(249,115,22,.08);--cyan:#06b6d4;--cyan-dim:rgba(6,182,212,.08);
---pink:#ec4899;--pink-dim:rgba(236,72,153,.08);
---prohor:#3b82f6;--dhaka:#06b6d4;--rong:#ec4899;--shoili:#10b981;--dheu:#f97316;
---sidebar-w:260px;--topbar-h:52px;
---radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;
---shadow-sm:0 1px 2px rgba(0,0,0,.3);--shadow-md:0 4px 12px rgba(0,0,0,.3);--shadow-lg:0 8px 32px rgba(0,0,0,.4);--shadow-glow:0 0 40px rgba(124,58,237,.15);
---transition:.2s cubic-bezier(.4,0,.2,1)
-}
-[data-theme="light"]{
---bg-base:#f8f8fc;--bg-elevated:#fff;--bg-surface:#fff;--bg-surface-2:#f3f3f8;--bg-surface-3:#ebebf2;--bg-hover:#f0f0f8;
---text-primary:#1a1a2e;--text-secondary:#555570;--text-tertiary:#8888a0;--text-heading:#0a0a14;
---accent:#6d28d9;--accent-light:#7c3aed;--accent-dim:rgba(109,40,217,.06);--accent-dim-2:rgba(109,40,217,.03);--accent-glow:rgba(109,40,217,.08);
---border:rgba(0,0,0,.06);--border-subtle:rgba(0,0,0,.03);--border-strong:rgba(0,0,0,.10);
---shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);--shadow-glow:0 0 40px rgba(109,40,217,.06);
---red-dim:rgba(244,63,94,.06);--green-dim:rgba(16,185,129,.06);--yellow-dim:rgba(245,158,11,.06);--blue-dim:rgba(59,130,246,.06);--orange-dim:rgba(249,115,22,.06);--cyan-dim:rgba(6,182,212,.06);--pink-dim:rgba(236,72,153,.06)
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar-h) + 16px)}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg-base);color:var(--text-primary);line-height:1.65;font-size:14px;-webkit-font-smoothing:antialiased;transition:background var(--transition),color var(--transition);overflow-x:hidden}
+:root{--bg:#0a0a0f;--surface:#111118;--surface2:#1a1a24;--border:#2a2a3a;--text:#e8e8f0;--text2:#9898a8;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--yellow:#eab308;--orange:#f97316;--cyan:#06b6d4;--pink:#ec4899;--mandate:#c5303e;--ledger:#e0a45e;--rong:#ff6b8a;--dheu:#00d9ff;--jonotar:#8b5cf6;--font:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;font-size:15px}
 ::selection{background:var(--accent);color:#fff}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
 
-/* TOPBAR */
-.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(6,6,11,.88);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:1000}
-[data-theme="light"] .topbar{background:rgba(255,255,255,.9)}
-.topbar-left{display:flex;align-items:center;gap:8px;min-width:0}
-.topbar-logo{display:flex;align-items:center;gap:7px;text-decoration:none;min-width:0}
-.topbar-logo svg{width:24px;height:24px;flex-shrink:0}
-.topbar-logo-text{font-weight:800;font-size:13px;color:var(--text-heading);letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.topbar-logo-text span{color:var(--accent-light);font-weight:600;font-size:10px;margin-left:4px;opacity:.7}
-.topbar-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.topbar-btn{background:var(--bg-surface-2);border:1px solid var(--border);color:var(--text-secondary);cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);font-size:10px;font-weight:600;transition:all var(--transition);display:flex;align-items:center;gap:4px;font-family:inherit;white-space:nowrap}
-.topbar-btn:hover{border-color:var(--accent);color:var(--accent)}
-.topbar-btn svg{width:12px;height:12px}
-.hamburger{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;padding:4px;border-radius:var(--radius-sm);transition:background var(--transition);flex-shrink:0}
-.hamburger:hover{background:var(--bg-surface-2)}
-.hamburger svg{width:20px;height:20px}
-
-/* SIDEBAR */
-.sidebar{position:fixed;top:var(--topbar-h);left:0;bottom:0;width:var(--sidebar-w);background:var(--bg-elevated);border-right:1px solid var(--border);overflow-y:auto;overflow-x:hidden;padding:12px 0 60px;z-index:900;transition:transform .3s cubic-bezier(.4,0,.2,1),width .3s ease}
-.sidebar::-webkit-scrollbar{width:2px}
-.sidebar::-webkit-scrollbar-track{background:transparent}
-.sidebar::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:10px}
-.sidebar-section{padding:14px 14px 3px;font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-tertiary)}
-.sidebar a{display:flex;align-items:center;gap:7px;padding:6px 14px;color:var(--text-tertiary);text-decoration:none;font-size:11px;font-weight:500;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sidebar a svg{width:13px;height:13px;flex-shrink:0;opacity:.5}
-.sidebar a:hover,.sidebar a.active{color:var(--accent-light);background:var(--accent-dim);border-left-color:var(--accent)}
-.sidebar a:hover svg,.sidebar a.active svg{opacity:1}
-.sidebar a.vol-link{font-weight:700;font-size:11px;color:var(--text-heading);padding:9px 14px;margin-top:4px;border-left:2px solid var(--accent);background:var(--accent-dim)}
-.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:899;backdrop-filter:blur(4px)}
-.sidebar-collapse-btn{display:none}
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding:20px 0}
+.nav-title{padding:0 20px 20px;font-size:18px;font-weight:800;letter-spacing:-0.5px;color:var(--accent2);border-bottom:1px solid var(--border)}
+.nav a{display:block;padding:10px 20px;color:var(--text2);font-size:13px;transition:all 0.15s}
+.nav a:hover{color:var(--text);background:var(--surface2);text-decoration:none}
+.nav a.section-head{color:var(--text);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:16px;padding-bottom:4px}
+.nav-tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:600;margin-left:6px}
+.nav-tag.new{background:#22c55e22;color:var(--green)}
+.nav-tag.critical{background:#ef444422;color:var(--red)}
 
 /* MAIN */
-.main{margin-left:var(--sidebar-w);margin-top:var(--topbar-h);padding:28px clamp(16px,4vw,48px) 80px;max-width:960px;width:100%}
+.main{margin-left:280px;max-width:900px;padding:60px 48px 120px}
 
-/* TYPOGRAPHY */
-h1{font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--text-heading);margin-bottom:6px;line-height:1.15;letter-spacing:-.5px}
-h2{font-size:clamp(18px,3vw,22px);font-weight:800;color:var(--text-heading);margin-top:48px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);letter-spacing:-.3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-h2 svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
-h3{font-size:clamp(15px,2.5vw,17px);font-weight:700;color:var(--text-heading);margin-top:32px;margin-bottom:10px;display:flex;align-items:center;gap:7px;letter-spacing:-.2px}
-h3 svg{width:16px;height:16px;color:var(--accent-light);flex-shrink:0}
-h4{font-size:13px;font-weight:700;color:var(--text-heading);margin-top:22px;margin-bottom:6px}
-p{margin-bottom:12px;color:var(--text-secondary);font-size:13px}
-.subtitle{color:var(--text-tertiary);font-size:14px;margin-bottom:28px;line-height:1.6}
+/* HEADINGS */
+h1{font-size:42px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-size:28px;font-weight:800;letter-spacing:-0.8px;margin:64px 0 20px;padding-top:32px;border-top:1px solid var(--border);color:var(--text)}
+h3{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--text)}
+h4{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--accent2)}
+.subtitle{font-size:18px;color:var(--text2);margin-bottom:40px;line-height:1.6}
 
-/* BADGES */
-.badge{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
-.badge-green{background:var(--green-dim);color:var(--green)}
-.badge-red{background:var(--red-dim);color:var(--red)}
-.badge-yellow{background:var(--yellow-dim);color:var(--yellow)}
-.badge-blue{background:var(--blue-dim);color:var(--blue)}
-.badge-accent{background:var(--accent-dim);color:var(--accent-light)}
+/* SECTIONS */
+section{scroll-margin-top:24px}
 
-/* HERO */
-.hero{position:relative;padding:clamp(20px,4vw,36px);border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(59,130,246,.08) 50%,rgba(16,185,129,.06));border:1px solid var(--border);overflow:hidden;margin-bottom:28px}
-.hero::before{content:'';position:absolute;top:-50%;right:-30%;width:400px;height:400px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);pointer-events:none}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent-light);margin-bottom:10px}
-.hero-eyebrow svg{width:12px;height:12px}
-.hero h1{position:relative}
-.hero .subtitle{position:relative}
-
-/* KPI */
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:16px 0}
-.kpi{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 10px;text-align:center;transition:all var(--transition)}
-.kpi:hover{border-color:var(--accent);box-shadow:var(--shadow-glow)}
-.kpi-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px}
-.kpi-icon svg{width:14px;height:14px}
-.kpi-number{font-size:22px;font-weight:900;color:var(--text-heading);letter-spacing:-.8px;line-height:1.1}
-.kpi-label{font-size:9px;color:var(--text-tertiary);margin-top:3px;font-weight:500;letter-spacing:.2px}
-
-/* BRAND CARDS */
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:16px 0}
-.brand-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;transition:all var(--transition);position:relative;overflow:hidden}
-.brand-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.brand-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.brand-card[data-brand="prohor"]::before{background:var(--prohor)}
-.brand-card[data-brand="dhaka"]::before{background:var(--dhaka)}
-.brand-card[data-brand="rong"]::before{background:var(--rong)}
-.brand-card[data-brand="shoili"]::before{background:var(--shoili)}
-.brand-card[data-brand="dheu"]::before{background:var(--dheu)}
-.brand-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.brand-icon{width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brand-name{font-size:14px;font-weight:800;color:var(--text-heading)}
-.brand-sub{font-size:10px;color:var(--text-tertiary);font-weight:500}
-.brand-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.brand-tag{font-size:9px;font-weight:600;padding:2px 6px;border-radius:20px;background:var(--bg-surface-2);color:var(--text-tertiary);border:1px solid var(--border)}
-.brand-card p{font-size:11px;margin-bottom:0;color:var(--text-secondary);line-height:1.5}
-
-/* CALLOUTS */
-.callout{padding:14px 16px;border-radius:var(--radius-md);margin:16px 0;font-size:12px;border:1px solid var(--border);display:flex;gap:12px;align-items:flex-start}
-.callout-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.callout-icon svg{width:14px;height:14px}
-.callout-content{flex:1;min-width:0}
-.callout-content strong{display:block;margin-bottom:3px;color:var(--text-heading);font-size:12px}
-.callout-danger{background:var(--red-dim);border-color:rgba(244,63,94,.15)}
-.callout-danger .callout-icon{background:rgba(244,63,94,.15);color:var(--red)}
-.callout-warning{background:var(--yellow-dim);border-color:rgba(245,158,11,.15)}
-.callout-warning .callout-icon{background:rgba(245,158,11,.15);color:var(--yellow)}
-.callout-success{background:var(--green-dim);border-color:rgba(16,185,129,.15)}
-.callout-success .callout-icon{background:rgba(16,185,129,.15);color:var(--green)}
-.callout-info{background:var(--accent-dim);border-color:rgba(124,58,237,.15)}
-.callout-info .callout-icon{background:rgba(124,58,237,.15);color:var(--accent-light)}
-
-/* TABLES */
-.table-wrap{overflow-x:auto;margin:14px 0 20px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--bg-surface);-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:11px;min-width:480px}
-thead{background:var(--bg-surface-2)}
-th{text-align:left;padding:8px 12px;font-weight:700;color:var(--text-heading);white-space:nowrap;border-bottom:1px solid var(--border);font-size:10px;letter-spacing:.3px;text-transform:uppercase}
-td{padding:7px 12px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:var(--accent-dim-2)}
-td strong{color:var(--text-heading)}
-
-/* PIPELINE */
-.pipeline{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:16px 0;padding:16px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg)}
-.pipeline-step{background:var(--accent-dim);border:1px solid rgba(124,58,237,.2);color:var(--accent-light);padding:5px 10px;border-radius:var(--radius-sm);font-size:9px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:4px}
-.pipeline-arrow{color:var(--text-tertiary);font-size:10px;flex-shrink:0}
-.pipeline-arrow svg{width:12px;height:12px}
+/* PIPELINE VISUAL */
+.pipeline{display:flex;flex-wrap:wrap;gap:4px;margin:24px 0}
+.pipeline-step{flex:1;min-width:80px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;position:relative}
+.pipeline-step .num{display:block;font-size:24px;font-weight:900;color:var(--accent2)}
+.pipeline-step .label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px}
 
 /* CARDS */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:16px 0}
-.card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;transition:all var(--transition)}
-.card:hover{border-color:var(--border-strong);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.card-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.card-icon svg{width:16px;height:16px}
-.card-title{font-weight:700;font-size:12px;color:var(--text-heading);margin-bottom:3px}
-.card p{font-size:11px;margin-bottom:0;color:var(--text-secondary)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.card-title{font-weight:700;font-size:17px}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.badge-mandate{background:#c5303e22;color:var(--mandate)}
+.badge-ledger{background:#e0a45e22;color:var(--ledger)}
+.badge-rong{background:#ff6b8a22;color:var(--rong)}
+.badge-dheu{background:#00d9ff22;color:var(--dheu)}
+.badge-jonotar{background:#8b5cf622;color:var(--jonotar)}
+.badge-green{background:#22c55e22;color:var(--green)}
+.badge-red{background:#ef444422;color:var(--red)}
+.badge-yellow{background:#eab30822;color:var(--yellow)}
 
-/* CHARTS */
-.chart-container{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin:16px 0}
-.chart-title{font-size:12px;font-weight:700;color:var(--text-heading);margin-bottom:2px}
-.chart-subtitle{font-size:10px;color:var(--text-tertiary);margin-bottom:16px}
-.bar-chart{display:flex;flex-direction:column;gap:8px}
-.bar-row{display:flex;align-items:center;gap:8px}
-.bar-label{width:80px;font-size:10px;font-weight:600;color:var(--text-secondary);text-align:right;flex-shrink:0}
-.bar-track{flex:1;height:24px;background:var(--bg-surface-2);border-radius:5px;overflow:hidden;position:relative;min-width:60px}
-.bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:7px;font-size:9px;font-weight:700;color:#fff;transition:width 1s ease;min-width:fit-content;white-space:nowrap}
-.bar-value{font-size:10px;font-weight:700;color:var(--text-heading);width:50px;text-align:right;flex-shrink:0}
-
-/* DONUT */
-.donut-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.donut-chart{position:relative;width:120px;height:120px;flex-shrink:0}
-.donut-chart svg{width:120px;height:120px;transform:rotate(-90deg)}
-.donut-chart circle{fill:none;stroke-width:16;stroke-linecap:round}
-.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.donut-center .number{font-size:20px;font-weight:900;color:var(--text-heading)}
-.donut-center .label{font-size:8px;color:var(--text-tertiary);font-weight:600}
-.donut-legend{display:flex;flex-direction:column;gap:6px;flex:1;min-width:140px}
-.legend-item{display:flex;align-items:center;gap:6px}
-.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.legend-text{font-size:11px;color:var(--text-secondary);flex:1;min-width:0}
-.legend-value{font-size:11px;font-weight:700;color:var(--text-heading);flex-shrink:0}
-
-/* VERSUS */
-.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:16px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
-.versus-side{padding:20px;background:var(--bg-surface)}
-.versus-side h4{font-size:12px;margin-bottom:12px;margin-top:0;display:flex;align-items:center;gap:5px}
-.versus-divider{width:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-surface-2);font-weight:900;color:var(--text-tertiary);font-size:12px}
-.versus-stat{margin-bottom:10px}
-.versus-stat .num{font-size:18px;font-weight:900;color:var(--text-heading);line-height:1.2}
-.versus-stat .lbl{font-size:9px;color:var(--text-tertiary);font-weight:500}
-
-/* PHASE */
-.phase-timeline{display:flex;gap:2px;margin:16px 0;border-radius:var(--radius-md);overflow:hidden}
-.phase-seg{flex:1;padding:10px 6px;text-align:center;font-size:9px;font-weight:700;color:#fff;display:flex;flex-direction:column;gap:1px;min-width:0}
-.phase-seg .ph-num{font-size:14px;font-weight:900}
-.phase-seg .ph-name{font-size:8px;opacity:.85;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-/* CHECKLIST */
-.checklist{list-style:none;margin:14px 0}
-.checklist li{padding:7px 0 7px 28px;position:relative;font-size:12px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
-.checklist li:last-child{border-bottom:none}
-.checklist li::before{content:'';position:absolute;left:2px;top:9px;width:14px;height:14px;border:2px solid var(--border-strong);border-radius:3px}
+/* TABLES */
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+th{text-align:left;padding:10px 12px;background:var(--surface2);color:var(--text2);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:hover td{background:var(--surface)}
 
 /* CODE */
-.code-block{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;font-family:'JetBrains Mono',monospace;font-size:10px;overflow-x:auto;margin:14px 0;line-height:1.7;white-space:pre-wrap;color:var(--text-secondary);position:relative;-webkit-overflow-scrolling:touch}
-.code-block::before{content:attr(data-label);position:absolute;top:0;right:0;background:var(--accent-dim);color:var(--accent-light);font-size:8px;font-weight:700;padding:2px 8px;border-radius:0 var(--radius-md) 0 var(--radius-sm);letter-spacing:.8px;text-transform:uppercase;font-family:'Inter',sans-serif}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:20px;overflow-x:auto;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.6}
+code{font-family:var(--mono);font-size:13px;background:var(--surface2);padding:2px 6px;border-radius:4px}
+pre code{background:none;padding:0}
 
-/* TABS */
-.tab-container{margin:16px 0;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.tab-buttons{display:flex;gap:0;background:var(--bg-surface-2);overflow-x:auto;border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch}
-.tab-btn{background:none;border:none;padding:8px 14px;font-size:10px;font-weight:700;color:var(--text-tertiary);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--transition);font-family:inherit}
-.tab-btn:hover{color:var(--text-primary);background:var(--bg-hover)}
-.tab-btn.active{color:var(--accent-light);border-bottom-color:var(--accent);background:var(--bg-surface)}
-.tab-panel{display:none;padding:16px}
-.tab-panel.active{display:block}
-.tab-panel p{font-size:12px}
+/* ALERTS */
+.alert{border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+.alert-critical{background:#ef444415;border-left:4px solid var(--red)}
+.alert-warning{background:#eab30815;border-left:4px solid var(--yellow)}
+.alert-success{background:#22c55e15;border-left:4px solid var(--green)}
+.alert-info{background:#6366f115;border-left:4px solid var(--accent)}
+.alert strong{display:block;margin-bottom:4px}
 
-/* BULLETS */
-ul.bullet{list-style:none;margin:12px 0}
-ul.bullet li{padding:4px 0 4px 22px;position:relative;font-size:12px;color:var(--text-secondary)}
-ul.bullet li::before{content:'';position:absolute;left:5px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.4}
+/* CHECKLIST */
+.checklist{list-style:none;margin:16px 0}
+.checklist li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid var(--border)}
+.checklist li::before{content:'☐';position:absolute;left:0;font-size:16px;color:var(--accent2)}
 
-/* PLATFORM LOGOS */
-.platform-logos{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
-.platform-logo{display:flex;align-items:center;gap:5px;padding:5px 10px;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:10px;font-weight:600;color:var(--text-secondary);white-space:nowrap}
-.platform-logo svg{width:16px;height:16px;flex-shrink:0}
+/* VOICE CARD */
+.voice-card{background:var(--surface);border-radius:12px;overflow:hidden;margin:16px 0}
+.voice-card-header{padding:16px 20px;font-weight:700;font-size:16px;color:#fff}
+.voice-card-body{padding:20px}
+.voice-card-sample{background:var(--surface2);border-radius:8px;padding:16px;margin-top:12px;font-size:13px;white-space:pre-line;font-family:var(--font)}
 
-/* SCROLL TOP */
-.scroll-top{position:fixed;bottom:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1001;box-shadow:0 4px 20px rgba(124,58,237,.4);transition:transform var(--transition)}
-.scroll-top:hover{transform:scale(1.1)}
-.scroll-top.show{display:flex}
-.scroll-top svg{width:16px;height:16px}
+/* COST TABLE */
+.cost-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.cost-row .tool{font-weight:600}
+.cost-row .price{color:var(--green);font-family:var(--mono);font-weight:700}
+.cost-total{display:flex;justify-content:space-between;padding:16px 0;font-size:18px;font-weight:800;border-top:2px solid var(--accent)}
 
-/* VOL HEADER */
-.vol-header{margin-top:56px;padding:28px 0 14px;position:relative}
-.vol-header::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent)}
-.vol-num{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent-light);margin-bottom:8px}
+/* DAY TIMELINE */
+.day{margin:24px 0;padding-left:24px;border-left:3px solid var(--border);position:relative}
+.day::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;background:var(--accent);border-radius:50%;border:2px solid var(--bg)}
+.day-label{font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);margin-bottom:4px}
+.day-title{font-weight:700;font-size:17px;margin-bottom:8px}
+
+/* FLOWCHART */
+.flow{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;font-family:var(--mono);font-size:12px;line-height:2;white-space:pre-wrap;overflow-x:auto}
+
+/* TEMPLATE GRID */
+.template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.template-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.template-item .num{font-size:28px;font-weight:900;color:var(--accent2)}
+.template-item .name{font-size:12px;color:var(--text2);margin-top:4px}
+
+/* COLOR SWATCH */
+.swatch-row{display:flex;gap:8px;margin:8px 0;align-items:center}
+.swatch{width:32px;height:32px;border-radius:6px;border:1px solid var(--border)}
+.swatch-label{font-size:12px;color:var(--text2);font-family:var(--mono)}
 
 /* RESPONSIVE */
-@media(min-width:1400px){
-.main{max-width:1060px}
+@media(max-width:768px){
+.nav{display:none}
+.main{margin-left:0;padding:24px 16px 80px}
+h1{font-size:28px}
+h2{font-size:22px}
+.template-grid{grid-template-columns:1fr 1fr}
+.pipeline{flex-direction:column}
 }
-@media(max-width:1100px){
-.main{padding:24px clamp(12px,3vw,32px) 70px}
-}
-@media(max-width:900px){
-.sidebar{transform:translateX(-100%)}
-.sidebar.open{transform:translateX(0)}
-.sidebar-overlay.open{display:block}
-.main{margin-left:0}
-.hamburger{display:block}
-.versus{grid-template-columns:1fr}
-.versus-divider{width:100%;height:32px}
-}
-@media(max-width:600px){
-.kpi-grid{grid-template-columns:repeat(2,1fr)}
-.card-grid,.brand-grid{grid-template-columns:1fr}
-.phase-timeline{flex-direction:column}
-.donut-row{flex-direction:column;align-items:center}
-.bar-label{width:60px;font-size:9px}
-.bar-value{width:40px;font-size:9px}
-.callout{flex-direction:column;gap:8px}
-.callout-icon{width:24px;height:24px}
-table{font-size:10px;min-width:400px}
-th,td{padding:6px 8px}
-}
-@media(max-width:380px){
-.kpi-grid{grid-template-columns:repeat(2,1fr)}
-.topbar-logo-text span{display:none}
-.kpi-number{font-size:18px}
-.hero{padding:16px}
-}
+
+/* PRINT */
 @media print{
-.sidebar,.topbar,.scroll-top,.hamburger,.sidebar-overlay{display:none!important}
-.main{margin-left:0;padding:16px;max-width:100%}
-.hero,.callout,.chart-container,.tab-container,.code-block{break-inside:avoid}
+.nav{display:none}
+.main{margin-left:0;max-width:100%}
+body{background:#fff;color:#000}
+.card,.alert,pre{break-inside:avoid}
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-<div class="topbar-left">
-<button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-<a href="#" class="topbar-logo">
-<svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M8 10h16M8 16h12M8 22h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="22" r="3" fill="#fff" opacity=".6"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs></svg>
-<div class="topbar-logo-text">BD Media Blueprint <span>v5.1 Verified</span></div>
-</a>
-</div>
-<div class="topbar-right">
-<button class="topbar-btn" onclick="toggleTheme()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>Theme</button>
-</div>
-</div>
-
-<!-- OVERLAY -->
-<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
-
-<!-- SIDEBAR -->
-<nav class="sidebar" id="sidebar">
-<div class="sidebar-section">Start Here</div>
-<a href="#overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Overview & KPIs</a>
-<a href="#stress-fixes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>8 Critical Fixes</a>
-<a href="#exec-summary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Executive Summary</a>
-
-<a href="#vol1" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Vol 1 — Architecture</a>
-<a href="#honest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Honest Assessment</a>
-<a href="#market"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market (73.4M FB)</a>
-<a href="#brands"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>5 Brands</a>
-<a href="#tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Tool Stack ($618)</a>
-<a href="#revenue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Revenue Model</a>
-
-<a href="#vol2" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06"/></svg>Vol 2 — Operations</a>
-<a href="#scoring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>AI Scoring Engine</a>
-<a href="#hooks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Hook Framework</a>
-<a href="#algos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>Platform Algorithms</a>
-<a href="#selflearn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>Self-Improving Model</a>
-
-<a href="#vol3" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Vol 3 — Stress Test</a>
-<a href="#pricing-fixes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing Corrections</a>
-<a href="#kill-risks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>8 Kill Risks</a>
-
-<a href="#vol4" class="vol-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Vol 4 — Execution</a>
-<a href="#handles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>Handle Strategy</a>
-<a href="#day30"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days</a>
-<a href="#tone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Content Tone</a>
-<a href="#architecture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>System Architecture</a>
+<nav class="nav">
+<div class="nav-title">BD Media HQ</div>
+<a href="#start" class="section-head">Start Here</a>
+<a href="#channels">5 Channel Names + Handles</a>
+<a href="#stack">$297/mo Tool Stack <span class="nav-tag new">UPDATED</span></a>
+<a href="#photos">How Photos Work</a>
+<a href="#sources">107 Source Map</a>
+<a href="#hardware" class="section-head">Infrastructure</a>
+<a href="#hardware">Server + Local AI Setup</a>
+<a href="#docker">Docker Compose (copy-paste)</a>
+<a href="#supabase">Supabase Schema (copy-paste)</a>
+<a href="#pipeline" class="section-head">The Pipeline</a>
+<a href="#pipeline">10-Stage Pipeline</a>
+<a href="#workflow-1">W01: Scrape → Score</a>
+<a href="#workflow-2">W02: Write → Publish</a>
+<a href="#self-healing">Self-Healing Protocol</a>
+<a href="#prompts" class="section-head">AI Prompts</a>
+<a href="#prompt-scorer">Scoring Prompt</a>
+<a href="#prompt-writer">Caption Writer Prompt</a>
+<a href="#prompt-qa">QA Gate Prompt</a>
+<a href="#optimizer" class="section-head">Self-Improvement</a>
+<a href="#optimizer">Every-3-Day Engine</a>
+<a href="#anti-ban">Anti-Ban Protocol <span class="nav-tag critical">CRITICAL</span></a>
+<a href="#templates">30 Image Templates</a>
+<a href="#voice" class="section-head">Voice + Writing</a>
+<a href="#voice">Channel Voice Cards</a>
+<a href="#writing-rules">Content Writing Rules</a>
+<a href="#fact-check">Fact-Check Protocol</a>
+<a href="#checklist" class="section-head">Execution</a>
+<a href="#checklist">30-Day Checklist</a>
+<a href="#commands">Step-by-Step Commands</a>
+<a href="#api-keys">API Key Collection Guide</a>
+<a href="#targets">Day 30 Targets</a>
+<a href="#pitch" class="section-head">Reference</a>
+<a href="#pitch">60-Second Pitch</a>
+<a href="#manus">Manus AI Usage</a>
+<a href="#cib-warning">CIB Warning</a>
+<a href="#seasonal">Seasonal Calendar</a>
 </nav>
 
-<!-- MAIN -->
-<div class="main">
+<main class="main">
 
-<!-- HERO -->
-<section id="overview">
-<div class="hero">
-<div class="hero-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Stress-Tested Execution Blueprint — All 4 Volumes</div>
-<h1>AI-First Bite-Size Media Conglomerate</h1>
-<p class="subtitle">Five media brands · 20 social accounts · 100+ posts/day · ~$618/month verified · Every tool, workflow, and strategy stress-tested against live March 2026 data. Built for Bangladesh.</p>
-<div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:4px">
-<span class="badge badge-red">8 Critical Fixes</span>
-<span class="badge badge-green">All Prices Verified 30 Mar 2026</span>
-<span class="badge badge-accent">Production-Ready</span>
-</div>
-</div>
+<!-- ==================== SECTION 0: HERO ==================== -->
+<section id="start">
+<h1>BD Media HQ</h1>
+<p class="subtitle">The definitive execution playbook for Bangladesh's first AI-automated media conglomerate.<br>Five channels. 30 accounts. 107 sources. 50–100+ posts/day. $297/month.<br><strong>Last updated: April 3, 2026 — all prices reflect Hetzner's April 1 increase + Qwen 3.5 model release.</strong></p>
 
-<!-- KPIs -->
-<div class="kpi-grid">
-<div class="kpi"><div class="kpi-icon" style="background:var(--accent-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><div class="kpi-number">5</div><div class="kpi-label">Media Brands</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--blue-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="kpi-number">20</div><div class="kpi-label">Social Accounts</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--green-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="kpi-number">100+</div><div class="kpi-label">Posts / Day</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--yellow-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="kpi-number">$618</div><div class="kpi-label">Monthly (Verified)</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--cyan-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div><div class="kpi-number">73.4M</div><div class="kpi-label">BD Facebook Users</div></div>
-<div class="kpi"><div class="kpi-icon" style="background:var(--pink-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div><div class="kpi-number">0</div><div class="kpi-label">Staff Required</div></div>
-</div>
-
-<!-- PLATFORMS -->
-<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Target Platforms (Verified User Counts)</h3>
-<div class="platform-logos">
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>Facebook 73.4M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.88 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.99a8.21 8.21 0 004.77 1.51v-3.4a4.85 4.85 0 01-1.01-.41z"/></svg>TikTok 46.5M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="#f00"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><polygon points="9.545 15.568 15.818 12 9.545 8.432" fill="#fff"/></svg>YouTube 44.6M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#igr)"/><circle cx="12" cy="12" r="3.5" stroke="#fff" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/><defs><linearGradient id="igr" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs></svg>Instagram 9.9M</div>
-<div class="platform-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Elite)</div>
+<div class="alert alert-critical">
+<strong>⚡ DO THIS BEFORE READING ANYTHING ELSE</strong>
+Open five browser tabs: Facebook, Instagram, TikTok, YouTube, X. Search every handle listed in Section 1. The moment you find a handle available on all five platforms, register it on all five simultaneously. Do not close any tab. Handles are being taken daily. Spend the next 45 minutes on this. Then come back.
 </div>
 </section>
 
-<!-- STRESS FIXES -->
-<section id="stress-fixes">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>8 Critical Fixes <span class="badge badge-red">Read First</span></h2>
+<!-- ==================== SECTION 1: CHANNELS ==================== -->
+<section id="channels">
+<h2>1. The Five Channels — Final Names</h2>
 
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>#1: WhatsApp is BLOCKED in Bangladesh</strong> Confirmed blocked as of March 2026 (12 countries blocking WhatsApp including BD). <strong>Replace with:</strong> Telegram channels + Facebook Messenger broadcast via ManyChat.</div></div>
+<p>You own The Mandate. That anchors the portfolio. These are the final names — premium, universal, not cringe-localised.</p>
 
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="callout-content"><strong>#2: NapoleonCat is $79/mo, NOT $32/mo</strong> Standard plan verified at $79/mo for 5 profiles. <strong>Dropped entirely.</strong> Replaced with Meta Graph API comment monitoring via n8n (free) + Publer's built-in inbox.</div></div>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#3: Publer Has DAILY POST LIMITS</strong> Professional: 12 FB / 15 IG posts per day per profile. At 100+ posts/day you WILL hit this. <strong>Solution:</strong> Publer for TikTok/YouTube/X + direct Meta Business Suite API via n8n for FB/IG (free, no limits). Publer also waives limits for established news media companies.</div></div>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>#4: Hetzner CX32 DOESN'T EXIST</strong> The product line uses CX23/CX33/CX43. CX33 (4 vCPU, 8GB RAM) goes from €4.99→€6.49/mo ($5.99→$7.99) effective April 1, 2026. All costs updated.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#5: Bannerbear 1,000 Credits Burns in 10 Days</strong> At 100+ images/day, the $49/mo plan is insufficient. <strong>Fixed:</strong> Orshot SaaS at $30/mo for 3,000 renders (verified). Overage at $0.018/render if needed. Bannerbear Scale ($149/mo) only when revenue justifies it.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#6: Facebook BD Users = 73.4M, NOT 72.6M</strong> NapoleonCat Feb 2026 data: 73,426,800 users (62.9% male). DataReportal says 64M via Meta ad tools. Using NapoleonCat figure as more current.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div><div class="callout-content"><strong>#7: Metricool Starter = $22/mo (Annual) or $25/mo (Monthly)</strong> For 5 brands. Confirmed via metricool.com pricing page. Updated from previous $22 claim — both figures are correct depending on billing cycle.</div></div>
-
-<div class="callout callout-success"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="callout-content"><strong>#8: ElevenLabs Bengali = CONFIRMED SUPPORTED</strong> Bengali listed as supported language. Voice cloning available in Bengali. Creator plan $22/mo with 100K characters. Verified via elevenlabs.io.</div></div>
-</section>
-
-<!-- EXEC SUMMARY -->
-<section id="exec-summary">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Executive Summary</h2>
-
-<div class="callout callout-info"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div class="callout-content"><strong>60-Second Pitch</strong> Five distinct media brands across 20 accounts on Facebook (73.4M BD users), Instagram (9.9M), TikTok (46.5M), YouTube (44.6M), and X. AI pipeline scrapes 30+ sources every 5–60 min, scores 0–100 via Claude Sonnet 4.6, auto-generates Bangla + English content, and publishes 100+ posts/day. Cost: ~$618/month verified. First fully AI-automated media operation in Bangladesh. Break-even: Month 8–10.</div></div>
-</section>
-
-<!-- VOL 1 -->
-<section id="vol1"><div class="vol-header"><div class="vol-num">Volume 1</div><h1>Architecture</h1><p class="subtitle">Market, channels, pipeline, tools, revenue — all stress-tested against live data.</p></div></section>
-
-<!-- HONEST -->
-<section id="honest">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Honest Assessment</h2>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="callout-content"><strong>CIB = Instant Death</strong> Running secret "pro/anti/neutral" channels under one entity = Coordinated Inauthentic Behavior. Meta removed 2,000+ CIB networks. <strong>Instead:</strong> Different verticals, same transparent parent. Like Tyger Media runs Nutshell + Cablgram openly.</div></div>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg></div><div class="callout-content"><strong>"Nobody Will Know It's AI"</strong> They will. When discovered, credibility = zero. <strong>Instead:</strong> "We use AI tools in our workflow like every modern newsroom." BBC, Reuters, AP all use AI.</div></div>
-
-<div class="callout callout-success"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="callout-content"><strong>What IS Genuinely Strong</strong> AI-first in a 20–25 person team market. No one in BD does full-pipeline automation. Bangla bite-size is wide open. 73.4M+ social users, median age 26. Neutrality positioning in a hyper-polarized landscape. Self-improving system.</div></div>
-</section>
-
-<!-- MARKET -->
-<section id="market">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Market Landscape <span class="badge badge-green">Verified 30 Mar 2026</span></h2>
-
-<div class="chart-container">
-<div class="chart-title">Bangladesh Platform Users (millions)</div>
-<div class="chart-subtitle">Sources: NapoleonCat Feb 2026, DataReportal, DemandSage — all verified today</div>
-<div class="bar-chart">
-<div class="bar-row"><div class="bar-label">Facebook</div><div class="bar-track"><div class="bar-fill" style="width:93%;background:#1877f2">73.4M</div></div><div class="bar-value">73.4M</div></div>
-<div class="bar-row"><div class="bar-label">TikTok</div><div class="bar-track"><div class="bar-fill" style="width:59%;background:linear-gradient(90deg,#25f4ee,#fe2c55)">46.5M</div></div><div class="bar-value">46.5M</div></div>
-<div class="bar-row"><div class="bar-label">YouTube</div><div class="bar-track"><div class="bar-fill" style="width:56%;background:#f00">44.6M</div></div><div class="bar-value">44.6M</div></div>
-<div class="bar-row"><div class="bar-label">Instagram</div><div class="bar-track"><div class="bar-fill" style="width:13%;background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045)">9.9M</div></div><div class="bar-value" style="color:var(--green)">+20% YoY</div></div>
-</div>
+<div class="card">
+<div class="card-header"><span class="card-title">The Mandate</span> <span class="badge badge-mandate">POLITICS</span></div>
+<p><code>@themandate.bd</code> — Politics · National Affairs · International impact on BD. "Mandate" = authority, duty to inform. Premium, serious, authoritative.</p>
+<p style="color:var(--text2);margin-top:8px">▶ Primary: Facebook → TikTok → YouTube</p>
 </div>
 
-<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>Key Competitors (Verified Today)</h3>
-<div class="table-wrap"><table>
-<thead><tr><th>Competitor</th><th>Followers</th><th>Posts</th><th>Output</th><th>Gap to Exploit</th></tr></thead>
-<tbody>
-<tr><td><strong>Nutshell Today</strong></td><td>322K IG (live)</td><td>14,429</td><td>6–7/day</td><td>English-only, no TikTok, no video</td></tr>
-<tr><td><strong>Cablgram</strong></td><td>~75K IG</td><td>11K+</td><td>6–7/day</td><td>Same team limits, no Bangla</td></tr>
-<tr><td><strong>Prothom Alo</strong></td><td>Massive FB</td><td>High</td><td>Many</td><td>Not bite-size native</td></tr>
-</tbody></table></div>
+<div class="card">
+<div class="card-header"><span class="card-title">The Dhaka Ledger</span> <span class="badge badge-ledger">BUSINESS</span></div>
+<p><code>@thedhakaledger</code> — Business · Banking (30%) · Economy · LinkedIn-first. Banking = highest ad budgets in BD. Targets chairmen, MDs, C-suite.</p>
+<p style="color:var(--text2);margin-top:8px">▶ Primary: LinkedIn → Facebook → Instagram</p>
+</div>
+
+<div class="card">
+<div class="card-header"><span class="card-title">রঙ (Rong)</span> <span class="badge badge-rong">ENTERTAINMENT</span></div>
+<p><code>@rong.bd</code> — Entertainment · Fashion · Celebrity · Culture. "Rong" = colour. Evocative, entertainment-native.</p>
+<p style="color:var(--text2);margin-top:8px">▶ Primary: Instagram → TikTok → Facebook</p>
+</div>
+
+<div class="card">
+<div class="card-header"><span class="card-title">ঢেউ (Dheu)</span> <span class="badge badge-dheu">VIRAL</span></div>
+<p><code>@dheu.bd</code> — Trending · Viral · Shareable. "Dheu" = wave. Implies rapid spread. The pure-reach play.</p>
+<p style="color:var(--text2);margin-top:8px">▶ Primary: Facebook → TikTok</p>
+</div>
+
+<div class="card">
+<div class="card-header"><span class="card-title">জনতার কথা (Jonotar Kotha)</span> <span class="badge badge-jonotar">CITIZEN</span></div>
+<p><code>@jonotarkotha</code> — Citizen politics · Street-level reaction · Polls · Rural impact. Same facts as The Mandate, citizen framing.</p>
+<p style="color:var(--text2);margin-top:8px">▶ Primary: Facebook → TikTok</p>
+</div>
+
+<h3>Handle Priority — Register Every Backup</h3>
+<table>
+<tr><th>Channel</th><th>Priority 1</th><th>Priority 2</th><th>Priority 3</th><th>Rule</th></tr>
+<tr><td>The Mandate</td><td><code>@themandate.bd</code></td><td><code>@themandatebd</code></td><td><code>@themandate_bd</code></td><td rowspan="5" style="font-size:12px;color:var(--yellow)">If taken on ANY one platform → move ALL platforms to next option. Never mix formats across platforms.</td></tr>
+<tr><td>The Dhaka Ledger</td><td><code>@thedhakaledger</code></td><td><code>@dhakaledger</code></td><td><code>@dhaka.ledger</code></td></tr>
+<tr><td>রঙ (Rong)</td><td><code>@rong.bd</code></td><td><code>@rongbd</code></td><td><code>@rong_media</code></td></tr>
+<tr><td>ঢেউ (Dheu)</td><td><code>@dheu.bd</code></td><td><code>@dheubd</code></td><td><code>@dheu_media</code></td></tr>
+<tr><td>জনতার কথা</td><td><code>@jonotarkotha</code></td><td><code>@jonotar.kotha</code></td><td><code>@jonotarkotha_bd</code></td></tr>
+</table>
 </section>
 
-<!-- BRANDS -->
-<section id="brands">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>The Five Brands</h2>
-<div class="brand-grid">
-<div class="brand-card" data-brand="prohor"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="brand-name">প্রহর (Prohor)</div><div class="brand-sub">The Steadfast Observer</div></div></div><p>Calm, precise. Bangla politics + national news. Like a senior Reuters correspondent who is Bangladeshi.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook</span><span class="brand-tag">25–55</span></div></div>
+<!-- ==================== SECTION 2: COST ==================== -->
+<section id="stack">
+<h2>2. The $297/Month Tool Stack</h2>
 
-<div class="brand-card" data-brand="dhaka"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><div><div class="brand-name">The Dhaka Brief</div><div class="brand-sub">The Informed Insider</div></div></div><p>Boardrooms and embassies. English business + world + policy. FT columnist energy.</p><div class="brand-tags"><span class="brand-tag">English</span><span class="brand-tag">Instagram</span><span class="brand-tag">18–35</span></div></div>
-
-<div class="brand-card" data-brand="rong"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#db2777,#be185d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="brand-name">রঙ (Rong)</div><div class="brand-sub">The Culture Pulse</div></div></div><p>Energetic but never cheap. Entertainment + celebrity + pop culture for BD youth.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">TikTok</span><span class="brand-tag">16–30</span></div></div>
-
-<div class="brand-card" data-brand="shoili"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#059669,#047857)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="brand-name">শৈলী (Shoili)</div><div class="brand-sub">The Taste-Maker</div></div></div><p>Elegant, aspirational. Lifestyle + culture. Bangladeshi Monocle energy.</p><div class="brand-tags"><span class="brand-tag">Bangla/English</span><span class="brand-tag">Instagram</span><span class="brand-tag">20–40</span></div></div>
-
-<div class="brand-card" data-brand="dheu"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#ea580c,#c2410c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="brand-name">ঢেউ (Dheu)</div><div class="brand-sub">The Wave</div></div></div><p>Fast, bold, unapologetic. Pure virality. Your sharpest friend who finds things first.</p><div class="brand-tags"><span class="brand-tag">Bangla</span><span class="brand-tag">Facebook</span><span class="brand-tag">All Ages</span></div></div>
-</div>
-</section>
-
-<!-- TOOLS -->
-<section id="tools">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Complete Tool Stack <span class="badge badge-green">Verified 30 Mar 2026</span></h2>
-
-<div class="chart-container">
-<div class="chart-title">Monthly Cost Breakdown — $618/month (Corrected & Verified)</div>
-<div class="chart-subtitle">Equivalent to ~1.5 junior employees in Dhaka. Every price checked against live listings today.</div>
-<div class="donut-row">
-<div class="donut-chart"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" stroke="var(--bg-surface-3)" stroke-dasharray="276" stroke-dashoffset="0"/><circle cx="60" cy="60" r="44" stroke="var(--accent-light)" stroke-dasharray="276" stroke-dashoffset="190"/><circle cx="60" cy="60" r="44" stroke="var(--blue)" stroke-dasharray="276" stroke-dashoffset="222"/><circle cx="60" cy="60" r="44" stroke="var(--green)" stroke-dasharray="276" stroke-dashoffset="242"/><circle cx="60" cy="60" r="44" stroke="var(--yellow)" stroke-dasharray="276" stroke-dashoffset="256"/><circle cx="60" cy="60" r="44" stroke="var(--cyan)" stroke-dasharray="276" stroke-dashoffset="268"/></svg><div class="donut-center"><div class="number">$618</div><div class="label">/month</div></div></div>
-<div class="donut-legend">
-<div class="legend-item"><div class="legend-dot" style="background:var(--accent-light)"></div><div class="legend-text">AI Models</div><div class="legend-value">$157</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div><div class="legend-text">Scraping + Listening</div><div class="legend-value">$107</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div><div class="legend-text">Distribution</div><div class="legend-value">$151</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div><div class="legend-text">Content Tools</div><div class="legend-value">$60</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div><div class="legend-text">Infrastructure</div><div class="legend-value">$43</div></div>
-<div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div><div class="legend-text">Analytics</div><div class="legend-value">$22</div></div>
-</div>
-</div>
+<div class="alert alert-warning">
+<strong>⚠️ PRICES UPDATED APRIL 3, 2026</strong>
+Hetzner raised all prices on April 1, 2026 (up to 37%). The GEX44 GPU server went from €182 → €212/mo. Cloud servers also increased. All figures below reflect the new post-hike pricing. The local AI model has been upgraded from Qwen3-8B to <strong>Qwen 3.5-9B</strong> (released March 2026, 201 language support including Bengali, available on Ollama).
 </div>
 
-<div class="table-wrap"><table>
-<thead><tr><th>Tool</th><th>Cost/mo</th><th>Purpose</th><th>✓</th></tr></thead>
-<tbody>
-<tr style="background:var(--accent-dim-2)"><td colspan="4"><strong style="color:var(--accent-light)">INFRASTRUCTURE — $43/mo</strong></td></tr>
-<tr><td><strong>n8n (self-hosted)</strong></td><td>$0</td><td>Orchestration brain — connects everything</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Hetzner CX33</strong></td><td>$8</td><td>4 vCPU, 8GB RAM (post Apr 1 price: €6.49)</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Supabase Pro</strong></td><td>$25</td><td>Database: content queue, analytics, scoring</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Cloudflare R2</strong></td><td>~$10</td><td>Image/video/asset storage</td><td style="color:var(--green)">✓</td></tr>
-<tr style="background:var(--blue-dim)"><td colspan="4"><strong style="color:var(--blue)">AI MODELS — $157/mo</strong></td></tr>
-<tr><td><strong>Claude Sonnet 4.6 API</strong></td><td>~$80</td><td>$3/$15 per MTok — scoring + writing + Bangla</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>DeepSeek V3 API</strong></td><td>~$25</td><td>$0.14/MTok — bulk volume overflow</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>ElevenLabs Creator</strong></td><td>$22</td><td>Bengali + English voiceover (100K chars)</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>FLUX 1.1 Pro</strong></td><td>~$30</td><td>$0.04/image via Replicate — photorealism</td><td style="color:var(--green)">✓</td></tr>
-<tr style="background:var(--green-dim)"><td colspan="4"><strong style="color:var(--green)">CONTENT + DISTRIBUTION — $211/mo</strong></td></tr>
-<tr><td><strong>Canva Pro</strong></td><td>$15</td><td>Design source templates</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Orshot SaaS</strong></td><td>$30</td><td>3,000 renders/mo — API image generation</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>OpusClip</strong></td><td>$15</td><td>Long → short video clipping</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Publer Business</strong></td><td>~$116</td><td>20 accounts ($21 base + per-account fees)</td><td style="color:var(--yellow)">⚠ Limits</td></tr>
-<tr><td><strong>Meta Business API</strong></td><td>Free</td><td>Direct FB/IG posting via n8n — no limits</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>ManyChat</strong></td><td>$15</td><td>Messenger + IG DM automation</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>CapCut</strong></td><td>Free</td><td>Video captions + transitions</td><td style="color:var(--green)">✓</td></tr>
-<tr style="background:var(--cyan-dim)"><td colspan="4"><strong style="color:var(--cyan)">SCRAPING + ANALYTICS — $129/mo</strong></td></tr>
-<tr><td><strong>Apify Starter</strong></td><td>~$40</td><td>$29 base + compute overage</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Feedly Pro+</strong></td><td>$18</td><td>AI-prioritized RSS aggregation</td><td style="color:var(--green)">✓</td></tr>
-<tr><td><strong>Brand24</strong></td><td>$49</td><td>Social listening (Phase 2 — skip Month 1)</td><td style="color:var(--yellow)">Phase 2</td></tr>
-<tr><td><strong>Metricool Starter</strong></td><td>$22</td><td>5 brands, cross-platform analytics (annual)</td><td style="color:var(--green)">✓</td></tr>
-</tbody></table></div>
+<h3>Phase 1: API-Powered Launch (Month 1–2)</h3>
+<div class="card">
+<div class="cost-row"><span class="tool">Hetzner CX33 Cloud Server</span><span>n8n + cron + scrapers (4 vCPU, 16GB RAM)</span><span class="price">$8/mo</span></div>
+<div class="cost-row"><span class="tool">Supabase Pro</span><span>Database, queue, config, storage</span><span class="price">$25/mo</span></div>
+<div class="cost-row"><span class="tool">DeepSeek V3 API</span><span>Scoring + caption writing (temporary)</span><span class="price">$30/mo</span></div>
+<div class="cost-row"><span class="tool">Claude Sonnet 4 API</span><span>QA gate ONLY — not for writing</span><span class="price">$15/mo</span></div>
+<div class="cost-row"><span class="tool">Apify Starter</span><span>Scrapes all 107 sources — HTML, social</span><span class="price">$29/mo</span></div>
+<div class="cost-row"><span class="tool">Feedly Pro+</span><span>RSS aggregation with AI prioritisation</span><span class="price">$18/mo</span></div>
+<div class="cost-row"><span class="tool">Google Alerts</span><span>Keyword monitoring → RSS → Feedly</span><span class="price">Free</span></div>
+<div class="cost-row"><span class="tool">Bannerbear Automate</span><span>Dynamic image generation from templates</span><span class="price">$49/mo</span></div>
+<div class="cost-row"><span class="tool">Canva Pro</span><span>Build 30 base templates</span><span class="price">$15/mo</span></div>
+<div class="cost-row"><span class="tool">FLUX 1.1 Pro via fal.ai</span><span>AI editorial illustrations when no photo</span><span class="price">$15/mo</span></div>
+<div class="cost-row"><span class="tool">Publer Professional</span><span>TikTok, YouTube, X scheduling</span><span class="price">$12/mo</span></div>
+<div class="cost-row"><span class="tool">Metricool Premium</span><span>Cross-platform analytics</span><span class="price">$22/mo</span></div>
+<div class="cost-row"><span class="tool">Meta Business Suite API</span><span>Direct posting to FB Pages + IG</span><span class="price">Free</span></div>
+<div class="cost-row"><span class="tool">LinkedIn API</span><span>Direct posting for Dhaka Ledger</span><span class="price">Free</span></div>
+<div class="cost-row"><span class="tool">ScreenshotOne</span><span>Auto-screenshots of viral tweets/posts</span><span class="price">$9/mo</span></div>
+<div class="cost-row"><span class="tool">X API</span><span>Consumption-based posting + reading</span><span class="price">~$10/mo</span></div>
+<div class="cost-row"><span class="tool">Telegram Bot</span><span>Approval gateway</span><span class="price">Free</span></div>
+<div class="cost-row"><span class="tool">Domain + Email</span><span>Cloudflare Registrar + Zoho Mail</span><span class="price">$3/mo</span></div>
+<div class="cost-total"><span>PHASE 1 TOTAL</span><span class="price">~$260/mo ≈ 31,200 BDT</span></div>
+</div>
 
-<div class="callout callout-info"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/></svg></div><div class="callout-content"><strong>Phase 1 Launch Budget: ~$569/mo</strong> — Skip Brand24 ($49) until Month 3. Use free Google Alerts + manual competitor checks. That's ~68,000 BDT/month.</div></div>
-</section>
-
-<!-- REVENUE -->
-<section id="revenue">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Revenue Model</h2>
-
-<div class="versus">
-<div class="versus-side"><h4 style="color:var(--green)">Your AI Operation</h4><div class="versus-stat"><div class="num" style="color:var(--green)">~$618</div><div class="lbl">Monthly Cost (verified)</div></div><div class="versus-stat"><div class="num">100–150</div><div class="lbl">Posts Per Day</div></div><div class="versus-stat"><div class="num">5+</div><div class="lbl">Platforms</div></div></div>
-<div class="versus-divider">VS</div>
-<div class="versus-side"><h4 style="color:var(--red)">Tyger Media</h4><div class="versus-stat"><div class="num" style="color:var(--red)">$5,200–$10,400</div><div class="lbl">Monthly (20–25 staff)</div></div><div class="versus-stat"><div class="num">12–14</div><div class="lbl">Posts Per Day</div></div><div class="versus-stat"><div class="num">2–3</div><div class="lbl">Platforms</div></div></div>
+<h3>Phase 2: Local AI (Month 3+) — The Target State</h3>
+<div class="card">
+<div class="cost-row"><span class="tool">Hetzner GEX44 GPU Server</span><span>n8n + Ollama + Qwen 3.5-9B (RTX 4000, 20GB VRAM, 64GB RAM)</span><span class="price">$252/mo</span></div>
+<div class="cost-row"><span class="tool">DeepSeek V3 API</span><span>ELIMINATED — replaced by Qwen 3.5 local</span><span class="price" style="color:var(--red);text-decoration:line-through">$0</span></div>
+<div class="cost-row"><span class="tool">Claude Sonnet 4 API</span><span>QA gate only (~30 calls/day)</span><span class="price">$15/mo</span></div>
+<div class="cost-row"><span class="tool">Everything else</span><span>Same as Phase 1</span><span class="price">$172/mo</span></div>
+<div class="cost-total"><span>PHASE 2 TOTAL</span><span class="price" style="font-size:22px">~$297/mo ≈ 35,600 BDT</span></div>
+<p style="color:var(--text2);font-size:13px;margin-top:8px">Less than 1 junior employee at a Dhaka media company — with <strong>unlimited</strong> local AI inference, no rate limits, no dependency on external AI providers.</p>
 </div>
 </section>
 
-<!-- VOL 2 -->
-<section id="vol2"><div class="vol-header"><div class="vol-num">Volume 2</div><h1>Deep Operations</h1><p class="subtitle">Scoring engine, hook framework, platform algorithms, self-improving model.</p></div></section>
+<!-- ==================== SECTION 3: HARDWARE ==================== -->
+<section id="hardware">
+<h2>3. Server + Local AI Model Setup</h2>
 
-<!-- SCORING -->
-<section id="scoring">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>AI Scoring Engine</h2>
+<h3>The Model: Qwen 3.5-9B (Released March 2026)</h3>
 
-<div class="chart-container">
-<div class="chart-title">Scoring Weights (0–100 composite)</div>
-<div class="chart-subtitle">Every scraped item scored by Claude Sonnet 4.6 across 7 dimensions</div>
-<div class="bar-chart">
-<div class="bar-row"><div class="bar-label">Emotion</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--red)">25%</div></div><div class="bar-value">25%</div></div>
-<div class="bar-row"><div class="bar-label">Relevance</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--blue)">20%</div></div><div class="bar-value">20%</div></div>
-<div class="bar-row"><div class="bar-label">Timeliness</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--yellow)">15%</div></div><div class="bar-value">15%</div></div>
-<div class="bar-row"><div class="bar-label">Shareability</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--green)">15%</div></div><div class="bar-value">15%</div></div>
-<div class="bar-row"><div class="bar-label">Visual</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--cyan)">10%</div></div><div class="bar-value">10%</div></div>
-<div class="bar-row"><div class="bar-label">Uniqueness</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--accent-light)">10%</div></div><div class="bar-value">10%</div></div>
-<div class="bar-row"><div class="bar-label">Brand Safety</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:var(--pink)">5%</div></div><div class="bar-value">5%</div></div>
+<div class="alert alert-success">
+<strong>✅ UPGRADE FROM PREVIOUS PLAYBOOKS</strong>
+Qwen 3.5 dropped in late February 2026 and is a strict upgrade over Qwen3-8B. It supports <strong>201 languages and dialects</strong> (including Bengali/Bangla), has native multimodal capabilities, dual-mode thinking/non-thinking, and 256K context window. On Ollama: <code>ollama pull qwen3.5:9b</code> — approximately 5.8 GB download. At Q4 quantization it needs only ~6.5GB VRAM, fitting easily on the GEX44's 20GB RTX 4000.
 </div>
-</div>
-<p><strong>Thresholds:</strong> 80+ = auto-post. 60–79 = generate + queue. 40–59 = draft for review. Below 40 = discard. Legal risk = AUTO-REJECT.</p>
-</section>
 
-<!-- HOOKS -->
-<section id="hooks">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Hook → Subversion → Payoff</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>Topic</th><th>Hook (0–2s)</th><th>Subversion</th><th>Payoff</th></tr></thead>
-<tbody>
-<tr><td><strong>Political</strong></td><td>"He arrived in a 3 crore taka car"</td><td>"To a school without electricity for 6 months"</td><td>Facts only. Let image speak.</td></tr>
-<tr><td><strong>Entertainment</strong></td><td>"Rejected from 47 auditions"</td><td>"Before becoming 2025's top star"</td><td>Her quote about persistence.</td></tr>
-<tr><td><strong>Lifestyle</strong></td><td>"This meal costs 15,000 taka"</td><td>"A street vendor makes the same dish"</td><td>"For 60 taka. Which one?"</td></tr>
-<tr><td><strong>Business</strong></td><td>"Company fired 500 workers"</td><td>"CEO's salary up 40% same month"</td><td>Both numbers. No commentary.</td></tr>
-</tbody></table></div>
-</section>
+<p>On the Hetzner GEX44 (RTX 4000 SFF Ada, 20GB GDDR6 ECC), Qwen 3.5-9B runs at approximately <strong>35–55 tokens/second</strong> with full GPU offloading. A complete caption generates in <strong>3–6 seconds</strong>. At 5 channels × 12 posts/day × ~4 AI calls per post (score + caption + QA + backup) = ~240 inference calls/day. Total active GPU time: roughly <strong>20–35 minutes per day</strong>. The remaining 23+ hours of GPU time is available for the optimizer, A/B testing, and the prompt stress-test engine.</p>
 
-<!-- ALGOS -->
-<section id="algos">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>Platform Algorithms (2026)</h2>
-<div class="tab-container">
-<div class="tab-buttons">
-<button class="tab-btn active" onclick="switchTab(event,'pf')">Facebook 73.4M</button>
-<button class="tab-btn" onclick="switchTab(event,'pi')">Instagram 9.9M</button>
-<button class="tab-btn" onclick="switchTab(event,'pt')">TikTok 46.5M</button>
-<button class="tab-btn" onclick="switchTab(event,'py')">YouTube 44.6M</button>
-<button class="tab-btn" onclick="switchTab(event,'px')">X / Twitter</button>
-</div>
-<div id="pf" class="tab-panel active"><p><strong>LARGEST BD AUDIENCE.</strong> Priority: Meaningful interactions > comments > shares. NEVER use link posts — image + link in comments. Go Live for breaking news (massive boost). Respond to EVERY comment in first hour. Optimal caption: 100–250 words. Post images with long captions, not links.</p></div>
-<div id="pi" class="tab-panel"><p><strong>GROWTH PLATFORM (+20% YoY).</strong> Reels > Carousels > Single images. Carousels: 1.4× more reach. Max 3–5 hashtags (keyword weight increased). Stories 8–10× per day with polls. Caption keywords are searchable (Instagram SEO). Post 3–5 feed posts per day.</p></div>
-<div id="pt" class="tab-panel"><p><strong>VIRAL ENGINE.</strong> Completion rate > shares > comments > likes. Sweet spot: 15–45 sec news, 30–90 entertainment. First 1 second MUST have movement. Text-on-screen critical — most BD users watch muted. Never identical content to IG. Post 3–8 times/day.</p></div>
-<div id="py" class="tab-panel"><p><strong>MONETIZATION PLATFORM.</strong> Shorts: 1K subs + 10M views in 90 days. Remove ALL watermarks. Shorts algo favors new channels. Cross-post TikTok content (clean, no watermark). End screen: "Subscribe for daily BD news in 30 seconds."</p></div>
-<div id="px" class="tab-panel"><p><strong>ELITE INFLUENCE.</strong> Journalists, politicians, diplomats. Thread format for explainers. 10–15 tweets/day. Quote-tweet viral BD tweets with analysis. "Pressure group" influence among policy circles.</p></div>
+<h3>The Hardware</h3>
+<table>
+<tr><th>Option</th><th>Spec</th><th>Cost (post April 1, 2026)</th><th>Use Case</th></tr>
+<tr><td><strong>GEX44 (recommended)</strong></td><td>i5-13500, 64GB DDR4, RTX 4000 20GB, 2×1.92TB NVMe</td><td>€212.30/mo (~$252)</td><td>Production: n8n + Ollama + Postgres</td></tr>
+<tr><td>CX33 (Phase 1 dev)</td><td>2 vCPU, 8GB RAM, 80GB SSD</td><td>€6.49/mo (~$8)</td><td>n8n only — API-based AI (no local model)</td></tr>
+<tr><td>CX53 (CPU fallback)</td><td>4 vCPU, 16GB RAM, 160GB SSD</td><td>€22.49/mo (~$26)</td><td>Qwen 3.5-9B on CPU — slow (~2–4 tok/s) but works</td></tr>
+<tr><td>Personal GPU</td><td>RTX 3060 12GB+ desktop</td><td>Free (needs 24/7 uptime)</td><td>Testing only — expose via Tailscale</td></tr>
+</table>
+
+<div class="alert alert-info">
+<strong>💡 MIGRATION PATH</strong>
+Start with CX33 ($8/mo) for Days 1–14 while building workflows with DeepSeek API. Order GEX44 on Day 15 when you start scaling. Migration = Docker export from CX33, Docker import on GEX44 + pull Qwen 3.5 model. Total downtime: ~30 minutes.
 </div>
 </section>
 
-<!-- SELF LEARN -->
-<section id="selflearn">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/></svg>Self-Improving Model</h2>
-<p>Every Monday 6 AM BST: n8n + Claude API analyzes top/bottom 10 posts, finds patterns, outputs adjustment JSON applied to Supabase scoring weights automatically.</p>
-<div class="code-block" data-label="Weekly Output JSON">{
-  "scoring_weight_adjustments": {"emotion": +0.02, "timeliness": -0.01},
-  "topic_boosts": {"cricket": +10, "celebrity_gossip": -5},
-  "format_recommendations": {"carousel": "increase_to_40%"},
-  "posting_time_adjustments": {"instagram_evening": "20:45"},
-  "competitor_gaps": ["Topic X trending, no competitor covered"]
-}</div>
+<!-- ==================== SECTION 4: DOCKER ==================== -->
+<section id="docker">
+<h2>4. Docker Compose — Copy-Paste Exactly</h2>
+
+<h3>Phase 1: CX33 Cloud Server (No GPU)</h3>
+<pre><code># Save as ~/n8n/docker-compose.yml on your CX33 server
+version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://${N8N_HOST}/
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - GENERIC_TIMEZONE=Asia/Dhaka
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+      - N8N_METRICS=true
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - shared_data:/data/shared
+
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  n8n_data:
+  shared_data:
+  caddy_data:
+  caddy_config:</code></pre>
+
+<h3>Phase 2: GEX44 GPU Server (Production)</h3>
+<pre><code># Save as ~/media-engine/docker-compose.yml on your GEX44 server
+version: "3.8"
+
+x-shared: &amp;shared
+  restart: unless-stopped
+  networks:
+    - media-engine
+
+services:
+  n8n:
+    &lt;&lt;: *shared
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://${N8N_HOST}/
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+      - N8N_METRICS=true
+      - GENERIC_TIMEZONE=Asia/Dhaka
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - shared_data:/data/shared
+    depends_on:
+      - postgres
+      - ollama
+
+  ollama:
+    &lt;&lt;: *shared
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  postgres:
+    &lt;&lt;: *shared
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=n8n
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  caddy:
+    &lt;&lt;: *shared
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  n8n_data:
+  ollama_data:
+  postgres_data:
+  shared_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  media-engine:
+    driver: bridge</code></pre>
+
+<pre><code># Caddyfile (same for both phases)
+{$N8N_HOST} {
+    reverse_proxy n8n:5678
+}</code></pre>
+
+<pre><code># .env file (fill in your values)
+N8N_HOST=n8n.yourdomain.com
+N8N_USER=admin
+N8N_PASSWORD=CHANGE_THIS_STRONG_PASSWORD
+N8N_ENCRYPTION_KEY=CHANGE_THIS_32_RANDOM_CHARACTERS
+POSTGRES_USER=mediadb
+POSTGRES_PASSWORD=CHANGE_THIS_DB_PASSWORD</code></pre>
+
+<h3>After Docker is running — pull the AI model:</h3>
+<pre><code># SSH into your server, then:
+docker exec -it media-engine-ollama-1 ollama pull qwen3.5:9b
+
+# Test it:
+docker exec -it media-engine-ollama-1 ollama run qwen3.5:9b \
+  "Write a 2-sentence Bangla news headline about Bangladesh Bank raising interest rates"
+
+# If the Bangla output looks natural, you're ready.
+# In n8n, create Ollama credential:
+#   Base URL: http://ollama:11434
+#   (Docker internal networking — no API key needed)</code></pre>
 </section>
 
-<!-- VOL 3 -->
-<section id="vol3"><div class="vol-header"><div class="vol-num">Volume 3</div><h1>Stress Test</h1><p class="subtitle">Every pricing correction, every tool swap, verified against live data.</p></div></section>
+<!-- ==================== SECTION 5: SUPABASE ==================== -->
+<section id="supabase">
+<h2>5. Supabase Database Schema — Copy-Paste into SQL Editor</h2>
 
-<!-- PRICING FIXES -->
-<section id="pricing-fixes">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing Corrections Table</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>Tool</th><th style="color:var(--red)">Original</th><th style="color:var(--green)">Verified</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><strong>NapoleonCat</strong></td><td style="color:var(--red);text-decoration:line-through">$32/mo</td><td><strong>$79/mo</strong></td><td style="color:var(--green)">DROPPED — Meta API + n8n</td></tr>
-<tr><td><strong>Hetzner "CX32"</strong></td><td style="color:var(--red);text-decoration:line-through">$17/mo</td><td><strong>CX33 $7.99/mo</strong></td><td style="color:var(--green)">Correct model, cheaper</td></tr>
-<tr><td><strong>Bannerbear</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo</td><td><strong>Burns in 10 days</strong></td><td style="color:var(--green)">Orshot $30/mo (3K renders)</td></tr>
-<tr><td><strong>Publer</strong></td><td style="color:var(--red);text-decoration:line-through">$12/mo</td><td><strong>~$116 for 20 accts</strong></td><td style="color:var(--green)">Business plan + Meta API</td></tr>
-<tr><td><strong>Apify</strong></td><td style="color:var(--red);text-decoration:line-through">$49/mo</td><td><strong>$29 base + overage</strong></td><td style="color:var(--green)">Budget $40/mo realistic</td></tr>
-<tr><td><strong>Metricool</strong></td><td>$22/mo</td><td><strong>$22 annual / $25 monthly</strong></td><td style="color:var(--green)">Confirmed ✓</td></tr>
-<tr><td><strong>ElevenLabs</strong></td><td>$22/mo</td><td><strong>$22/mo Creator</strong></td><td style="color:var(--green)">Bengali confirmed ✓</td></tr>
-<tr><td><strong>Claude Sonnet 4.6</strong></td><td>~$100/mo</td><td><strong>$3/$15 MTok</strong></td><td style="color:var(--green)">~$80/mo at volume ✓</td></tr>
-</tbody></table></div>
+<p>Go to <a href="https://supabase.com">supabase.com</a> → Sign Up → New Project → Name: <code>bd-media</code> → Region: Singapore → Create. When loaded, click <strong>SQL Editor</strong> → New Query → paste entire block → click <strong>Run</strong>.</p>
+
+<pre><code>-- ============================================
+-- BD MEDIA HQ — COMPLETE DATABASE SCHEMA
+-- Run this ONCE in Supabase SQL Editor
+-- ============================================
+
+-- 1. SOURCE REGISTRY
+CREATE TABLE sources (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  url TEXT NOT NULL,
+  feed_type TEXT NOT NULL,          -- 'rss', 'apify', 'google_alerts'
+  language TEXT DEFAULT 'bn',        -- 'bn', 'en'
+  tier INT NOT NULL DEFAULT 2,       -- 1=official, 2=major, 3=secondary
+  category TEXT,                     -- 'politics','business','entertainment'
+  is_active BOOLEAN DEFAULT true,
+  last_scraped_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- 2. RAW SCRAPED ITEMS
+CREATE TABLE raw_items (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  source_id UUID REFERENCES sources(id),
+  source_url TEXT NOT NULL,
+  url_hash TEXT UNIQUE NOT NULL,     -- SHA-256 for dedup
+  title TEXT,
+  body TEXT,
+  image_url TEXT,
+  published_at TIMESTAMPTZ,
+  scraped_at TIMESTAMPTZ DEFAULT now(),
+  language TEXT DEFAULT 'bn',
+  processed BOOLEAN DEFAULT false
+);
+CREATE INDEX idx_raw_hash ON raw_items(url_hash);
+CREATE INDEX idx_raw_processed ON raw_items(processed);
+
+-- 3. CONTENT QUEUE (scored items)
+CREATE TABLE content_queue (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  raw_item_id UUID REFERENCES raw_items(id),
+  title TEXT NOT NULL,
+  body TEXT,
+  source_url TEXT NOT NULL,
+  source_name TEXT,
+  image_url TEXT,
+  score INTEGER DEFAULT 0,
+  score_emotion INTEGER,
+  score_relevance INTEGER,
+  score_timeliness INTEGER,
+  score_shareability INTEGER,
+  score_visual INTEGER,
+  score_uniqueness INTEGER,
+  score_safety INTEGER,
+  channels TEXT[],                   -- ['the_mandate','dheu']
+  language TEXT,
+  format TEXT,                       -- 'news_card','quote_card', etc.
+  urgency TEXT,                      -- 'immediate','next_slot','scheduled'
+  hook_bangla TEXT,
+  hook_english TEXT,
+  deeper_layer TEXT,
+  emotional_trigger TEXT,
+  status TEXT DEFAULT 'pending',     -- pending,writing,designed,qa_pass,
+                                     -- qa_fail,awaiting_approval,approved,
+                                     -- published,rejected,error
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE INDEX idx_queue_status ON content_queue(status);
+CREATE INDEX idx_queue_score ON content_queue(score DESC);
+
+-- 4. GENERATED CONTENT (per channel × platform)
+CREATE TABLE generated_content (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  queue_id UUID REFERENCES content_queue(id),
+  channel TEXT NOT NULL,
+  platform TEXT NOT NULL,            -- 'facebook','instagram','tiktok','youtube','x','linkedin'
+  headline TEXT,
+  caption TEXT,
+  hashtags TEXT[],
+  cta TEXT,
+  image_url TEXT,
+  template_id TEXT,
+  bannerbear_uid TEXT,
+  qa_verdict TEXT,                   -- 'pass','fail','rewrite'
+  qa_notes TEXT,
+  rewrite_count INT DEFAULT 0,
+  approved_by TEXT,                  -- 'auto' or 'human:telegram_user'
+  approved_at TIMESTAMPTZ,
+  published_at TIMESTAMPTZ,
+  platform_post_id TEXT,
+  status TEXT DEFAULT 'draft',
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE INDEX idx_content_status ON generated_content(channel, status);
+
+-- 5. PUBLISHED (engagement tracking)
+CREATE TABLE published (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  content_id UUID REFERENCES generated_content(id),
+  channel TEXT,
+  platform TEXT,
+  post_id TEXT,
+  published_at TIMESTAMPTZ DEFAULT now(),
+  likes INT DEFAULT 0,
+  comments INT DEFAULT 0,
+  shares INT DEFAULT 0,
+  saves INT DEFAULT 0,
+  reach INT DEFAULT 0,
+  impressions INT DEFAULT 0,
+  engagement_rate FLOAT DEFAULT 0,
+  fetched_at TIMESTAMPTZ
+);
+
+-- 6. SCORING CONFIG (adjustable weights)
+CREATE TABLE scoring_config (
+  id SERIAL PRIMARY KEY,
+  criterion TEXT UNIQUE,
+  weight FLOAT,
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+INSERT INTO scoring_config (criterion, weight) VALUES
+  ('emotion', 0.25),
+  ('relevance', 0.20),
+  ('timeliness', 0.15),
+  ('shareability', 0.15),
+  ('visual', 0.10),
+  ('uniqueness', 0.10),
+  ('safety', 0.05);
+
+-- 7. PROMPT VERSIONS (A/B testing)
+CREATE TABLE prompt_versions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  prompt_name TEXT NOT NULL,
+  prompt_type TEXT NOT NULL,         -- 'scorer','caption','qa','optimizer'
+  channel TEXT,
+  system_prompt TEXT NOT NULL,
+  user_prompt_template TEXT NOT NULL,
+  is_active BOOLEAN DEFAULT false,
+  win_rate FLOAT DEFAULT 0,
+  total_tests INT DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- 8. PUBLISH SCHEDULE
+CREATE TABLE publish_schedule (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  channel TEXT NOT NULL,
+  platform TEXT NOT NULL,
+  day_of_week INT,                   -- 0=Mon, 6=Sun; NULL=every day
+  post_time TIME NOT NULL,
+  is_active BOOLEAN DEFAULT true
+);
+
+-- 9. ERROR LOG
+CREATE TABLE pipeline_errors (
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  workflow TEXT,
+  node_name TEXT,
+  error_message TEXT,
+  severity TEXT NOT NULL,            -- 'CRITICAL','WARNING','INFO'
+  payload JSONB,
+  resolved BOOLEAN DEFAULT false
+);
+
+-- 10. OPTIMIZATION LOG
+CREATE TABLE optimization_logs (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  cycle_date TIMESTAMPTZ DEFAULT now(),
+  channel TEXT,
+  posts_analyzed INT,
+  avg_engagement FLOAT,
+  top_hook_type TEXT,
+  top_posting_time TEXT,
+  weight_changes JSONB,
+  recommendations TEXT,
+  applied BOOLEAN DEFAULT false
+);</code></pre>
 </section>
 
-<!-- KILL RISKS -->
-<section id="kill-risks">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>8 Kill Risks</h2>
+<!-- ==================== SECTION 6: PIPELINE ==================== -->
+<section id="pipeline">
+<h2>6. The 10-Stage Pipeline</h2>
 
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="callout-content"><strong>#1: Bad AI Comment Goes Viral</strong> One tone-deaf reply screenshotted 50K times = finished. Phase 1: NO auto-replies. AI drafts, you review top 20/day. NEVER auto-reply political/religious.</div></div>
+<div class="pipeline">
+<div class="pipeline-step"><span class="num">1</span><span class="label">Scrape</span></div>
+<div class="pipeline-step"><span class="num">2</span><span class="label">Dedup</span></div>
+<div class="pipeline-step"><span class="num">3</span><span class="label">Score</span></div>
+<div class="pipeline-step"><span class="num">4</span><span class="label">Route</span></div>
+<div class="pipeline-step"><span class="num">5</span><span class="label">Write</span></div>
+<div class="pipeline-step"><span class="num">6</span><span class="label">Image</span></div>
+<div class="pipeline-step"><span class="num">7</span><span class="label">QA</span></div>
+<div class="pipeline-step"><span class="num">8</span><span class="label">Approve</span></div>
+<div class="pipeline-step"><span class="num">9</span><span class="label">Publish</span></div>
+<div class="pipeline-step"><span class="num">10</span><span class="label">Learn</span></div>
+</div>
 
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>#2: Publishing False Information</strong> One wrong fact Day 5 = nobody trusts Day 50. Tier 1 sources: 5 min. Social claims: NEVER as fact. Reverse image search EVERY news image.</div></div>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="callout-content"><strong>#3: Platform Suspension</strong> Official APIs only. Never Jarvee or unofficial tools. Remove ALL watermarks from cross-posted YT content. Stagger posting times across channels.</div></div>
-
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/></svg></div><div class="callout-content"><strong>#4: CIB Detection — All Banned Together</strong> Different posting times per brand. Different ad accounts. Different visual templates. Never share payment methods across Meta accounts.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-3"/></svg></div><div class="callout-content"><strong>#5: Bangla Sounds Like AI</strong> Generate 50 samples, show 5 BD friends WITHOUT saying it's AI. If 1+ spots it, rewrite prompts. $0 test prevents $50K mistake.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg></div><div class="callout-content"><strong>#6: Burnout Month 2</strong> Minimum: ~45 min/day Months 1–3, dropping to ~20 min/day Month 6+. Not optional.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/></svg></div><div class="callout-content"><strong>#7: Publer Daily Limits Silently Cap Output</strong> Pro: 12 FB/15 IG per day per profile. Use Meta Business Suite API (free, no limits) for FB/IG. Publer for TikTok/YT/X only.</div></div>
-
-<div class="callout callout-warning"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12.01" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg></div><div class="callout-content"><strong>#8: Orshot 3,000 Renders Exhausted Mid-Month</strong> At 100+ images/day × 30 days = 3,000+. Enable pay-as-you-go overage at $0.018/render. Budget extra ~$18/mo. Or use FLUX Kontext Dev at $0.015/image for lower-priority visuals.</div></div>
+<div class="flow">[107 SOURCES] → [APIFY + FEEDLY RSS + GOOGLE ALERTS]
+         ↓
+[n8n CODE NODE: SHA-256 hash each URL → check Supabase → skip duplicates]
+         ↓
+[QWEN 3.5-9B (local) or DEEPSEEK V3 (API): Score 0–100 on 7 criteria]
+         ↓
+[IF score &lt; 60 → DISCARD]
+[IF score 60–79 → QUEUE for next slot]
+[IF score 80+ → FAST TRACK within 5 minutes]
+         ↓
+[CHANNEL ROUTER: assign to 1–5 brands + pick format + template]
+         ↓
+[QWEN 3.5-9B: write headline + caption + CTA + hashtags per channel]
+         ↓
+[BANNERBEAR API: template + og:image + headline + source → rendered card]
+         ↓
+[QWEN 3.5-9B local QA: factual? neutral? natural Bangla? no filler?]
+[HIGH-STAKES items → CLAUDE SONNET 4 API: second opinion]
+         ↓
+[QA FAIL → REWRITE (max 2 attempts) → then DISCARD]
+[QA PASS + score 80+ → AUTO-PUBLISH]
+[QA PASS + score 60-79 → TELEGRAM: /approve or /reject]
+         ↓
+[META GRAPH API → Facebook + Instagram (direct, free)]
+[PUBLER API → TikTok + YouTube + X]
+[LINKEDIN API → Dhaka Ledger only]
+         ↓
+[AUTO-LIKE all comments within 1 hour]
+[SCAN DMs for sponsor keywords → forward to Telegram]
+         ↓
+[METRICOOL: pull engagement after 24h and 7d → Supabase]
+         ↓
+[EVERY 3 DAYS 5AM: optimizer → adjust weights → Telegram report]</div>
 </section>
 
-<!-- VOL 4 -->
-<section id="vol4"><div class="vol-header"><div class="vol-num">Volume 4</div><h1>Execution Audit</h1><p class="subtitle">Handle strategy, first 30 days, content tone, system architecture.</p></div></section>
+<!-- ==================== SECTION 7: PROMPTS ==================== -->
+<section id="prompts">
+<h2>7. Exact AI Prompts — Copy Into n8n Nodes</h2>
 
-<!-- HANDLES -->
-<section id="handles">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>Handle Strategy — DO THIS TODAY</h2>
-<div class="callout callout-danger"><div class="callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div class="callout-content"><strong>Register ALL handles in one session. Every day you wait, a handle gets taken.</strong> Same format across ALL platforms. If Priority 1 taken anywhere, use Priority 2 everywhere.</div></div>
-<div class="table-wrap"><table>
-<thead><tr><th>Channel</th><th>Priority 1</th><th>Priority 2</th><th>Priority 3</th></tr></thead>
-<tbody>
-<tr><td style="color:var(--prohor)"><strong>Prohor</strong></td><td>@prohor.bd</td><td>@prohorbd</td><td>@prohor_bd</td></tr>
-<tr><td style="color:var(--dhaka)"><strong>Dhaka Brief</strong></td><td>@thedhakabrief</td><td>@dhakabrief</td><td>@dhaka.brief</td></tr>
-<tr><td style="color:var(--rong)"><strong>Rong</strong></td><td>@rong.bd</td><td>@rongbd</td><td>@rong_bd</td></tr>
-<tr><td style="color:var(--shoili)"><strong>Shoili</strong></td><td>@shoili.bd</td><td>@shoilibd</td><td>@shoili_bd</td></tr>
-<tr><td style="color:var(--dheu)"><strong>Dheu</strong></td><td>@dheu.bd</td><td>@dheubd</td><td>@dheu_bd</td></tr>
-</tbody></table></div>
+<h3 id="prompt-scorer">Prompt 1: Scoring Agent</h3>
+<pre><code>SYSTEM:
+You are the editorial intelligence engine for a Bangladeshi bite-size media conglomerate.
+Score each news item 0-100 and return ONLY a valid JSON object. No other text.
+
+SCORING CRITERIA (weighted):
+1. EMOTIONAL TRIGGER (weight 0.25): Outrage > National Pride > Sympathy > Humor > Fear > Aspiration. Score 90+ if triggers outrage + national pride simultaneously.
+2. BD RELEVANCE (weight 0.20): Directly affects BD citizens = 90-100. BD figures/institutions = 70-89. Subcontinent = 50-69. International diaspora = 40-49. No BD link = 0-19.
+3. TIMELINESS (weight 0.15): Breaking (now) = 95-100. Last 2 hours = 80-94. Today = 60-79. This week = 30-59. Evergreen = 20-40. Old = 0-19.
+4. SHAREABILITY (weight 0.15): Would someone share to look informed (+30)? Express opinion (+25)? Make others laugh (+20)? Alert others (+15)?
+5. VISUAL POTENTIAL (weight 0.10): Strong photo exists = 80-100. Good infographic possible = 60-79. Text-only works = 40-59. No visual angle = 0-39.
+6. UNIQUENESS (weight 0.10): Nobody covered in bite-size = 90-100. Covered poorly = 60-89. Everyone has it = 0-39.
+7. BRAND SAFETY (weight 0.05): Fully neutral possible = 90-100. Needs careful framing = 60-89. Impossible to cover neutrally = 0-29. Legal risk = AUTO-REJECT.
+
+CHANNEL OPTIONS: the_mandate, dhaka_ledger, rong, dheu, jonotar_kotha
+LANGUAGE OPTIONS: bangla, english, both
+FORMAT OPTIONS: news_card, quote_card, data_card, screenshot_card, carousel, breaking_news_card
+URGENCY OPTIONS: immediate, next_slot, scheduled, evergreen
+
+Return ONLY this JSON — no markdown, no explanation:
+{
+  "score": 87,
+  "channels": ["the_mandate", "dheu"],
+  "language": "bangla",
+  "format": "news_card",
+  "urgency": "immediate",
+  "hook_bangla": "One sentence in natural Bangla that stops scrolling",
+  "hook_english": "English equivalent hook",
+  "deeper_layer": "What this REALLY says beneath the surface",
+  "emotional_trigger": "national_pride",
+  "reject_reason": null
+}
+
+USER:
+Title: {{$json.title}}
+Body: {{$json.body}}
+Source: {{$json.source_name}}
+Published: {{$json.published_at}}</code></pre>
+
+<h3 id="prompt-writer">Prompt 2: Caption Writer</h3>
+<pre><code>SYSTEM:
+You write social media captions for a Bangladeshi bite-size media brand. Return ONLY valid JSON.
+
+ABSOLUTE RULES — VIOLATION = INSTANT REJECT:
+- Use চলিত ভাষা (natural colloquial Bangla). NEVER literary/academic Bangla.
+- Write like an educated 28-year-old Dhaka professional texting a colleague.
+- Mix English naturally: policy, rate, GDP, update, trending — these are how Bangladeshis actually write.
+- ZERO filler words. Every word earns its place.
+- ZERO exclamation marks on news channels. Max 1 on entertainment.
+- ZERO emoji on The Mandate and Dhaka Ledger. Max 1 on Rong/Jonotar. Max 2 on Dheu.
+- Max 15 words per sentence. Vary length — mix 5-word and 15-word sentences.
+- Headline: max 10 words. Hook immediately.
+- Caption structure: Line 1 = hook → empty line → 2-3 sentences info → empty line → source OR question → hashtags.
+- Source credit always at end. NEVER say "Breaking" unless it happened in the last 30 minutes.
+- NEVER editorialize. Present facts. Ask questions. Never lecture.
+- The ending question must be genuine and non-leading.
+
+BANNED: "উল্লেখ্য যে", "বলা বাহুল্য", "জানা গেছে" without source, "ভাইরাল" in headlines, "শকিং", "বিশ্বাস করবেন না"
+
+Return ONLY this JSON:
+{
+  "headline_bangla": "10-word max Bangla headline",
+  "headline_english": "English version",
+  "caption_bangla": "Full formatted caption with \\n for line breaks",
+  "caption_english": "English version",
+  "hashtags": ["#channel_name", "#topic"],
+  "cta_question": "The question at the end"
+}
+
+USER:
+Article: {{$json.title}} — {{$json.body}}
+Channel: {{$json.channels[0]}}
+Emotional trigger: {{$json.emotional_trigger}}
+Deeper layer: {{$json.deeper_layer}}
+Hook: {{$json.hook_bangla}}</code></pre>
+
+<h3 id="prompt-qa">Prompt 3: QA Gate</h3>
+<pre><code>SYSTEM:
+You are a quality control editor for a Bangladeshi media brand that values truth, neutrality, and class above all.
+Review the headline and caption. Return ONLY valid JSON.
+
+CHECK IN ORDER:
+1. FACTUAL: Any verifiable claim that seems false or unverifiable? Is source credible?
+2. NEUTRAL: Takes any political side? Editorial opinion disguised as fact? Leading question?
+3. BANGLA QUALITY: Sounds natural? Would a 25-year-old Dhaka professional find it cringe or artificial? Uses literary instead of colloquial Bangla?
+4. CLASS: Exclamation marks? Emoji on news content? "BREAKING" for old news? Clickbait? Filler?
+5. DEEPER LAYER: Genuine question or reflection at end? Serves more than surface consumption?
+
+Return ONLY:
+{
+  "verdict": "PASS",
+  "confidence": 92,
+  "issues": [],
+  "rewrite_instructions": null
+}
+OR:
+{
+  "verdict": "FAIL",
+  "confidence": 45,
+  "issues": ["Bangla sounds translated", "Question is leading"],
+  "rewrite_instructions": "Rewrite using more casual Bangla. Change question to genuinely open-ended."
+}</code></pre>
 </section>
 
-<!-- FIRST 30 DAYS -->
-<section id="day30">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>First 30 Days — Exact Sequence</h2>
+<!-- ==================== SECTION 8: SELF-HEALING ==================== -->
+<section id="self-healing">
+<h2>8. Self-Healing Protocol</h2>
 
-<h4>Day 1–2: Foundation</h4>
+<div class="alert alert-info">
+<strong>RULE FOR EVERY HTTP NODE</strong>
+In n8n, every HTTP Request node must have: Retry on Fail = ON, Max Retries = 3, Wait Between Tries = 5000ms. This handles 90% of transient failures automatically.
+</div>
+
+<table>
+<tr><th>Failure</th><th>Detection</th><th>Auto-Fix</th><th>Alert</th></tr>
+<tr><td>Apify down &gt;30 min</td><td>0 results returned</td><td>Switch to Feedly RSS for that source</td><td>⚠️ Telegram</td></tr>
+<tr><td>DeepSeek API fails 3×</td><td>Retry exhausted</td><td>Route ALL writing to Claude API (higher cost)</td><td>⚠️ Telegram + "costs elevated"</td></tr>
+<tr><td>Ollama container down</td><td>Connection refused on 11434</td><td>Fallback to DeepSeek API immediately</td><td>🚨 CRITICAL Telegram</td></tr>
+<tr><td>Bannerbear fails</td><td>500 or timeout</td><td>Text-only template (solid color + headline)</td><td>⚠️ Telegram</td></tr>
+<tr><td>Meta API token expired</td><td>403 response</td><td>Switch to Publer for FB/IG posting</td><td>🚨 CRITICAL Telegram</td></tr>
+<tr><td>Publer fails</td><td>API error</td><td>Switch to direct platform APIs</td><td>🚨 Telegram</td></tr>
+<tr><td>Supabase down</td><td>Connection timeout</td><td>PAUSE ENTIRE PIPELINE immediately</td><td>🚨🚨 CRITICAL every 5 min</td></tr>
+<tr><td>Claude QA API fails</td><td>Retry exhausted</td><td>Route ALL posts to Telegram manual approval</td><td>⚠️ Telegram</td></tr>
+<tr><td>Platform warning/ban</td><td>403 or policy flag</td><td>Auto-pause that platform for 24h</td><td>🚨 CRITICAL Telegram</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 9: OPTIMIZER ==================== -->
+<section id="optimizer">
+<h2>9. Every-3-Day Self-Improvement Engine</h2>
+
+<p>Not daily (too noisy). Not weekly (too slow). Every 3 days at 5:00 AM Dhaka time. n8n Cron: <code>0 5 */3 * *</code></p>
+
+<table>
+<tr><th>Variable</th><th>How It Auto-Adjusts</th><th>Example</th></tr>
+<tr><td>Scoring weights</td><td>If "emotion" predicted engagement better than "timeliness" this cycle, emotion weight +0.02</td><td>emotion: 0.25 → 0.27</td></tr>
+<tr><td>Posting times</td><td>Compare actual time vs engagement. Shift by ±15 min toward proven peaks</td><td>8:00PM → 8:30PM</td></tr>
+<tr><td>Content mix</td><td>If carousels got 2× engagement vs cards, increase carousel production</td><td>carousel_pct: 20 → 35</td></tr>
+<tr><td>Hook formulas</td><td>Track which hook type gets highest completion. Increase winner probability</td><td>question_hook: 0.35 → 0.45</td></tr>
+<tr><td>Topic boosts</td><td>If cricket posts +40% above baseline, boost cricket items by +15 score</td><td>topic_boosts: {"cricket": +15}</td></tr>
+<tr><td>Source quality</td><td>If source consistently fails QA, auto-deprioritize</td><td>source_penalty: {"x": -10}</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 10: ANTI-BAN ==================== -->
+<section id="anti-ban">
+<h2>10. Anti-Ban Protocol — Stay Alive</h2>
+
+<div class="alert alert-critical">
+<strong>🚨 THE PIPELINE IS WORTHLESS IF ACCOUNTS GET BANNED</strong>
+Every measure below is mandatory, not optional.
+</div>
+
+<table>
+<tr><th>Risk</th><th>Mandatory Fix</th></tr>
+<tr><td>Same IP for all 25 accounts</td><td>Use residential proxies (IPRoyal, ~$7/GB). Each channel brand gets a <strong>different</strong> proxy.</td></tr>
+<tr><td>Same posting time across channels</td><td>Stagger: Mandate at :00/:30, Ledger at :10/:40, Rong at :15/:45, Dheu at :05/:35, Jonotar at :20/:50. Never 2 channels in the same 5-min window.</td></tr>
+<tr><td>Identical content on multiple platforms</td><td>Each platform gets a <strong>different caption variant</strong>. Different hashtags. Different cover image crop. TikTok detects cross-posts.</td></tr>
+<tr><td>Unofficial automation tools</td><td>ONLY: Meta Graph API, TikTok Content Posting API, YouTube Data API, LinkedIn API, Publer. NEVER Jarvee, MassPlanner, or browser-login bots.</td></tr>
+<tr><td>Auto comment replies (Month 1–3)</td><td>DO NOT auto-reply. Auto-<strong>like</strong> only. One bad AI reply gets screenshotted = brand dead.</td></tr>
+<tr><td>Ad accounts shared between channels</td><td>Each channel brand gets its own separate ad account inside ONE Meta Business Manager.</td></tr>
+<tr><td>AI-sounding content</td><td>Vary sentence length. Mix Bangla/English naturally. Add ±5–15 min random timing jitter to posting schedule. Rotate between 6+ template designs.</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 11: VOICE CARDS ==================== -->
+<section id="voice">
+<h2>11. Channel Voice Cards</h2>
+
+<div class="voice-card">
+<div class="voice-card-header" style="background:var(--mandate)">The Mandate — Politics</div>
+<div class="voice-card-body">
+<p><strong>Speaks like:</strong> A senior Reuters correspondent who happens to be Bangladeshi. Calm. Precise. Never flinches.</p>
+<p><strong>Never:</strong> Emotional, opinionated, rushed, casual, exclamation marks, emoji.</p>
+<p><strong>Always:</strong> Precise, sourced, calm, authoritative. Every word earned.</p>
+<div class="voice-card-sample">বাংলাদেশ ব্যাংক policy rate ৫০ basis points বাড়ালো
+
+মুদ্রানীতি কমিটি আজ সকালে এই সিদ্ধান্ত নিয়েছে। নতুন rate ৯.৫%।
+বিশ্লেষকদের ধারণা, আগামী quarter-এ inflation pressure কমবে।
+
+সূত্র: বাংলাদেশ ব্যাংক
+#themandate #economy #bangladeshbank</div>
+</div>
+</div>
+
+<div class="voice-card">
+<div class="voice-card-header" style="background:var(--ledger)">The Dhaka Ledger — Business</div>
+<div class="voice-card-body">
+<p><strong>Speaks like:</strong> An FT columnist who grew up in Gulshan. Sharp, globally aware, data-literate.</p>
+<p><strong>Never:</strong> Casual Bangla-English mix, emoji, hype. <strong>Always:</strong> Numbers, context, "what this means for your business."</p>
+<div class="voice-card-sample">Bangladesh's remittance corridor is shifting.
+
+Saudi Arabia's share dropped from 31% to 24% in three years while Malaysia surged to 18%. The driver isn't policy — it's demographics. Younger workers choose East Asian destinations with higher monthly wages ($450+ vs $350).
+
+#dhakaledger #remittance #bdeconomy #migration #southasia</div>
+</div>
+</div>
+
+<div class="voice-card">
+<div class="voice-card-header" style="background:var(--rong)">রঙ (Rong) — Entertainment</div>
+<div class="voice-card-body">
+<p><strong>Speaks like:</strong> The most well-connected entertainment journalist at a top BD magazine. Inside knowledge.</p>
+<p><strong>Never:</strong> Cheap gossip, moral judgment, clickbait. <strong>Always:</strong> Cultural context, specific detail, warmth. Max 1 emoji.</p>
+<div class="voice-card-sample">Chanchal Chowdhury-র নতুন series-এর trailer drop হয়েছে
+
+Chorki-তে আসছে "অচেনা শহর" — Dhaka noir genre-তে এটা প্রথম serious attempt।
+Director Mostofa Sarwar Farooki বলেছেন, shooting-এ ১৮ মাস লেগেছে।
+
+Trailer link bio-তে
+#rong #chorki #chanchal #dhakanoir #banglaott</div>
+</div>
+</div>
+
+<div class="voice-card">
+<div class="voice-card-header" style="background:var(--dheu)">ঢেউ (Dheu) — Viral</div>
+<div class="voice-card-body">
+<p><strong>Speaks like:</strong> Your sharpest friend who finds things before everyone else. Fast, bold, confident.</p>
+<p><strong>Never:</strong> Try-hard, overexplaining, begging for engagement. <strong>Always:</strong> Fast. Short. Mass-market energy. Max 2 emoji.</p>
+<div class="voice-card-sample">Dhaka traffic-এ ১ ঘণ্টা stuck থাকলে মানুষ কী করে
+
+🔁 ৪২% — phone scroll
+😴 ২৭% — ঘুমায়
+🎵 ১৯% — গান শোনে
+🗣️ ১২% — driver-কে lecture দেয়
+
+তুমি কোনটা? Comment-এ বলো
+#dheu #dhakalife #relatable</div>
+</div>
+</div>
+
+<div class="voice-card">
+<div class="voice-card-header" style="background:var(--jonotar)">জনতার কথা (Jonotar Kotha) — Citizen</div>
+<div class="voice-card-body">
+<p><strong>Speaks like:</strong> A passionate but fair community journalist from a mofussil town. Speaks for ordinary people.</p>
+<p><strong>Never:</strong> Elite framing, economic jargon, top-down perspective. <strong>Always:</strong> "How does this affect you?" End with poll or question.</p>
+<div class="voice-card-sample">Gas-এর দাম বাড়লো — সবচেয়ে বেশি চাপে কারা?
+
+রান্নাঘরে LPG cylinder এখন ১,৩৫০ টাকা। গত বছর ছিল ১,১০০।
+ঢাকার বাইরে অনেক পরিবার এখনো কাঠের চুলা ব্যবহার করে।
+
+এই দাম বাড়া তোমার পরিবারকে কতটা affect করছে?
+#jonotarkotha #gasprice #bangladesh</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== SECTION 12: 30-DAY CHECKLIST ==================== -->
+<section id="checklist">
+<h2>12. 30-Day Execution Checklist</h2>
+
+<div class="day">
+<div class="day-label">Day 1 — Today (April 3, 2026)</div>
+<div class="day-title">Handles + Accounts + Payment</div>
 <ul class="checklist">
-<li>Register ALL 20 handles across ALL platforms in one session</li>
-<li>Set up Hetzner CX33 server + install n8n via Docker Compose</li>
-<li>Create Supabase project with all tables</li>
-<li>Sign up for all tool accounts</li>
+<li>Register all 5 channel handles on Facebook, Instagram, TikTok, YouTube, X, LinkedIn (30 accounts total)</li>
+<li>Apply for TikTok Developer account + Content Posting API (takes 2–4 weeks — start TODAY)</li>
+<li>Set up Meta Business Manager at business.facebook.com → add all FB Pages</li>
+<li>Create 5 Google Cloud projects → enable YouTube Data API v3 → request quota extension</li>
+<li>Register at developer.x.com for X API access (consumption-based billing)</li>
+<li>Get dual-currency card: DBBL Nexus Debit or EBL Visa Debit or Payoneer account</li>
+<li>Create Telegram approval bot via @BotFather → create "BD Media Approvals" group → get chat_id</li>
+<li>Sign up for ALL tools: Hetzner, Supabase, Apify, DeepSeek, Anthropic, Bannerbear, Canva, Publer, Metricool, ScreenshotOne, fal.ai, Feedly</li>
 </ul>
+</div>
 
-<h4>Day 3–5: Brand Identity</h4>
+<div class="day">
+<div class="day-label">Day 2–3</div>
+<div class="day-title">Server + Database</div>
 <ul class="checklist">
-<li>Design 5 logos ($50 total on Fiverr — NOT where you save money)</li>
-<li>Create color palette + typography per channel</li>
-<li>Design 25 templates (5 per channel) in Canva → export to Orshot</li>
-<li>Profile pics, covers, bios for all 20 accounts</li>
+<li>Order Hetzner CX33 (€6.49/mo) → install Docker + Docker Compose → deploy n8n (follow commands in Section 13)</li>
+<li>Purchase domain via Cloudflare → configure DNS → set up Caddy for SSL</li>
+<li>Create Supabase project → run SQL schema from Section 5</li>
+<li>Set up Zoho Mail for 5 channel emails (mandate@domain.com, ledger@domain.com, etc.)</li>
+<li>Collect ALL API keys from every service → add to n8n Credentials</li>
+<li>Run 10 test prompts through DeepSeek API in n8n to verify connectivity</li>
 </ul>
+</div>
 
-<h4>Day 6–8: Pipeline Build</h4>
+<div class="day">
+<div class="day-label">Day 3–5</div>
+<div class="day-title">Brand Identity + 30 Templates</div>
 <ul class="checklist">
-<li>Configure Apify scrapers for top 10 BD news sources</li>
-<li>Build n8n Workflow 1: Scrape → Deduplicate → Score → Queue</li>
-<li>Build n8n Workflow 2: Queue → Generate → Design → Schedule</li>
-<li>Build n8n Workflow 3: Meta API direct posting (bypasses Publer limits)</li>
-<li>End-to-end test: article → published post automatically</li>
+<li>Commission 5 logos on Fiverr ($10 each, $50 total) — simple wordmark, white + dark versions</li>
+<li>Create colour palettes in Canva using hex codes from Section 14</li>
+<li>Build 6 Bannerbear templates for The Mandate (news card, text-only, quote, data, screenshot, breaking)</li>
+<li>Duplicate for remaining 4 channels — change colors, fonts, logo only (24 more = 30 total)</li>
+<li>Create profile pics, cover images, and bios for all 30 social accounts</li>
+<li>Upload logos + brand assets to Cloudflare R2</li>
 </ul>
+</div>
 
-<h4>Day 9–12: Test + Soft Launch</h4>
+<div class="day">
+<div class="day-label">Day 5–7</div>
+<div class="day-title">Build the Pipeline in n8n</div>
 <ul class="checklist">
-<li>Test 50 Bangla captions with 5 BD friends (AI detection test)</li>
-<li>Run pipeline 48h privately — target 80%+ publishable</li>
-<li>Soft launch: 3–5 posts per channel per day</li>
+<li>Configure Feedly: 6 boards, add top 20 RSS sources first</li>
+<li>Set up Google Alerts for 10 keyword combos → RSS → Feedly</li>
+<li>Configure 3 Apify actors: BD news scraper, social media trending, entertainment sources</li>
+<li>Build W01_Scrape_Score: Cron → Apify + Feedly → Dedup → Score → Supabase</li>
+<li>Build W02_Write_Publish: Cron → Queue → Caption → Bannerbear → QA → Approval → Publish</li>
+<li>Build W00_Error_Handler: Error Trigger → classify → Telegram alert → fallback chain</li>
+<li>Build W03_Comment_Engagement: Cron → fetch comments → auto-like → DM scan → Telegram</li>
+<li>End-to-end test: does a Prothom Alo article become a correctly formatted Mandate post?</li>
 </ul>
+</div>
 
-<h4>Day 13–30: Ramp</h4>
+<div class="day">
+<div class="day-label">Day 8–10</div>
+<div class="day-title">Prompt Engineering + Bangla Validation</div>
 <ul class="checklist">
-<li>Week 3: 5–8 posts/channel/day</li>
-<li>Week 4: 8–12 posts/channel/day</li>
-<li>Enable auto-comment-liking via Meta Graph API</li>
-<li>First analytics review + scoring adjustments</li>
+<li>Feed 50 real articles through scoring prompt → verify scores match your editorial judgment</li>
+<li>Generate 50 captions per channel (250 total) → review every one</li>
+<li>Send 50 Bangla captions to 3–5 native speakers for blind test → target: 80%+ rated 4–5 out of 5</li>
+<li>Write + test QA prompts with 50 known-bad captions → target: 90%+ catch rate</li>
+<li>Insert final prompts into prompt_versions table with is_active = true</li>
 </ul>
+</div>
 
-<h3>Day 30 Checkpoint</h3>
-<div class="kpi-grid">
-<div class="kpi"><div class="kpi-number">500+</div><div class="kpi-label">Followers / Channel</div></div>
-<div class="kpi"><div class="kpi-number">3%+</div><div class="kpi-label">Engagement Rate</div></div>
-<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Factual Errors</div></div>
-<div class="kpi"><div class="kpi-number">0</div><div class="kpi-label">Platform Warnings</div></div>
-<div class="kpi"><div class="kpi-number">20+</div><div class="kpi-label">Hrs/Day Running</div></div>
-<div class="kpi"><div class="kpi-number">&lt;1hr</div><div class="kpi-label">Daily Oversight</div></div>
+<div class="day">
+<div class="day-label">Day 11–12</div>
+<div class="day-title">48-Hour Silent Test</div>
+<ul class="checklist">
+<li>Run full pipeline 48 hours WITHOUT publishing — everything goes to Supabase only</li>
+<li>Monitor: items scraped? Pass scoring? Pass QA? Generation time?</li>
+<li>Target: ≥200 scraped/day, ≥80 scored, ≥80% QA pass, &lt;10s generation time</li>
+<li>Deliberately break nodes — does error handler alert and fallback work?</li>
+</ul>
+</div>
+
+<div class="day">
+<div class="day-label">Day 13–14</div>
+<div class="day-title">Soft Launch</div>
+<ul class="checklist">
+<li>Publish 3–5 posts/channel/day (15–25 total). ALL through human approval.</li>
+<li>Monitor every post for accuracy. Respond to all comments personally.</li>
+<li>Zero tolerance: one factually wrong post = pause and diagnose before continuing.</li>
+<li>Follow 20 relevant accounts per channel manually.</li>
+</ul>
+</div>
+
+<div class="day">
+<div class="day-label">Day 15–21</div>
+<div class="day-title">Scale + GPU Migration</div>
+<ul class="checklist">
+<li>Ramp to 8–10 posts/channel/day. Enable auto-publish for score ≥85.</li>
+<li>Order Hetzner GEX44 → migrate Docker setup → pull Qwen 3.5-9B → verify GPU inference</li>
+<li>Add carousel automation for Dhaka Ledger (Bannerbear Template Sets)</li>
+<li>Build W04_Optimizer workflow. Run first optimization cycle.</li>
+<li>Add W05_Metrics_Puller (Metricool → Supabase twice daily)</li>
+<li>Begin A/B testing: vary hook types across posts per channel</li>
+</ul>
+</div>
+
+<div class="day">
+<div class="day-label">Day 22–28</div>
+<div class="day-title">Optimization + Advanced Features</div>
+<ul class="checklist">
+<li>Review full-week analytics → identify top 3 content types per channel</li>
+<li>Add Reel/short-video pipeline for Rong and Dheu</li>
+<li>Implement crisis mode: keyword trigger auto-pauses scheduled content</li>
+<li>Build sponsorship DM detection workflow</li>
+<li>Run second optimizer cycle. Promote winning prompt variants.</li>
+<li>Prepare seasonal calendar: Ramadan, Eid, Pohela Boishakh, cricket tournaments</li>
+</ul>
+</div>
+
+<div class="day">
+<div class="day-label" style="color:var(--green)">Day 30 — TARGETS</div>
+<div class="day-title">Must Hit These or Pause Scaling</div>
+<ul class="checklist">
+<li>500+ followers per channel on primary platform (2,500+ total)</li>
+<li>≥3% average engagement rate</li>
+<li>ZERO factual errors published</li>
+<li>ZERO platform warnings or restrictions</li>
+<li>Pipeline running 20+ hours/day autonomously</li>
+<li>Daily human oversight ≤45 minutes</li>
+<li>Cost tracking within ±10% of budget</li>
+</ul>
 </div>
 </section>
 
-<!-- TONE -->
-<section id="tone">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Content Tone — Final Calibration</h2>
-<div class="brand-grid">
-<div class="brand-card" data-brand="prohor"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="brand-name">প্রহর</div><div class="brand-sub">Senior Reuters correspondent</div></div></div><p><strong>Never:</strong> Emotional, opinionated. <strong>Always:</strong> Precise, sourced, calm.</p></div>
-<div class="brand-card" data-brand="dhaka"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><div><div class="brand-name">The Dhaka Brief</div><div class="brand-sub">FT columnist from Gulshan</div></div></div><p><strong>Never:</strong> Casual, emoji. <strong>Always:</strong> Sharp, analytical, data-literate.</p></div>
-<div class="brand-card" data-brand="rong"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#db2777,#be185d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="brand-name">রঙ</div><div class="brand-sub">Well-connected entertainment journalist</div></div></div><p><strong>Never:</strong> Cheap gossip. <strong>Always:</strong> Inside knowledge, cultural context.</p></div>
-<div class="brand-card" data-brand="shoili"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#059669,#047857)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="brand-name">শৈলী</div><div class="brand-sub">Bangladeshi Monocle editor</div></div></div><p><strong>Never:</strong> "Goals!" clichés. <strong>Always:</strong> Specific, curated, quietly impressive.</p></div>
-<div class="brand-card" data-brand="dheu"><div class="brand-header"><div class="brand-icon" style="background:linear-gradient(135deg,#ea580c,#c2410c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="brand-name">ঢেউ</div><div class="brand-sub">Sharpest friend on the internet</div></div></div><p><strong>Never:</strong> Try-hard, begging. <strong>Always:</strong> Fast, bold, slightly amused.</p></div>
+<!-- ==================== SECTION 13: COMMANDS ==================== -->
+<section id="commands">
+<h2>13. Step-by-Step Server Commands — Copy-Paste Exactly</h2>
+
+<h4>Step 1: Order Hetzner CX33</h4>
+<p>hetzner.com → Cloud → Create Server → Location: Falkenstein → Image: Ubuntu 24.04 → Type: CX33 → Create. You receive an IP and root password by email.</p>
+
+<h4>Step 2: SSH In and Install Everything</h4>
+<pre><code># Replace YOUR_SERVER_IP with the IP from Hetzner's email
+ssh root@YOUR_SERVER_IP
+# Type 'yes' when asked. Enter the password.
+
+# Update system
+apt update && apt upgrade -y
+
+# Install Docker
+curl -fsSL https://get.docker.com | sh
+
+# Install Docker Compose v2
+apt install docker-compose-plugin -y
+
+# Verify
+docker --version
+docker compose version
+
+# Create project directory
+mkdir ~/media-engine && cd ~/media-engine
+
+# Create .env file
+cat > .env << 'EOF'
+N8N_HOST=n8n.yourdomain.com
+N8N_USER=admin
+N8N_PASSWORD=YOUR_STRONG_PASSWORD_HERE
+N8N_ENCRYPTION_KEY=generate-32-random-chars-here-abc
+POSTGRES_USER=mediadb
+POSTGRES_PASSWORD=YOUR_DB_PASSWORD_HERE
+EOF
+
+# Create docker-compose.yml (paste the Phase 1 compose from Section 4)
+nano docker-compose.yml
+# Paste → Ctrl+X → Y → Enter
+
+# Create Caddyfile
+cat > Caddyfile << 'EOF'
+n8n.yourdomain.com {
+    reverse_proxy n8n:5678
+}
+EOF
+
+# Launch
+docker compose up -d
+
+# Verify: open http://YOUR_SERVER_IP:5678 in browser
+# Or https://n8n.yourdomain.com if DNS is configured</code></pre>
+
+<h4>Step 3: Telegram Bot Setup</h4>
+<pre><code># 1. Open Telegram → search @BotFather → /newbot
+# 2. Name: BD Media Pipeline Bot
+# 3. Username: bdmediapipeline_bot
+# 4. Save the API TOKEN (looks like: 1234567890:ABCdef...)
+# 5. Create group "BD Media Approvals" → add bot
+# 6. Send any message in group
+# 7. Visit: https://api.telegram.org/botYOUR_TOKEN/getUpdates
+# 8. Find "chat":{"id":-XXXXXXXXXX} → save this chat_id</code></pre>
+</section>
+
+<!-- ==================== SECTION 14: TEMPLATES ==================== -->
+<section id="templates">
+<h2>14. 30 Image Templates</h2>
+
+<h3>Universal Layer Stack (every template)</h3>
+<pre><code>Canvas: 1080 × 1080 px
+
+LAYER 1 — bg_image (dynamic)
+  Full canvas. "Fill" mode. og:image from article.
+  Fallback: solid brand color.
+
+LAYER 2 — gradient_overlay (static)
+  Rectangle, bottom 60%. Black, 70% opacity.
+  Makes white text readable over any photo.
+
+LAYER 3 — headline (dynamic)
+  Lower third, left-aligned, 40px margin.
+  Font: Noto Sans Bengali Bold / Space Grotesk Bold.
+  42px. White. Max 2 lines. Auto-shrink.
+
+LAYER 4 — summary (dynamic, optional)
+  Below headline. 18px. White 75% opacity. Max 1 line.
+
+LAYER 5 — source (dynamic)
+  Bottom left. Monospace. 13px. White 55% opacity.
+
+LAYER 6 — channel_logo (static)
+  Bottom right. 55×55px. White logo version.</code></pre>
+
+<h3>Channel Colors</h3>
+<table>
+<tr><th>Channel</th><th>Primary</th><th>Accent</th><th>Gradient</th></tr>
+<tr><td>The Mandate</td><td style="color:#1A1A2E">#1A1A2E <span class="swatch" style="background:#1A1A2E;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td style="color:#C5303E">#C5303E <span class="swatch" style="background:#C5303E;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td>Navy → transparent</td></tr>
+<tr><td>Dhaka Ledger</td><td style="color:#0D1B2A">#0D1B2A <span class="swatch" style="background:#0D1B2A;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td style="color:#E0A45E">#E0A45E <span class="swatch" style="background:#E0A45E;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td>Charcoal → transparent</td></tr>
+<tr><td>Rong</td><td style="color:#2D1B4E">#2D1B4E <span class="swatch" style="background:#2D1B4E;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td style="color:#FF6B8A">#FF6B8A <span class="swatch" style="background:#FF6B8A;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td>Purple → transparent</td></tr>
+<tr><td>Dheu</td><td style="color:#0F2027">#0F2027 <span class="swatch" style="background:#0F2027;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td style="color:#00D9FF">#00D9FF <span class="swatch" style="background:#00D9FF;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td>Teal → transparent</td></tr>
+<tr><td>Jonotar Kotha</td><td style="color:#1a1035">#1a1035 <span class="swatch" style="background:#1a1035;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td style="color:#8B5CF6">#8B5CF6 <span class="swatch" style="background:#8B5CF6;display:inline-block;width:14px;height:14px;vertical-align:middle"></span></td><td>Deep purple → transparent</td></tr>
+</table>
+
+<h3>6 Template Types × 5 Channels = 30</h3>
+<div class="template-grid">
+<div class="template-item"><div class="num">1</div><div class="name">News Card (with photo)</div></div>
+<div class="template-item"><div class="num">2</div><div class="name">News Card (text-only)</div></div>
+<div class="template-item"><div class="num">3</div><div class="name">Quote Card</div></div>
+<div class="template-item"><div class="num">4</div><div class="name">Data/Stat Card</div></div>
+<div class="template-item"><div class="num">5</div><div class="name">Screenshot Frame</div></div>
+<div class="template-item"><div class="num">6</div><div class="name">Breaking News Card</div></div>
 </div>
 </section>
 
-<!-- ARCHITECTURE -->
-<section id="architecture">
-<h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>System Architecture</h2>
-<div class="code-block" data-label="Full Pipeline (Corrected)">[30+ NEWS SOURCES] → [APIFY SCRAPERS] → [SUPABASE]
-                                              ↓
-                                      [CLAUDE SONNET 4.6 SCORING 0-100]
-                                              ↓
-                                      [CONTENT QUEUE]
-                                              ↓
-                           ┌─────────────────┼─────────────────┐
-                           ↓                 ↓                 ↓
-                   [WRITE (Claude)]  [DESIGN (Orshot)]  [VIDEO (ElevenLabs)]
-                           ↓                 ↓                 ↓
-                           └─────────────────┼─────────────────┘
-                                              ↓
-                                      [CHANNEL ROUTER]
-                           ┌─────────────────┼─────────────────┐
-                           ↓                                   ↓
-               [META API DIRECT]                   [PUBLER SCHEDULER]
-               (FB + IG — NO LIMITS)               (TikTok + YT + X)
-                           ↓                                   ↓
-                           └─────────────────┼─────────────────┘
-                                              ↓
-                                      [20 ACCOUNTS PUBLISHED]
-                                              ↓
-                                      [ENGAGEMENT ENGINE]
-                                              ↓
-                                      [ANALYTICS → WEEKLY AI REVIEW ↺]</div>
+<!-- ==================== SECTION 15: SOURCES ==================== -->
+<section id="sources">
+<h2>15. Complete 107-Source Map</h2>
+
+<table>
+<tr><th>Category</th><th>#</th><th>Sources</th><th>Method</th><th>Frequency</th></tr>
+<tr><td><strong>BD Bangla Dailies</strong></td><td>14</td><td>Prothom Alo, Samakal, Jugantor, Kaler Kantho, Ittefaq, Manab Zamin, Bangladesh Pratidin, Janakantha, Bhorer Kagoj, Inqilab, Naya Diganta, Desh Rupantor, Amader Shomoy, Bangla Tribune</td><td>Apify + RSS</td><td>5–15 min</td></tr>
+<tr><td><strong>BD English Dailies</strong></td><td>10</td><td>Daily Star, Dhaka Tribune, The Business Standard, Daily Sun, Financial Express, New Age, The Independent, Bangladesh Post, Dhaka Courier, Weekly Holiday</td><td>RSS</td><td>5–10 min</td></tr>
+<tr><td><strong>Wire Services</strong></td><td>4</td><td>BSS, UNB, BDnews24, Jago News 24</td><td>RSS</td><td>5 min</td></tr>
+<tr><td><strong>Broadcast/TV</strong></td><td>12</td><td>Somoy TV, Jamuna TV, Channel i, NTV, ATN News, Ekattor TV, Channel 24, Independent TV, DBC News, Rtv, Boishakhi TV, SA TV</td><td>YouTube RSS + HTML</td><td>15–30 min</td></tr>
+<tr><td><strong>International</strong></td><td>16</td><td>BBC Bangla, VOA Bangla, DW Bangla, Al Jazeera (BD), Reuters (BD), AP (BD), AFP (BD), NDTV (BD), Times of India (BD), Dawn, Al Arabiya, Middle East Eye, The Guardian (BD), SCMP (BD), The Diplomat (BD), Nikkei Asia (BD)</td><td>RSS</td><td>15–60 min</td></tr>
+<tr><td><strong>Sports</strong></td><td>10</td><td>ESPN Cricinfo, Cricbuzz, ICC, FIFA, Premier League, Goal.com, Transfermarkt, BD Football Federation, T Sports, Risingbd Sports</td><td>RSS + API</td><td>15 min / 5 min live</td></tr>
+<tr><td><strong>Business/Banking</strong></td><td>12</td><td>Bangladesh Bank, DSE, CSE, BSEC, LightCastle Partners, Future Startup, Markedium, DataBD, BD Venture Capital, Business Haunt, IDLC Monthly, BD Economic Review</td><td>RSS + Apify + Alerts</td><td>30–60 min</td></tr>
+<tr><td><strong>Competitors</strong></td><td>10</td><td>Nutshell Today, Cablgram, The Front Page, The Sports Page BD, TBS Bites, Daily Star Byte, Markedium social, Prothom Alo social, Bangla Tribune social, DT social</td><td>Apify IG/FB</td><td>2 hours</td></tr>
+<tr><td><strong>Social Listening</strong></td><td>8</td><td>X trending BD, Reddit r/bangladesh, Reddit r/dhaka, YouTube BD trending, FB BD trending, TikTok BD trending, LinkedIn BD, Google Trends BD</td><td>APIs + Apify</td><td>Continuous</td></tr>
+<tr><td><strong>Government</strong></td><td>7</td><td>Parliament, PMO, Bangladesh Bank circulars, NBR, BTRC, BBS, Election Commission</td><td>Apify + Alerts</td><td>60 min</td></tr>
+<tr><td><strong>Niche</strong></td><td>4</td><td>Tech Shohor, Textile Today, The Apparel Story, ICT Division BD</td><td>RSS + Alerts</td><td>60 min</td></tr>
+</table>
+
+<div class="alert alert-info">
+<strong>PHASE YOUR SOURCES</strong><br>
+Week 1: Top 20 sources only (Prothom Alo, Daily Star, BSS, UNB, BDnews24, Somoy TV, BBC Bangla, ESPN Cricinfo + 12 more via Feedly). This alone beats every competitor in BD.<br>
+Week 2–3: Add remaining 67 sources.<br>
+Month 2: Full 107 with social listening.
+</div>
 </section>
 
-<!-- FINAL -->
-<section style="margin-top:48px;padding:28px;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(59,130,246,.06));border-radius:var(--radius-xl);border:1px solid var(--border);">
-<h2 style="margin-top:0;border-bottom:none;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Stress-Tested. Every Price Verified. Execute.</h2>
+<!-- ==================== SECTION 16: WRITING RULES ==================== -->
+<section id="writing-rules">
+<h2>16. Content Writing Rules — Master Reference</h2>
 
-<div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">
-<div class="kpi" style="background:var(--red-dim)"><div class="kpi-number" style="font-size:18px;color:var(--red)">8</div><div class="kpi-label">Fixes Made</div></div>
-<div class="kpi" style="background:var(--green-dim)"><div class="kpi-number" style="font-size:18px;color:var(--green)">$618</div><div class="kpi-label">Verified Cost</div></div>
-<div class="kpi" style="background:var(--blue-dim)"><div class="kpi-number" style="font-size:18px;color:var(--blue)">73.4M</div><div class="kpi-label">FB Users (Feb 2026)</div></div>
-<div class="kpi" style="background:var(--accent-dim)"><div class="kpi-number" style="font-size:18px;color:var(--accent-light)">100+</div><div class="kpi-label">Posts/Day</div></div>
+<div class="card">
+<p>These rules are embedded in every caption prompt and every QA prompt. They are the law.</p>
+<table>
+<tr><td>Filler phrases</td><td>NEVER: "আজকের দিনে," "চাঞ্চল্যকর খবর," "জানলে অবাক হবেন," or any clickbait formula</td></tr>
+<tr><td>Headlines</td><td>Max 8–10 Bangla words. Hook immediately.</td></tr>
+<tr><td>Emoji</td><td>Mandate/Ledger: ZERO. Rong/Jonotar: max 1. Dheu: max 2.</td></tr>
+<tr><td>Hashtags</td><td>Instagram: max 5. X: max 3. Facebook: max 5. TikTok: max 5. Always lowercase.</td></tr>
+<tr><td>Exclamation marks</td><td>ZERO on all channels.</td></tr>
+<tr><td>Bangla style</td><td>চলিত ভাষা (colloquial) only. Never সাধু ভাষা (literary).</td></tr>
+<tr><td>Code-switching</td><td>Use English for: proper nouns, acronyms, globally understood terms. Say "GDP" not "মোট দেশজ উৎপাদন" in casual context.</td></tr>
+<tr><td>Caption structure</td><td>Hook (1 line) → empty line → Meat (2–4 sentences) → empty line → Source or CTA question → hashtags</td></tr>
+<tr><td>Sentence variety</td><td>Mix 5-word and 15-word sentences. Never start two consecutive sentences the same way.</td></tr>
+</table>
 </div>
-
-<p style="text-align:center;font-size:16px;font-weight:800;color:var(--text-heading);margin:16px 0 4px;letter-spacing:-.3px">Register handles today. Build pipeline. Post 10 things. Then scale.</p>
-<p style="text-align:center;color:var(--text-tertiary);font-size:10px;margin:0">Stress-tested March 30, 2026 — All tool pricing verified against live listings · WhatsApp BD block confirmed · Hetzner Apr 1 pricing applied · Publer limits documented · Facebook 73.4M (NapoleonCat Feb 2026) · Nutshell Today 322K IG (live today)</p>
 </section>
 
-</div>
+<!-- ==================== SECTION 17: FACT-CHECK ==================== -->
+<section id="fact-check">
+<h2>17. Fact-Checking Protocol</h2>
 
-<!-- SCROLL TOP -->
-<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<table>
+<tr><th>Source Tier</th><th>Speed Rule</th><th>Verification</th></tr>
+<tr><td><span class="badge badge-green">Tier 1</span> Official/Institutional</td><td>Publish within 5 min</td><td>Attribution required. No cross-check needed.</td></tr>
+<tr><td><span class="badge badge-yellow">Tier 2</span> Major Dailies/Wire</td><td>Publish within 15 min</td><td>Attribution required. Quick check: does 1+ other Tier 2 corroborate?</td></tr>
+<tr><td><span class="badge" style="background:#f9731622;color:var(--orange)">Tier 3</span> Secondary Media</td><td>Publish after ≥30 min</td><td>Must be corroborated by Tier 1/2. If not, use "unconfirmed" language.</td></tr>
+<tr><td><span class="badge badge-red">Social Media</span></td><td>Hold ≥1 hour</td><td>Require Tier 1/2 corroboration. Can publish as "reports suggest" with attribution.</td></tr>
+<tr><td>Images &gt;48h old</td><td>Always verify</td><td>Reverse image search via Google Lens/ScreenshotOne before use.</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 18: CIB WARNING ==================== -->
+<section id="cib-warning">
+<h2>18. CIB Warning — The Mandate + Jonotar Kotha</h2>
+
+<div class="alert alert-critical">
+<strong>⚠️ COORDINATED INAUTHENTIC BEHAVIOR RISK</strong>
+Two political channels from the same operator = CIB risk <strong>only if they push different political sides on the same story</strong>. The fix: The Mandate covers policy/facts/institutions. Jonotar Kotha covers citizen reaction/impact/polls. Same facts, different editorial angle. <strong>Never "pro vs anti" framing. Never.</strong>
+</div>
+</section>
+
+<!-- ==================== SECTION 19: API KEYS ==================== -->
+<section id="api-keys">
+<h2>19. API Key Collection Guide</h2>
+
+<table>
+<tr><th>Service</th><th>Where to Find</th><th>Format</th></tr>
+<tr><td>Apify</td><td>apify.com → Settings → Integrations → API token</td><td><code>apify_xxxx...</code></td></tr>
+<tr><td>DeepSeek</td><td>platform.deepseek.com → API Keys → Create</td><td><code>sk-xxxx...</code></td></tr>
+<tr><td>Claude (Anthropic)</td><td>console.anthropic.com → API Keys → Create</td><td><code>sk-ant-xxxx...</code></td></tr>
+<tr><td>Bannerbear</td><td>bannerbear.com → Account → API Key</td><td><code>bb_pr_xxxx...</code></td></tr>
+<tr><td>Publer</td><td>publer.io → Settings → API → Generate</td><td><code>publer_xxxx...</code></td></tr>
+<tr><td>Supabase</td><td>Project → Settings → API</td><td>URL + <code>eyJhbGci...</code></td></tr>
+<tr><td>ScreenshotOne</td><td>screenshotone.com → Dashboard</td><td><code>xxxx</code></td></tr>
+<tr><td>Telegram</td><td>@BotFather</td><td>Token + chat_id</td></tr>
+<tr><td>Meta Business</td><td>business.facebook.com → Settings → System Users → Generate Token</td><td><code>EAABxx...</code></td></tr>
+<tr><td>fal.ai</td><td>fal.ai → Dashboard → API Keys</td><td><code>fal_xxxx...</code></td></tr>
+<tr><td>Feedly</td><td>feedly.com → Developer → API Token</td><td><code>AxxxxBxxxx...</code></td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 20: PHOTOS ==================== -->
+<section id="photos">
+<h2>20. How Photos Actually Work</h2>
+
+<p>Every news article has a hidden HTML tag: <code>&lt;meta property="og:image"&gt;</code>. This is the photo that appears when you share a link on Facebook. When Apify scrapes an article, it extracts this image URL alongside the headline and text. That is your photo — a real photo of a real event, chosen by the original newsroom.</p>
+
+<table>
+<tr><th>Source Type</th><th>How You Get It</th><th>Used When</th><th>% of Posts</th></tr>
+<tr><td>Article og:image</td><td>Apify extracts automatically</td><td>Standard news posts</td><td>~85%</td></tr>
+<tr><td>Screenshot via ScreenshotOne</td><td>Pass tweet/post URL → get clean screenshot</td><td>Viral tweets, politician posts</td><td>~8%</td></tr>
+<tr><td>AI Illustration via FLUX</td><td>Prompt fal.ai → abstract editorial image</td><td>Abstract topics, data stories</td><td>~4%</td></tr>
+<tr><td>Text-Only Card</td><td>No image. Bold headline on brand color.</td><td>Breaking news, quotes, data points</td><td>~3%</td></tr>
+</table>
+
+<h4>The Bannerbear API Call (exact)</h4>
+<pre><code>POST https://api.bannerbear.com/v2/images
+Authorization: Bearer YOUR_BANNERBEAR_API_KEY
+Content-Type: application/json
+
+{
+  "template": "YOUR_MANDATE_NEWS_TEMPLATE_ID",
+  "modifications": [
+    {
+      "name": "bg_image",
+      "image_url": "https://prothomalo.com/path/to/og-image.jpg"
+    },
+    {
+      "name": "headline",
+      "text": "ঢাকায় নতুন বিনিয়োগ নীতি ঘোষণা — বিস্তারিত"
+    },
+    {
+      "name": "summary",
+      "text": "সরকার বিদেশি বিনিয়োগের জন্য নতুন সুবিধা ঘোষণা করেছে"
+    },
+    {
+      "name": "source",
+      "text": "সূত্র: প্রথম আলো"
+    }
+  ]
+}
+
+// Returns in 5-10 seconds:
+// { "image_url": "https://cdn.bannerbear.com/renders/final-post.png" }</code></pre>
+</section>
+
+<!-- ==================== SECTION 21: SEASONAL ==================== -->
+<section id="seasonal">
+<h2>21. Seasonal Calendar</h2>
+
+<table>
+<tr><th>Event</th><th>Approximate Date</th><th>Volume Adjustment</th><th>Content Notes</th></tr>
+<tr><td>Language Day (ভাষা দিবস)</td><td>February 21</td><td>2× volume all channels</td><td>Bangla-heavy, cultural pride content</td></tr>
+<tr><td>Independence Day</td><td>March 26</td><td>2× The Mandate, Jonotar Kotha</td><td>Historical, patriotic — not partisan</td></tr>
+<tr><td>Pohela Boishakh (পহেলা বৈশাখ)</td><td>April 14</td><td>3× Rong, Dheu</td><td>Food, fashion, celebration content</td></tr>
+<tr><td>Ramadan</td><td>~March (varies)</td><td>Adjust posting times for iftar/suhoor</td><td>Community, food, spiritual — never commercial tone</td></tr>
+<tr><td>Eid ul-Fitr</td><td>End of Ramadan</td><td>3× all channels, especially Rong</td><td>Fashion, food, celebration, travel</td></tr>
+<tr><td>Eid ul-Adha</td><td>~70 days after Ramadan</td><td>2× all channels</td><td>Similar to Eid ul-Fitr</td></tr>
+<tr><td>Cricket tournaments (IPL, T20 WC, Asia Cup)</td><td>Various</td><td>3× Dheu, 2× The Mandate</td><td>Live reaction, scores, memes</td></tr>
+<tr><td>Victory Day</td><td>December 16</td><td>2× The Mandate, Jonotar Kotha</td><td>Historical, patriotic</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 22: MANUS ==================== -->
+<section id="manus">
+<h2>22. Manus AI Usage</h2>
+
+<p>Manus AI ($39/month) is reserved <strong>exclusively</strong> for weekly strategic research — never routed into automated workflows due to credit limits.</p>
+
+<table>
+<tr><th>Frequency</th><th>Task</th><th>Output</th></tr>
+<tr><td>Weekly (Monday)</td><td>Competitor analysis: top 5 BD media pages, what's working, trending formats</td><td>PDF briefing → Telegram summary</td></tr>
+<tr><td>Monthly</td><td>Market trend report: audience shifts, algorithm changes, format adoption in BD</td><td>Strategy document</td></tr>
+<tr><td>Ad-hoc</td><td>Special research: Ramadan content strategy, podcast pipeline spec, new platform analysis</td><td>One-off report</td></tr>
+</table>
+</section>
+
+<!-- ==================== SECTION 23: TARGETS ==================== -->
+<section id="targets">
+<h2>23. Day 30 Targets</h2>
+
+<div class="card" style="border-color:var(--green)">
+<table>
+<tr><td style="font-weight:700">Followers per channel (primary platform)</td><td style="color:var(--green);font-weight:700">500+</td></tr>
+<tr><td style="font-weight:700">Average engagement rate</td><td style="color:var(--green);font-weight:700">≥3%</td></tr>
+<tr><td style="font-weight:700">Factual errors published</td><td style="color:var(--green);font-weight:700">ZERO</td></tr>
+<tr><td style="font-weight:700">Platform warnings/restrictions</td><td style="color:var(--green);font-weight:700">ZERO</td></tr>
+<tr><td style="font-weight:700">Pipeline uptime</td><td style="color:var(--green);font-weight:700">20+ hours/day autonomous</td></tr>
+<tr><td style="font-weight:700">Daily human oversight</td><td style="color:var(--green);font-weight:700">≤45 minutes</td></tr>
+<tr><td style="font-weight:700">Monthly cost</td><td style="color:var(--green);font-weight:700">Within ±10% of $297 budget</td></tr>
+</table>
+<p style="color:var(--yellow);margin-top:12px;font-size:13px"><strong>If below targets:</strong> Pause scaling. Diagnose. Fix. Then resume.</p>
+</div>
+</section>
+
+<!-- ==================== SECTION 24: PITCH ==================== -->
+<section id="pitch">
+<h2>24. The 60-Second Pitch</h2>
+
+<div class="card">
+<p><strong>What:</strong> Bangladesh's first AI-automated media conglomerate. Five channel brands across 30 accounts on six platforms — politics (The Mandate), business/banking (Dhaka Ledger), entertainment (Rong), viral (Dheu), and citizen voice (Jonotar Kotha).</p>
+
+<p><strong>How:</strong> AI scrapes 107 sources every 5–60 minutes. Scores for virality. Writes natural Bangla and English. Generates branded post cards using real news photos. Quality-checked before publishing. 50–100+ posts per day. Self-improves every 3 days.</p>
+
+<p><strong>Why now:</strong> No dominant Bangla bite-size brand exists. 60 million social users, median age 26. Competitors are English-only, human-dependent, capped at 6–7 posts/day. We produce 50–100+ at one-twentieth the cost.</p>
+
+<p><strong>The Dhaka Ledger angle:</strong> Banking has the highest marketing budgets in Bangladesh. A LinkedIn-first business channel targeting MDs and chairmen = sponsorship pipeline from Month 2.</p>
+
+<p><strong>Cost:</strong> $297/month. Break-even Month 6–8.</p>
+
+<p><strong>The moat:</strong> Volume. Speed. Self-improvement. 107 sources. 30 accounts. 50–100+ posts/day. Getting better every 3 days without human intervention. Nobody can replicate this at this cost in this market.</p>
+</div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<section style="margin-top:80px;padding-top:40px;border-top:1px solid var(--border);color:var(--text2);font-size:13px">
+<p><strong>BD Media HQ — Final Execution Playbook v3.0</strong></p>
+<p>Compiled: April 3, 2026. All prices verified post-Hetzner April 1 increase. Model recommendation updated to Qwen 3.5-9B (released March 2026). n8n version: 2.15.0. Meta Graph API: v21.0. Supabase Pro: $25/mo confirmed.</p>
+<p style="margin-top:12px">This document is self-contained. Print it, bookmark it, execute it line by line. No guesswork. No room for error. Go register those handles.</p>
+</section>
+
+</main>
 
 <script>
-function toggleTheme(){const h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');localStorage.setItem('theme',h.getAttribute('data-theme'))}
-const st=localStorage.getItem('theme');if(st)document.documentElement.setAttribute('data-theme',st);
+// Smooth scroll for nav links
+document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
+a.addEventListener('click',e=>{
+e.preventDefault();
+const t=document.querySelector(a.getAttribute('href'));
+if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+});
+});
 
-function toggleSidebar(){
-  const s=document.getElementById('sidebar');
-  const o=document.querySelector('.sidebar-overlay');
-  s.classList.toggle('open');
-  o.classList.toggle('open');
-  document.body.style.overflow=s.classList.contains('open')?'hidden':'';
+// Highlight active nav item on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav a[href^="#"]');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+navLinks.forEach(l=>l.style.color='');
+const active=document.querySelector(`.nav a[href="#${entry.target.id}"]`);
+if(active)active.style.color='var(--accent2)';
 }
-
-document.querySelectorAll('.sidebar a').forEach(l=>{
-  l.addEventListener('click',()=>{
-    if(window.innerWidth<=900){
-      document.getElementById('sidebar').classList.remove('open');
-      document.querySelector('.sidebar-overlay').classList.remove('open');
-      document.body.style.overflow='';
-    }
-  });
 });
+},{threshold:0.3,rootMargin:'-80px 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
 
-window.addEventListener('scroll',()=>{
-  document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>400);
-});
-
-const secs=document.querySelectorAll('section[id]');
-const navs=document.querySelectorAll('.sidebar a[href^="#"]');
-let ticking=false;
-window.addEventListener('scroll',()=>{
-  if(!ticking){
-    window.requestAnimationFrame(()=>{
-      let cur='';
-      secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
-      navs.forEach(n=>{
-        n.classList.remove('active');
-        if(n.getAttribute('href')==='#'+cur)n.classList.add('active');
-      });
-      ticking=false;
-    });
-    ticking=true;
-  }
-});
-
-function switchTab(e,id){
-  const c=e.target.closest('.tab-container');
-  c.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  c.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-  e.target.closest('.tab-btn').classList.add('active');
-  c.querySelector('#'+id).classList.add('active');
+// Make checklist items clickable
+document.querySelectorAll('.checklist li').forEach(li=>{
+li.style.cursor='pointer';
+li.addEventListener('click',()=>{
+if(li.style.textDecoration==='line-through'){
+li.style.textDecoration='';
+li.style.opacity='1';
+li.querySelector&&(li.style.setProperty('--check','☐'));
+}else{
+li.style.textDecoration='line-through';
+li.style.opacity='0.5';
 }
-
-// Close sidebar on escape
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){
-    document.getElementById('sidebar').classList.remove('open');
-    document.querySelector('.sidebar-overlay').classList.remove('open');
-    document.body.style.overflow='';
-  }
 });
-
-// Handle resize — if desktop, ensure sidebar visible
-window.addEventListener('resize',()=>{
-  if(window.innerWidth>900){
-    document.getElementById('sidebar').classList.remove('open');
-    document.querySelector('.sidebar-overlay').classList.remove('open');
-    document.body.style.overflow='';
-  }
 });
 </script>
 </body>
